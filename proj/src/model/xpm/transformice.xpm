@@ -1,5 +1,5 @@
 /* XPM */
-static char * transformice_xpm[] = {
+static char * mouse_xpm[] = {
 "300 250 256 2",
 "  	c #FFFFFE",
 ". 	c #47704C",

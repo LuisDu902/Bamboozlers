@@ -1,17 +1,17 @@
-#ifndef _LCOM_SPRITE_H_
-#define _LCOM_SPRITE_H_
+#ifndef _SPRITE_H_
+#define _SPRITE_H_
 
-#include "controller/video/graphics.h"
+#include <lcom/lcf.h>
+#include "controllers/video/graphics.h"
 
 typedef struct {
-    uint16_t x;
-    uint16_t x;
-    uint16_t height;
-    uint16_t width;
-    uint32_t *colors;
+    int x, y;
+    int width, height;
+    int xspeed, yspeed;
+    uint32_t *pixmap;
 } Sprite; 
 
-Sprite *create_sprite_xpm(xpm_map_t sprite);
+Sprite *create_sprite_xpm(xpm_map_t sprite, int x, int y);
 void destroy_sprite(Sprite *sprite);
 
 #endif

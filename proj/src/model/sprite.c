@@ -1,16 +1,21 @@
+#include <lcom/lcf.h>
 #include "sprite.h"
 
-// Construção de um Sprite com um XPM com cores em modo direto
-// O Sprite terá de conter um array de cores
-Sprite *create_sprite_xpm(xpm_map_t sprite){
+
+Sprite *create_sprite_xpm(xpm_map_t sprite, int x, int y){
 
   Sprite *sp = (Sprite *) malloc (sizeof(Sprite));
   if( sp == NULL ) return NULL;
 
+  sp->x = x;
+  sp->y = y;
+  sp->xspeed = 0;
+  sp->yspeed = 0;
+
   xpm_image_t img;
-  sp->colors = (uint32_t *) xpm_load(sprite, XPM_INDEXED, &img);
+  sp->pixmap = (uint32_t *) xpm_load(sprite, XPM_8_8_8_8, &img);
   
-  if( sp->colors == NULL ) {
+  if( sp->pixmap == NULL ) {
     free(sp);
     return NULL;
   }
@@ -20,12 +25,11 @@ Sprite *create_sprite_xpm(xpm_map_t sprite){
 
   return sp;
 
-
-
+}
 
 void destroy_sprite(Sprite *sprite) {
     if (sprite == NULL) return;
-    if (sprite->colors) free(sprite->colors);
+    if (sprite->pixmap) free(sprite->pixmap);
     free(sprite);
     sprite = NULL;
 }
