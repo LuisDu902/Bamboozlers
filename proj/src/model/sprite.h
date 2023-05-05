@@ -2,7 +2,7 @@
 #define _SPRITE_H_
 
 #include <lcom/lcf.h>
-#include "controllers/video/graphics.h"
+#include "controller/video/graphics.h"
 
 typedef struct {
     int x, y;

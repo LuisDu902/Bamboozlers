@@ -1,12 +1,12 @@
 #include <lcom/lcf.h>
 #include "model.h"
 
-Sprite *mouse;
-
 void create_sprites(){
-    mouse = create_sprite_xpm((xpm_map_t) mouse_xpm, 40, 40);
+    create_menu_sprites();
+    create_game_sprites();
 }
 
 void destroy_sprites(){
-    destroy_sprite(mouse);
+    destroy_menu_sprites();
+    destroy_game_sprites();
 }

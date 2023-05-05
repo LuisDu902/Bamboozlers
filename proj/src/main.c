@@ -1,11 +1,17 @@
 #include <lcom/lcf.h>
-#include "controllers/timer/timer.h"
-#include "controllers/video/graphics.h"
-#include "controllers/keyboard/keyboard.h"
-#include "controllers/mouse/mouse.h"
+#include "controller/timer/timer.h"
+#include "controller/video/graphics.h"
+#include "controller/keyboard/keyboard.h"
+#include "controller/mouse/mouse.h"
+#include "controller/KBC/KBC.h"
 #include "model/model.h"
 #include "model/sprite.h"
-#include "view/view.h"
+#include "viewer/menu_viewer.h"
+#include "viewer/game_viewer.h"
+#include "states/state.h"
+
+extern Menu_state menu_state;
+uint32_t timer_mask, keyboard_mask, mouse_mask;
 
 int (main)(int argc, char *argv[]) {
     lcf_set_language("EN-US");
@@ -15,81 +21,67 @@ int (main)(int argc, char *argv[]) {
     lcf_cleanup();
     return 0;
 }
-extern Sprite *mouse;
-extern uint8_t scancode;
 
-int (proj_main_loop)(int argc, char *argv[]) {
-  
-    if (map_vram(VBE_DIRECT_600p) != 0) return 1;
+int init() {
+
+    if (timer_set_frequency(0, 60) != 0) return 1;
+
+    if (set_frame_buffer(VBE_DIRECT_600p) != 0) return 1;
 
     if (set_graphic_mode(VBE_DIRECT_600p) != 0) return 1;
 
-    vbe_mode_info_t mode_info;
-
-    memset(&mode_info, 0, sizeof(mode_info));
-    if (vbe_get_mode_info(VBE_DIRECT_600p, &mode_info) != 0)
-        return 1;
-
     create_sprites();
 
-    if (vg_draw_sprite(mouse) != 0) return 1;
+    if (timer_subscribe_interrupt(&timer_mask) != 0) return 1;
+    if (keyboard_subscribe_int(&keyboard_mask) != 0) return 1;
+    if (mouse_subscribe_int(&mouse_mask) != 0) return 1;
 
-    int ipc_status, r;
-    message msg;
-    uint32_t kbd_irq_set;
+    if (enable_data_reporting() != 0) return 1;
 
-    if (keyboard_subscribe_int(&kbd_irq_set) != 0) return 1;
+    return 0;
+}
 
-    while (scancode != ESC_BREAK){ /* You may want to use a different condition */
-    /* Get a request message. */
-    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0){
-        printf("driver_receive failed with: %d", r);
-        continue;
-    }
 
-    if (is_ipc_notify(ipc_status))
-    { /* received notification */
-        switch (_ENDPOINT_P(msg.m_source)){
-        case HARDWARE: /* hardware interrupt notification */
-        if (msg.m_notify.interrupts & kbd_irq_set){
-            read_scancode();
-            
-            if (scancode == ARROW_UP){ 
-                mouse->y -= 20;
-                if (mouse->y < 0) mouse->y = 0;
-                if (vg_clear() != 0) return 1;
-                if (vg_draw_sprite(mouse) != 0) return 1;
-            }
-            else if (scancode == ARROW_LEFT){
-                mouse->x -= 20;
-                if (mouse->x < 0) mouse->x = 0;
-                if (vg_clear() != 0) return 1;
-                if (vg_draw_sprite(mouse) != 0) return 1;
-            }
-            else if (scancode == ARROW_DOWN){ 
-                mouse->y += 20;
-                if (mouse->y > mode_info.YResolution - mouse->height) mouse->y = mode_info.YResolution - mouse->height;
-                if (vg_clear() != 0) return 1;
-                if (vg_draw_sprite(mouse) != 0) return 1;
-            }
-            else if (scancode == ARROW_RIGHT){ 
-                mouse->x += 20;
-                if (mouse->x > mode_info.XResolution - mouse->width) mouse->x = mode_info.XResolution - mouse->width;
-                if (vg_clear() != 0) return 1;
-                if (vg_draw_sprite(mouse) != 0) return 1;
-            }
-            
-        }
-        break;
-        default:
-        break; /* no other notifications expected: do nothing */
-        }
-    }
-    }
+int cleanup() {
 
+    if (vg_exit() != 0) return 1;
+
+    destroy_sprites();
+
+    if (timer_unsubscribe_int() != 0) return 1;
     if (keyboard_unsubscribe_int() != 0) return 1;
+    if (mouse_unsubscribe_int() != 0) return 1;
 
-    if (vg_exit()) return 1;
+    if (disable_data_reporting() != 0) return 1;
+
+    return 0;
+}
+
+
+int (proj_main_loop)(int argc, char *argv[]) {
+  
+    if (init() != 0) return 1;
+
+    draw_main_menu();
+
+    int ipc_status;
+    message msg;
+    while (menu_state != EXIT) {
+    
+        if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+        printf("Error");
+        continue;
+        }
+
+        if (is_ipc_notify(ipc_status)) {
+        switch(_ENDPOINT_P(msg.m_source)) {
+            case HARDWARE: 
+            if (msg.m_notify.interrupts & keyboard_mask) update_keyboard_state();
+            }
+        }
+    }
+    
+    if (cleanup() != 0) return 1;
 
     return 0;
 }
