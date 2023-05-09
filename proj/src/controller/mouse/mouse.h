@@ -15,7 +15,9 @@ int (enable_data_reporting)();
 
 int (disable_data_reporting)();
 
-int (parse_packet)(uint8_t byte_no, struct packet *pp);
+void (parse_packet)();
+
+void (sync_packet)();
 
 #endif
 

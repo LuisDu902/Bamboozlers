@@ -7,8 +7,10 @@
 
 #define VBE_SET_MODE 0x4F02
 
+
 #define LINEAR_FRAME_BUF BIT(14)
 
+#define TEXT_MODE 0x03
 #define VBE_INDEXED_MODE 0X105
 #define VBE_DIRECT_480p 0X110
 #define VBE_DIRECT_600p 0X115

@@ -22,46 +22,43 @@ int(set_text_mode)()
 
     r86.intno = VIDEO_SERVICES;
     r86.ah = 0x00;
-    r86.al = 0x03;
+    r86.al = TEXT_MODE;
 
     return sys_int86(&r86);
 }
 
-int(set_frame_buffer)(uint16_t mode)
+int(set_main_buffer)(uint16_t mode)
 {
     struct minix_mem_range mr;
-    unsigned int bytes_per_pixel;
-    unsigned int frame_size; /* VRAM's size, but you can use the frame-buffer size, instead */
-
+   
     /* Use VBE function 0x01 to initialize vram_base and vram_size */
     memset(&mode_info, 0, sizeof(mode_info));
     if (vbe_get_mode_info(mode, &mode_info) != 0)
         return 1;
 
+    yRes = mode_info.YResolution;
+    xRes = mode_info.XResolution;
     bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
-    frame_size = bytes_per_pixel * mode_info.XResolution * mode_info.YResolution;
-
+    frame_size = bytes_per_pixel * xRes * yRes;
+    
     mr.mr_base = mode_info.PhysBasePtr;
     mr.mr_limit = mr.mr_base + frame_size;
 
     if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr) != 0)
         return 1;
 
-    frame_buffer = vm_map_phys(SELF, (void *)mr.mr_base, frame_size);
+    main_frame_buffer = vm_map_phys(SELF, (void *)mr.mr_base, frame_size);
 
-    if (frame_buffer == NULL)
+    if (main_frame_buffer == NULL)
         return 1;
     return 0;
 }
 
 int(vg_draw_pixel)(int x, int y, uint32_t color)
 {
-
-    unsigned int bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
-
-    unsigned int index = (mode_info.XResolution * y + x) * bytes_per_pixel;
-
-    if (memcpy(&frame_buffer[index], &color, bytes_per_pixel) == NULL) return 1;
+    unsigned int index = (xRes * y + x) * bytes_per_pixel;
+    if (x >= xRes || y >= yRes) return 0;
+    if (memcpy(&drawing_frame_buffer[index], &color, bytes_per_pixel) == NULL) return 1;
     return 0;
 }
 
@@ -86,16 +83,27 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
 }
 
 int (vg_clear)(){
-    memset(&mode_info, 0, sizeof(mode_info));
-    if (vbe_get_mode_info(VBE_DIRECT_600p, &mode_info) != 0)
-        return 1;
-    int width = mode_info.XResolution;
-    int height = mode_info.YResolution;
-
-    for (int i = 0; i < width; i++){
-        for (int j = 0; j < height; j++){
+    for (int i = 0; i < xRes; i++){
+        for (int j = 0; j < yRes; j++){
             if(vg_draw_pixel(i,j,0) != 0) return 1;
         }
     }
     return 0;
+}
+
+
+void (set_drawing_buffer)(){
+    drawing_frame_buffer = (uint8_t*) malloc (frame_size);
+}
+
+void (swap_buffers)(){
+    memcpy(main_frame_buffer, drawing_frame_buffer, frame_size);
+}
+
+void (clear_drawing_buffer)(){
+    memset(drawing_frame_buffer, 0, frame_size);
+}
+
+void (free_drawing_buffer)(){
+    free(drawing_frame_buffer);
 }

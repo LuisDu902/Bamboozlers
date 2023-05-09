@@ -12,4 +12,5 @@ int (draw_sprite)(Sprite *sprite);
 
 int (draw_menu)();
 
+int (draw_cursor)();
 #endif

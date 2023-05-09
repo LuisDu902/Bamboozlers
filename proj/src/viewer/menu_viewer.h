@@ -5,7 +5,9 @@
 #include "viewer.h"
 
 extern Sprite* main_menu;
-//extern Sprite* play_button;
+extern Sprite* cursor;
+
+extern Sprite* mouse;
 
 int (draw_main_menu)();
 

@@ -24,9 +24,10 @@ int (main)(int argc, char *argv[]) {
 
 int init() {
 
-    if (timer_set_frequency(0, 60) != 0) return 1;
+    if (timer_set_frequency(0, 30) != 0) return 1;
 
-    if (set_frame_buffer(VBE_DIRECT_600p) != 0) return 1;
+    if (set_main_buffer(VBE_DIRECT_600p) != 0) return 1;
+    set_drawing_buffer();
 
     if (set_graphic_mode(VBE_DIRECT_600p) != 0) return 1;
 
@@ -62,21 +63,21 @@ int (proj_main_loop)(int argc, char *argv[]) {
   
     if (init() != 0) return 1;
 
-    draw_main_menu();
+    draw_menu();
 
     int ipc_status;
     message msg;
     while (menu_state != EXIT) {
-    
         if (driver_receive(ANY, &msg, &ipc_status) != 0) {
-        printf("Error");
-        continue;
+            printf("Error");
+            continue;
         }
-
         if (is_ipc_notify(ipc_status)) {
-        switch(_ENDPOINT_P(msg.m_source)) {
-            case HARDWARE: 
-            if (msg.m_notify.interrupts & keyboard_mask) update_keyboard_state();
+            switch(_ENDPOINT_P(msg.m_source)) {
+                case HARDWARE: 
+                    if (msg.m_notify.interrupts & timer_mask) update_timer_state();
+                    if (msg.m_notify.interrupts & keyboard_mask) update_keyboard_state();
+                    if (msg.m_notify.interrupts & mouse_mask)  update_mouse_state();
             }
         }
     }

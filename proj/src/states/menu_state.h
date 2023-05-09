@@ -8,6 +8,11 @@
 #include "viewer/viewer.h"
 #include "state.h"
 
+extern Sprite* cursor;
+
 void update_keyboard_menu();
+void update_mouse_menu();
+
+
 
 #endif

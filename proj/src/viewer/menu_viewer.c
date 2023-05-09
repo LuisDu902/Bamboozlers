@@ -3,7 +3,7 @@
 
 int (draw_main_menu)()
 {
-    if (draw_sprite(main_menu) != 0) return 1;
-   // if (draw_sprite(play_button) != 0) return 1;
+    //if (draw_sprite(main_menu) != 0) return vg_exit();
+    if (draw_sprite(mouse) != 0) return vg_exit();
     return 0;
 }

@@ -3,6 +3,7 @@
 extern uint8_t scancode;
 extern Menu_state menu_state;
 extern Sprite* mouse;
+extern uint16_t yRes, xRes;
 
 void update_keyboard_game(){
     read_scancode();
@@ -16,7 +17,7 @@ void update_keyboard_game(){
             break;
         case ARROW_DOWN:
             mouse->y += 20;
-            if (mouse->y > mode_info.YResolution - mouse->height) mouse->y = mode_info.YResolution - mouse->height;   
+            if (mouse->y > yRes - mouse->height) mouse->y = yRes - mouse->height;   
             break;
         case ARROW_LEFT:
             mouse->x -= 20;
@@ -24,7 +25,7 @@ void update_keyboard_game(){
             break;
         case ARROW_RIGHT:
             mouse->x += 20;
-            if (mouse->x > mode_info.XResolution - mouse->width) mouse->x = mode_info.XResolution - mouse->width;
+            if (mouse->x > xRes - mouse->width) mouse->x = xRes - mouse->width;
             break;    
         default:
             break;
