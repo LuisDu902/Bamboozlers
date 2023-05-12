@@ -17,6 +17,6 @@ void destroy_sprites()
 
 void create_mouse_sprites()
 {
-    xpm_map_t pixmaps[] = {(xpm_map_t)cursor_xpm, (xpm_map_t)hand_xpm};
-    cursor = create_sprite_xpm(pixmaps, 2, 300, 400);
+    xpm_map_t pixmaps[] = {(xpm_map_t)cursor_xpm, (xpm_map_t)hand_xpm, (xpm_map_t) dragging_xpm};
+    cursor = create_sprite_xpm(pixmaps, 3, 300, 400);
 }

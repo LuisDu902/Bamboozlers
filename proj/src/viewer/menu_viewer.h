@@ -4,7 +4,8 @@
 #include <lcom/lcf.h>
 #include "viewer.h"
 
-extern Sprite* main_menu;
+extern Sprite* logo;
+extern Sprite* text_main_menu;
 extern Sprite* cursor;
 
 extern Sprite* mouse;

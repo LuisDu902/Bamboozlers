@@ -5,7 +5,14 @@
 #include "sprite.h"
 #include "xpm/mouse.xpm"
 #include "xpm/map0.xpm"
+#include "xpm/little_plank.xpm"
+#include "xpm/big_plank.xpm"
+#include "xpm/block.xpm"
 
+Sprite *mouse;
+Sprite *block;
+Sprite *little_plank;
+Sprite *big_plank;
 Sprite *mouse;
 Sprite *map;
 

@@ -8,6 +8,15 @@
 #include "viewer/viewer.h"
 #include "state.h"
 
-void update_keyboard_game();
+extern Sprite* cursor;
+extern Sprite* map;
 
+typedef enum {INIT, DRAG} state_t;
+
+void update_keyboard_game();
+void update_mouse_game();
+
+bool select_item(Sprite* item);
+bool is_in_map(Sprite* item);
+bool collide(Sprite* s1, Sprite* s2);
 #endif

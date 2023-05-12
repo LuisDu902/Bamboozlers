@@ -3,9 +3,12 @@
 
 #include <lcom/lcf.h>
 #include "sprite.h"
-#include "xpm/menu.xpm"
+#include "xpm/logo.xpm"
+#include "xpm/text_main_menu.xpm"
+#include "xpm/text_selected.xpm"
 
-Sprite* main_menu;
+Sprite* logo;
+Sprite* text_main_menu;
 
 void create_menu_sprites();
 void destroy_menu_sprites();

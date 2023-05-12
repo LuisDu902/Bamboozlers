@@ -39,8 +39,11 @@ void update_mouse_state()
         update_cursor_position();
         switch (menu_state)
         {
-        case MENU: case GAME:
+        case MENU:
             update_mouse_menu();
+            break;
+        case GAME:
+            update_mouse_game();
             break;
         case LEVEL_SELECTION:
         case GAME_OVER:

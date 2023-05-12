@@ -7,9 +7,11 @@
 #include "game.h"
 #include "xpm/cursor.xpm"
 #include "xpm/hand.xpm"
+#include "xpm/dragging.xpm"
+
 
 extern Sprite *mouse;
-extern Sprite *main_menu;
+
 Sprite* cursor;
 
 void create_sprites();

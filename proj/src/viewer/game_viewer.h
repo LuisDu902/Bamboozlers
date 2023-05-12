@@ -6,7 +6,9 @@
 
 extern Sprite* mouse;
 extern Sprite* map;
-vbe_mode_info_t mode_info;
+extern Sprite* block;
+extern Sprite* little_plank;
+extern Sprite* big_plank;
 
 int (draw_game_menu)();
 
