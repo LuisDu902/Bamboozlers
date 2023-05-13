@@ -14,6 +14,8 @@
 #define ARROW_LEFT 0x4B
 #define ARROW_RIGHT 0x4D
 #define ENTER 0x1C
+#define R_KEY 0x13
+#define E_KEY 0x12
 
 /* KBC register ports */
 #define KBC_OUT_BUF 0x60

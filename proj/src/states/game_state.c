@@ -1,15 +1,16 @@
 #include "game_state.h"
 
 extern uint8_t scancode;
-extern Menu_state menu_state;
-extern Sprite *mouse;
 
+extern Menu_state menu_state;
+
+extern uint8_t* drawing_frame_buffer;
 extern struct packet mouse_packet;
+
 extern uint16_t yRes, xRes;
 
 state_t state = INIT;
-Sprite* current_item;
-
+Sprite* item;
 static int16_t ini_x, ini_y;
 static int16_t off_x = 0;
 static int16_t off_y = 0;
@@ -17,55 +18,57 @@ static int16_t off_y = 0;
 void update_keyboard_game()
 {
     read_scancode();
-    switch (scancode)
-    {
+
+    switch (scancode) {
+    case R_KEY: 
+        if (state == DRAG)
+            item->current_pixmap = (item->current_pixmap + 1) % item->num_pixmaps;
+        break;
+    case E_KEY: 
+        if (state == DRAG)
+            item->current_pixmap = (item->current_pixmap - 1 + item->num_pixmaps) % item->num_pixmaps;
+        break;
     case ESC_BREAK:
         menu_state = EXIT;
         break;
     case ARROW_UP:
-        mouse->y -= 20;
+        mouse->y -= 10;
         if (mouse->y < 0)
             mouse->y = 0;
         break;
     case ARROW_DOWN:
-        mouse->y += 20;
-        if (mouse->y > yRes - mouse->height)
-            mouse->y = yRes - mouse->height;
+        mouse->y += 10;
+        if (mouse->y > yRes - mouse->height[mouse->current_pixmap])
+            mouse->y = yRes - mouse->height[mouse->current_pixmap];
         break;
     case ARROW_LEFT:
-        mouse->x -= 20;
+        mouse->x -= 10;
         if (mouse->x < 0)
             mouse->x = 0;
         break;
     case ARROW_RIGHT:
-        mouse->x += 20;
-        if (mouse->x > xRes - mouse->width)
-            mouse->x = xRes - mouse->width;
+        mouse->x += 10;
+        if (mouse->x > xRes - mouse->width[mouse->current_pixmap])
+            mouse->x = xRes - mouse->width[mouse->current_pixmap];
         break;
     default:
         break;
     }
 }
 
-bool select_item(Sprite* item)
-{
-    return cursor->x >= item->x && cursor->x <= item->x + item->width &&
-           cursor->y >= item->y && cursor->y <= item->y + item->height;
-}
-
 bool collide(Sprite* s1, Sprite* s2){
     if (s1 == s2) return false;
-    return (s1->x < s2->x + s2->width && 
-    s1->x + s1->width > s2->x && 
-    s1->y < s2->y + s2->height && 
-    s1->y + s1->height > s2->y);
+    return (s1->x < s2->x + s2->width[s2->current_pixmap] && 
+    s1->x + s1->width[s1->current_pixmap] > s2->x && 
+    s1->y < s2->y + s2->height[s2->current_pixmap] && 
+    s1->y + s1->height[s1->current_pixmap] > s2->y);
 
 }
 
 bool is_in_map(Sprite* item){
-    return item->x + item->width <= map->x + map->width &&
+    return item->x + item->width[item->current_pixmap] <= map->x + map->width[map->current_pixmap] &&
             item->x >= map->x &&
-            item->y + item->height <= map->y + map->height &&
+            item->y + item->height[item->current_pixmap] <= map->y + map->height[map->current_pixmap] &&
             item->y >= map->y;
 }
 
@@ -82,7 +85,7 @@ void update_mouse_game()
                 ini_x = block->x;
                 ini_y = block->y;
 
-                current_item = block;
+                item = block;
                 state = DRAG;
             }
             if (select_item(little_plank) && !is_in_map(little_plank)) {
@@ -91,7 +94,7 @@ void update_mouse_game()
                 ini_x = little_plank->x;
                 ini_y = little_plank->y;
 
-                current_item = little_plank;
+                item = little_plank;
 
                 state = DRAG;
             }
@@ -101,26 +104,28 @@ void update_mouse_game()
                 ini_x = big_plank->x;
                 ini_y = big_plank->y;
 
-                current_item = big_plank;
+                item = big_plank;
                 state = DRAG;
             }
         }
         break;
 
     case DRAG:
-        current_item->x = cursor->x - off_x;
-        current_item->y = cursor->y - off_y;
+        item->x = cursor->x - off_x;
+        item->y = cursor->y - off_y;
         
         if (!mouse_packet.lb)
         {
-            if (!is_in_map(current_item) || 
-            collide(current_item, mouse) || 
-            collide(current_item, block) || 
-            collide(current_item, little_plank) ||
-            collide(current_item, big_plank)){
+            if (!is_in_map(item) || 
+            collide(item, mouse) || 
+            collide(item, block) || 
+            collide(item, little_plank) ||
+            collide(item, big_plank)){
                 
-                current_item->x = ini_x;
-                current_item->y = ini_y;
+                item->x = ini_x;
+                item->y = ini_y;
+                item->current_pixmap = 0;
+
             }
             
             

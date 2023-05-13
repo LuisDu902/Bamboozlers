@@ -6,7 +6,7 @@
 
 typedef struct {
     int x, y;
-    int width, height;
+    int *width, *height;
     int xspeed, yspeed;
     int num_pixmaps;
     int current_pixmap;

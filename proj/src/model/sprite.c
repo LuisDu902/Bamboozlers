@@ -5,16 +5,21 @@
 Sprite *create_sprite_xpm(xpm_map_t *sprites, int num_sprites, int x, int y){
 
   Sprite *sp = (Sprite *) malloc (sizeof(Sprite));
-  if( sp == NULL ) return NULL;
+  if (sp == NULL) {
+    return NULL;
+  }
 
+  sp->width = (int *) malloc(sizeof(int) * num_sprites);
+  sp->height = (int *) malloc(sizeof(int) * num_sprites);
+  sp->pixmap_array = (uint32_t **) malloc(sizeof(uint32_t *) * num_sprites);
+  
   sp->x = x;
   sp->y = y;
   sp->xspeed = 0;
   sp->yspeed = 0;
   sp->num_pixmaps = num_sprites;
   sp->current_pixmap = 0;
-
-  sp->pixmap_array = (uint32_t **) malloc(sizeof(uint32_t *) * num_sprites);
+ 
   if (sp->pixmap_array == NULL) {
     free(sp);
     return NULL;
@@ -32,13 +37,10 @@ Sprite *create_sprite_xpm(xpm_map_t *sprites, int num_sprites, int x, int y){
       free(sp);
       return NULL;
     }
-    if (i == 0){
-      sp->width = img.width;
-      sp->height = img.height;
-    }
-   
+    sp->width[i] = img.width;
+    sp->height[i] = img.height;
   }
- 
+  
   return sp;
 
 }

@@ -27,4 +27,6 @@ void update_timer_state();
 
 void update_cursor_position();
 
+bool select_item(Sprite* item);
+
 #endif

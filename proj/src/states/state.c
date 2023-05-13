@@ -72,11 +72,18 @@ void update_cursor_position(){
     int16_t new_y = cursor->y - mouse_packet.delta_y;
 
     if (new_x < 0) cursor->x = 0;
-    else if (new_x >= (xRes-cursor->width)) cursor->x = (xRes-cursor->width);
+    else if (new_x >= (xRes-cursor->width[cursor->current_pixmap])) cursor->x = (xRes-cursor->width[cursor->current_pixmap]);
     else cursor->x = new_x;
 
     if (new_y < 0) cursor->y = 0;
-    else if (new_y >= (yRes-cursor->height)) cursor->y = (yRes-cursor->height);
+    else if (new_y >= (yRes-cursor->height[cursor->current_pixmap])) cursor->y = (yRes-cursor->height[cursor->current_pixmap]);
     else cursor->y = new_y;
 
+}
+
+bool select_item(Sprite* item)
+{
+    return cursor->x >= item->x && cursor->x <= item->x + item->width[item->current_pixmap] &&
+           cursor->y >= item->y && cursor->y <= item->y + item->height[item->current_pixmap] ;
+           //&& get_pixel_color(cursor->x, cursor->y) != 0;           
 }

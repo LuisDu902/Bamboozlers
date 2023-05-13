@@ -5,9 +5,9 @@
 
 #include "menu.h"
 #include "game.h"
-#include "xpm/cursor.xpm"
-#include "xpm/hand.xpm"
-#include "xpm/dragging.xpm"
+#include "xpm/cursor/cursor.xpm"
+#include "xpm/cursor/hand.xpm"
+#include "xpm/cursor/dragging.xpm"
 
 
 extern Sprite *mouse;
