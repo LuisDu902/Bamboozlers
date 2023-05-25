@@ -1,4 +1,3 @@
-#include <lcom/lcf.h>
 #include "state.h"
 
 Menu_state menu_state = MENU;
@@ -58,6 +57,9 @@ void update_mouse_state()
 
 void update_timer_state()
 {
+    if (menu_state == GAME){
+        update_hero_pos();
+    }
     draw_menu();
     draw_cursor();
     swap_buffers();
@@ -72,18 +74,18 @@ void update_cursor_position(){
     int16_t new_y = cursor->y - mouse_packet.delta_y;
 
     if (new_x < 0) cursor->x = 0;
-    else if (new_x >= (xRes-cursor->width[cursor->current_pixmap])) cursor->x = (xRes-cursor->width[cursor->current_pixmap]);
+    else if (new_x >= (xRes-cursor->width[cursor->i])) cursor->x = (xRes-cursor->width[cursor->i]);
     else cursor->x = new_x;
 
     if (new_y < 0) cursor->y = 0;
-    else if (new_y >= (yRes-cursor->height[cursor->current_pixmap])) cursor->y = (yRes-cursor->height[cursor->current_pixmap]);
+    else if (new_y >= (yRes-cursor->height[cursor->i])) cursor->y = (yRes-cursor->height[cursor->i]);
     else cursor->y = new_y;
 
 }
 
 bool select_item(Sprite* item)
 {
-    return cursor->x >= item->x && cursor->x <= item->x + item->width[item->current_pixmap] &&
-           cursor->y >= item->y && cursor->y <= item->y + item->height[item->current_pixmap] ;
+    return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
+           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i] ;
            //&& get_pixel_color(cursor->x, cursor->y) != 0;           
 }

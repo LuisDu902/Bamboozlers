@@ -11,8 +11,10 @@
 #define ESC_BREAK 0x81
 #define ARROW_UP 0x48
 #define ARROW_DOWN 0x50
-#define ARROW_LEFT 0x4B
-#define ARROW_RIGHT 0x4D
+#define ARROW_LEFT_PRESS 0x4B
+#define ARROW_LEFT_RELEASE 0xCB
+#define ARROW_RIGHT_PRESS 0x4D
+#define ARROW_RIGHT_RELEASE 0xCD
 #define ENTER 0x1C
 #define R_KEY 0x13
 #define E_KEY 0x12

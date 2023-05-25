@@ -1,4 +1,3 @@
-#include <lcom/lcf.h>
 #include "sprite.h"
 
 
@@ -18,7 +17,7 @@ Sprite *create_sprite_xpm(xpm_map_t *sprites, int num_sprites, int x, int y){
   sp->xspeed = 0;
   sp->yspeed = 0;
   sp->num_pixmaps = num_sprites;
-  sp->current_pixmap = 0;
+  sp->i = 0;
  
   if (sp->pixmap_array == NULL) {
     free(sp);

@@ -1,7 +1,6 @@
 #ifndef _MENU_H_
 #define _MENU_H_
 
-#include <lcom/lcf.h>
 #include "sprite.h"
 #include "xpm/logo.xpm"
 #include "xpm/text_main_menu.xpm"

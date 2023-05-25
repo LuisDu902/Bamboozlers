@@ -1,14 +1,10 @@
 #ifndef _MODEL_H_
 #define _MODEL_H_
 
-#include <lcom/lcf.h>
 
 #include "menu.h"
 #include "game.h"
-#include "xpm/cursor/cursor.xpm"
-#include "xpm/cursor/hand.xpm"
-#include "xpm/cursor/dragging.xpm"
-
+#include "xpm/cursor.xpm"
 
 extern Sprite *mouse;
 

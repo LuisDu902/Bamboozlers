@@ -1,7 +1,6 @@
 #ifndef _SPRITE_H_
 #define _SPRITE_H_
 
-#include <lcom/lcf.h>
 #include "controller/video/graphics.h"
 
 typedef struct {
@@ -9,7 +8,7 @@ typedef struct {
     int *width, *height;
     int xspeed, yspeed;
     int num_pixmaps;
-    int current_pixmap;
+    int i;
     uint32_t **pixmap_array;
 } Sprite; 
 

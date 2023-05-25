@@ -1,4 +1,3 @@
-#include <lcom/lcf.h>
 #include "menu.h"
 
 void create_menu_sprites(){

@@ -12,15 +12,6 @@ typedef enum {
     EXIT
 } Menu_state;
 
-typedef enum {
-    CHILLING, 
-    RUNNING,
-    JUMPING,
-    WALL_CLIMBING,
-    CARRYING,
-    DYING
-} Game_state;
-
 void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();

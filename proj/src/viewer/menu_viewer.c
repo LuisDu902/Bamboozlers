@@ -1,4 +1,3 @@
-#include <lcom/lcf.h>
 #include "menu_viewer.h"
 
 extern uint16_t xRes, yRes;

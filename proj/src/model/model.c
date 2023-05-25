@@ -1,4 +1,3 @@
-#include <lcom/lcf.h>
 #include "model.h"
 
 void create_sprites()

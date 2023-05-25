@@ -3,10 +3,11 @@
 
 #include <lcom/lcf.h>
 
+#define TRANSPARENT 0xFFFFFE
+
 #define VIDEO_SERVICES 0x10
 
 #define VBE_SET_MODE 0x4F02
-
 
 #define LINEAR_FRAME_BUF BIT(14)
 

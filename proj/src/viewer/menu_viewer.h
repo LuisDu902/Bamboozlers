@@ -1,7 +1,6 @@
 #ifndef _MENU_VIEWER_H_
 #define _MENU_VIEWER_H_
 
-#include <lcom/lcf.h>
 #include "viewer.h"
 
 extern Sprite* logo;

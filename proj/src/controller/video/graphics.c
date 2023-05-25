@@ -30,7 +30,7 @@ int(set_text_mode)()
 int(set_main_buffer)(uint16_t mode)
 {
     struct minix_mem_range mr;
-   
+
     /* Use VBE function 0x01 to initialize vram_base and vram_size */
     memset(&mode_info, 0, sizeof(mode_info));
     if (vbe_get_mode_info(mode, &mode_info) != 0)
@@ -40,7 +40,7 @@ int(set_main_buffer)(uint16_t mode)
     xRes = mode_info.XResolution;
     bytes_per_pixel = (mode_info.BitsPerPixel + 7) / 8;
     frame_size = bytes_per_pixel * xRes * yRes;
-    
+
     mr.mr_base = mode_info.PhysBasePtr;
     mr.mr_limit = mr.mr_base + frame_size;
 
@@ -57,8 +57,10 @@ int(set_main_buffer)(uint16_t mode)
 int(vg_draw_pixel)(int x, int y, uint32_t color)
 {
     unsigned int index = (xRes * y + x) * bytes_per_pixel;
-    if (x >= xRes || y >= yRes) return 0;
-    if (memcpy(&drawing_frame_buffer[index], &color, bytes_per_pixel) == NULL) return 1;
+    if (x >= xRes || y >= yRes)
+        return 0;
+    if (memcpy(&drawing_frame_buffer[index], &color, bytes_per_pixel) == NULL)
+        return 1;
     return 0;
 }
 
@@ -67,6 +69,16 @@ int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
     for (int i = 0; i < len; i++)
     {
         if (vg_draw_pixel(x + i, y, color) != 0)
+            return 1;
+    }
+    return 0;
+}
+
+int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
+{
+    for (int i = 0; i < len; i++)
+    {
+        if (vg_draw_pixel(x, y+i, color) != 0)
             return 1;
     }
     return 0;
@@ -82,35 +94,44 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
     return 0;
 }
 
-int (vg_clear)(){
-    for (int i = 0; i < xRes; i++){
-        for (int j = 0; j < yRes; j++){
-            if(vg_draw_pixel(i,j,0) != 0) return 1;
+int(vg_clear)()
+{
+    for (int i = 0; i < xRes; i++)
+    {
+        for (int j = 0; j < yRes; j++)
+        {
+            if (vg_draw_pixel(i, j, 0) != 0)
+                return 1;
         }
     }
     return 0;
 }
 
-
-void (set_drawing_buffer)(){
-    drawing_frame_buffer = (uint8_t*) malloc (frame_size);
+void(set_drawing_buffer)()
+{
+    drawing_frame_buffer = (uint8_t *)malloc(frame_size);
 }
 
-void (swap_buffers)(){
+void(swap_buffers)()
+{
     memcpy(main_frame_buffer, drawing_frame_buffer, frame_size);
 }
 
-void (clear_drawing_buffer)(){
+void(clear_drawing_buffer)()
+{
     memset(drawing_frame_buffer, 0, frame_size);
 }
 
-void (free_drawing_buffer)(){
+void(free_drawing_buffer)()
+{
     free(drawing_frame_buffer);
 }
 
-uint32_t (get_pixel_color)(uint16_t x, uint16_t y){
+uint32_t(get_pixel_color)(uint16_t x, uint16_t y)
+{
     unsigned int index = (xRes * y + x) * bytes_per_pixel;
     uint32_t color;
     memcpy(&color, &drawing_frame_buffer[index], bytes_per_pixel);
     return color;
 }
+
