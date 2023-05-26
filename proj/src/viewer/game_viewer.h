@@ -9,8 +9,9 @@ extern Sprite* block;
 extern Sprite* little_plank;
 extern Sprite* big_plank;
 extern Sprite* home;
+extern int counter;
 
 int (draw_game_menu)();
 int (draw_map)();
-
+int (draw_timer)(int counter);
 #endif
