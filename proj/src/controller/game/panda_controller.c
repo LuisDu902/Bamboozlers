@@ -1,8 +1,9 @@
 #include "panda_controller.h"
 
-bool above(Sprite *item)
+bool above()
 {
-    return (panda->y + panda->height[panda->i] <= item->y + 5);
+    return panda->y + panda->height[panda->i] >= (collide_item->y -5) && 
+    (panda->y + panda->height[panda->i] <= (collide_item->y +5 ));
 }
 
 void move_left()
@@ -29,9 +30,14 @@ void fall(uint32_t time, uint32_t y)
 
 bool collide_with_items()
 {
-    if (collide(panda, block))
+    if (collide(panda, dirt_block))
     {
-        collide_item = block;
+        collide_item = dirt_block;
+        return true;
+    }    
+    if (collide(panda, little_block))
+    {
+        collide_item = little_block;
         return true;
     }
     else if (collide(panda, little_plank))
@@ -42,6 +48,11 @@ bool collide_with_items()
     else if (collide(panda, big_plank))
     {
         collide_item = big_plank;
+        return true;
+    }
+    else if (collide(panda, big_block))
+    {
+        collide_item = big_block;
         return true;
     }
     return false;
@@ -62,11 +73,16 @@ void handle_boundary_conditions()
 
 void fix_collision()
 {
-    if (!above(collide_item))
-    {
+    printf("FIXING COLISION\n");
+   if (!above()){
+        printf("IT IS NOT ABOVE\n");
         while (collide(panda, collide_item))
             panda->x += isRightPressed ? -1 : 1;
+   }
+    else {
+        printf("IT IS ABOVE %d, %d, %d\n", panda->y, panda->y + panda->height[panda->i], collide_item->y);
     }
+    
 }
 
 void fix_jump_collision()

@@ -8,7 +8,9 @@ int16_t item_x, item_y, off_x, off_y;
 
 extern Sprite* little_plank;
 extern Sprite* big_plank;
-extern Sprite* block;
+extern Sprite* dirt_block;
+extern Sprite* little_block;
+extern Sprite* big_block;
 extern Sprite* panda;
 extern Sprite* cursor;
 extern uint8_t scancode;

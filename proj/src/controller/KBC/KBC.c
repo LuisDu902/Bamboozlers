@@ -20,10 +20,10 @@ int (write_command)(int port, uint8_t command){
 
     while (attempts--){
         
-        if (get_KBC_status(&status) != 0) 
+        if (get_KBC_status(&status) ) 
             return 1;
         
-        if (check_KBC_status(status) != 0) 
+        if (check_KBC_status(status) ) 
             return 1;
         
         if ((status & KBC_IBF) == 0)
@@ -41,15 +41,15 @@ int (read_output)(int port, uint8_t *output, bool keyboard){
 
     while (attempts--){
         
-        if (get_KBC_status(&status) != 0) 
+        if (get_KBC_status(&status) ) 
             return 1;
         
-        if (check_KBC_status(status) != 0) 
+        if (check_KBC_status(status) ) 
             return 1;
         
         if (status & KBC_OBF){
 
-            if (util_sys_inb(port, output) != 0) return 1;
+            if (util_sys_inb(port, output) ) return 1;
 
             if (keyboard ^ (status & KBC_AUX)) 
                 return 0;

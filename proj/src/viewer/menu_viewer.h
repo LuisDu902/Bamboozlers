@@ -3,8 +3,9 @@
 
 #include "viewer.h"
 
-extern Sprite* logo;
-extern Sprite* text_main_menu;
+extern Sprite* menu_title;
+extern Sprite* menu_play;
+extern Sprite* instructions;
 extern Sprite* cursor;
 
 int (draw_main_menu)();

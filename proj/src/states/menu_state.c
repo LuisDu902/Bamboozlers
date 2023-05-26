@@ -26,7 +26,12 @@ void update_keyboard_menu()
 
 void update_mouse_menu()
 {
-    if (select_item (text_main_menu)){
+    if (select_item (menu_play)){
+        if (mouse_packet.lb){
+            menu_state = GAME;
+        }
+    }
+    if (select_item (instructions)){
         if (mouse_packet.lb){
             menu_state = GAME;
         }

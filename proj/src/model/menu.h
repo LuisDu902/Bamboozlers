@@ -2,12 +2,14 @@
 #define _MENU_H_
 
 #include "sprite.h"
-#include "xpm/logo.xpm"
-#include "xpm/text_main_menu.xpm"
-#include "xpm/text_selected.xpm"
+#include "xpm/menu_title.xpm"
+#include "xpm/menu_play.xpm"
+#include "xpm/instructions.xpm"
 
-Sprite* logo;
-Sprite* text_main_menu;
+
+Sprite* menu_title;
+Sprite* menu_play;
+Sprite* instructions;
 
 void create_menu_sprites();
 void destroy_menu_sprites();

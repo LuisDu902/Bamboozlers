@@ -2,8 +2,10 @@
 
 bool is_selected_item()
 {
-    if (select_item(block) && !is_in_map(block))
-        item = block;
+    if (select_item(little_block) && !is_in_map(little_block))
+        item = little_block;
+     if (select_item(big_block) && !is_in_map(big_block))
+        item = big_block;
     if (select_item(little_plank) && !is_in_map(little_plank))
         item = little_plank;
     if (select_item(big_plank) && !is_in_map(big_plank))
@@ -29,7 +31,7 @@ void update_item_pos()
 void check_item_pos()
 {
 
-    if (!is_in_map(item) || collide(item, panda) || collide(item, block) || collide(item, little_plank) || collide(item, big_plank))
+    if (!is_in_map(item) || collide(item, panda) || collide(item, little_block) || collide(item, big_block) || collide(item, little_plank) || collide(item, big_plank))
     {
         item->x = item_x;
         item->y = item_y;

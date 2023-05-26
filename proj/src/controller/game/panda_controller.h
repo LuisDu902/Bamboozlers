@@ -5,9 +5,11 @@
 
 
 extern Sprite* panda;
+extern Sprite* dirt_block;
 extern Sprite* little_plank;
 extern Sprite* big_plank;
-extern Sprite* block;
+extern Sprite* little_block;
+extern Sprite* big_block;
 extern Sprite* item;
 
 Sprite* collide_item;
@@ -16,7 +18,7 @@ extern Game_state game_state;
 
 extern bool isRightPressed;
 
-bool above(Sprite *item);
+bool above();
 
 void move_left();
 void move_right();

@@ -24,13 +24,13 @@ int (enable_keyboard_int)(){
   
     uint8_t config;
 
-    if (write_command(KBC_IN_BUF, KBC_READ_CMD) != 0) return 1;
-    if (read_output(KBC_OUT_BUF, &config, true) != 0) return 1;
+    if (write_command(KBC_IN_BUF, KBC_READ_CMD) ) return 1;
+    if (read_output(KBC_OUT_BUF, &config, true) ) return 1;
    
     config |= KBC_INT;
 
-    if (write_command(KBC_IN_BUF, KBC_WRITE_CMD) != 0) return 1;
-    if (write_command(KBC_OUT_BUF, config) != 0) return 1;
+    if (write_command(KBC_IN_BUF, KBC_WRITE_CMD) ) return 1;
+    if (write_command(KBC_OUT_BUF, config) ) return 1;
 
     return 0;
 }

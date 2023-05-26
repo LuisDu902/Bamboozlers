@@ -17,7 +17,7 @@ int(draw_sprite)(Sprite *sprite)
             color = sprite->pixmap_array[sprite->i][col + row * width];
             if (color == TRANSPARENT)
                 continue;
-            if (vg_draw_pixel(x + col, y + row, color) != 0)
+            if (vg_draw_pixel(x + col, y + row, color) )
                 return 1;
         }
     }
@@ -52,21 +52,31 @@ int(draw_cursor)()
     switch (menu_state)
     {
     case MENU:
-        if (select_item(text_main_menu)){
+        if (select_item(menu_play)){
             cursor->i = 1;
-            text_main_menu->i = 1;
+            menu_play->i = 1;
         }
         else
         {
             cursor->i = 0;
-            text_main_menu->i = 0;
+            menu_play->i = 0;
+        }
+        
+        if (select_item(instructions)){
+            cursor->i = 1;
+            instructions->i = 1;
+        }
+        else
+        {
+            cursor->i = 0;
+            instructions->i = 0;
         }
         return draw_sprite(cursor);
         break;
     case GAME:
         if (item_state == INIT)
         {
-            if ((select_item(block) && !is_in_map(block)) || 
+            if ((select_item(little_block) && !is_in_map(little_block)) || 
                 (select_item(little_plank) && !is_in_map(little_plank)) || 
                 (select_item(big_plank) && !is_in_map(big_plank)) 
             ){
