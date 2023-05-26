@@ -58,8 +58,12 @@ void update_mouse_state()
 void update_timer_state()
 {
     if (menu_state == GAME){
+<<<<<<< HEAD
         timer_int_handler();
         update_hero_pos();
+=======
+       update_panda_state();
+>>>>>>> 4fc26bc (refactoring)
     }
     draw_menu();
     draw_cursor();
@@ -87,6 +91,5 @@ void update_cursor_position(){
 bool select_item(Sprite* item)
 {
     return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
-           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i] ;
-           //&& get_pixel_color(cursor->x, cursor->y) != 0;           
+           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i] ;        
 }

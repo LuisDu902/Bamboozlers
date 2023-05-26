@@ -16,7 +16,6 @@ int (draw_game_menu)()
     return 0;
 }
 
-
 int(draw_map)() {
     for (int i = 0; i < BORDER_WIDTH; i++) {
         if (vg_draw_hline(20, 20 + i, MAP_WIDTH, 0xFFFFFF)) return 1;

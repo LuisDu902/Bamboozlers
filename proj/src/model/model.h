@@ -6,8 +6,6 @@
 #include "game.h"
 #include "xpm/cursor.xpm"
 
-extern Sprite *mouse;
-
 Sprite* cursor;
 
 void create_sprites();

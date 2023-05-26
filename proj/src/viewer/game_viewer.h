@@ -4,7 +4,6 @@
 #include "viewer.h"
 #include "controller/timer/timer.h"
 
-extern Sprite* mouse;
 extern Sprite* map;
 extern Sprite* block;
 extern Sprite* little_plank;
