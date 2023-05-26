@@ -9,6 +9,7 @@
 #include "xpm/big_plank.xpm"
 #include "xpm/block.xpm"
 #include "xpm/home.xpm"
+#include "xpm/numbers.xpm"
 
 
 Sprite *home;
@@ -18,6 +19,7 @@ Sprite *big_plank;
 Sprite *mouse;
 Sprite *panda;
 Sprite *map;
+Sprite *timer[4];
 
 void create_game_sprites();
 void destroy_game_sprites();

@@ -58,6 +58,7 @@ void update_mouse_state()
 void update_timer_state()
 {
     if (menu_state == GAME){
+        timer_int_handler();
         update_hero_pos();
     }
     draw_menu();
