@@ -58,12 +58,8 @@ void update_mouse_state()
 void update_timer_state()
 {
     if (menu_state == GAME){
-<<<<<<< HEAD
         timer_int_handler();
-        update_hero_pos();
-=======
-       update_panda_state();
->>>>>>> 4fc26bc (refactoring)
+        update_panda_state();
     }
     draw_menu();
     draw_cursor();
