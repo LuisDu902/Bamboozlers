@@ -14,7 +14,7 @@ Game_state game_state = INACTIVE;
 
 Sprite *item;
 
-uint16_t jump_time = 0;
+uint16_t y_time = 0;
 
 static int16_t ini_x, ini_y;
 static int16_t off_x = 0;
@@ -44,8 +44,8 @@ void update_keyboard_game()
     case ARROW_UP:
         if (game_state == INACTIVE || game_state == RUN)
         {
-            jump_time = 0;
-            ini_y = mouse->y;
+            y_time = 0;
+            ini_y = panda->y;
             game_state = JUMP;
         }
         break;
@@ -86,18 +86,35 @@ bool collide(Sprite *s1, Sprite *s2)
 {
     if (s1 == s2)
         return false;
-    return (s1->x < s2->x + s2->width[s2->i] &&
-            s1->x + s1->width[s1->i] > s2->x &&
-            s1->y < s2->y + s2->height[s2->i] &&
-            s1->y + s1->height[s1->i] > s2->y);
+
+    uint16_t left = (s1->x > s2->x) ? s1->x : s2->x;
+    uint16_t right = (s1->x + s1->width[s1->i] < s2->x + s2->width[s2->i]) ? s1->x + s1->width[s1->i] : s2->x + s2->width[s2->i];
+    uint16_t top = (s1->y > s2->y) ? s1->y : s2->y;
+    uint16_t bottom = (s1->y + s1->height[s1->i] < s2->y + s2->height[s2->i]) ? s1->y + s1->height[s1->i] : s2->y + s2->height[s2->i];
+
+    for (int y = top; y < bottom; ++y)
+    {
+        for (int x = left; x < right; ++x)
+        {
+            uint32_t s1_color = s1->pixmap_array[s1->i][x - s1->x + (y - s1->y) * s1->width[s1->i]];
+            uint32_t s2_color = s2->pixmap_array[s2->i][x - s2->x + (y - s2->y) * s2->width[s2->i]];
+
+            if (s1_color != TRANSPARENT && s2_color != TRANSPARENT)
+            {
+                return true;
+            }
+        }
+    }
+
+    return false;
 }
 
 bool above(Sprite *s2)
 {
-    return (mouse->y + mouse->height[mouse->i] == s2->y &&
-            ((mouse->x >= s2->x && mouse->x <= s2->x + s2->width[s2->i]) ||
-            (mouse->x + mouse->width[mouse->i] <= s2->x + s2->width[s2->i] && mouse->x + mouse->width[mouse->i]  >= s2->x))
-    );
+    return (panda->y + panda->height[panda->i] == s2->y &&
+            ((panda->x <= s2->x && s2->x <= panda->x + panda->width[panda->i]) ||
+             (panda->x <= s2->x + s2->width[s2->i] && s2->x + s2->width[s2->i] <= panda->x + panda->width[panda->i]) ||
+             (panda->x <= s2->x + s2->width[s2->i] && panda->x >= s2->x)));
 }
 
 bool is_in_map(Sprite *item)
@@ -176,81 +193,118 @@ void update_mouse_game()
 
 void update_hero_pos()
 {
-    if (!above(block) && !above(little_plank) && !above(big_plank) && mouse->y + mouse->height[mouse->i] != 20 + MAP_HEIGHT && game_state != JUMP && game_state != FALL){
-        printf("IT SHOULD FALL\n");
+
+    if (game_state == INACTIVE){
+        panda->i = 0;
+    }
+    if (!above(block) && !above(little_plank) && !above(big_plank) && panda->y + panda->height[panda->i] != 20 + MAP_HEIGHT && game_state != JUMP && game_state != FALL)
+    {
         game_state = FALL;
-        ini_y = mouse->y;
+        ini_y = panda->y;
     }
     if (isRightPressed || isLeftPressed)
     {
-        mouse->x += isRightPressed ? (XSPEED) : (-XSPEED);
-        if (mouse->x < 25)
-            mouse->x = 25;
-        if (mouse->x + mouse->width[mouse->i] > 15 + MAP_WIDTH)
-            mouse->x = 15 + MAP_WIDTH - mouse->width[mouse->i];
+        panda->x += isRightPressed ? (XSPEED) : (-XSPEED);
+        if (isRightPressed){ 
+            if (panda->i == 0)panda->i =2;
+            if (panda->i == 2) panda->i =8;
+            else panda->i =2;
+        }
+        if (panda->x < 25)
+            panda->x = 25;
+        if (panda->x + panda->width[panda->i] > 15 + MAP_WIDTH)
+            panda->x = 15 + MAP_WIDTH - panda->width[panda->i];
+
+        if (collide(mouse, block))
+        {
+            game_state = INACTIVE;
+            if (isRightPressed)
+                panda->x = block->x - panda->width[panda->i];
+            else
+                panda->x = block->x + block->width[block->i];
+        }
+        else if (collide(mouse, little_plank))
+        {
+            game_state = INACTIVE;
+            while (collide(mouse, little_plank)) {
+                if (isRightPressed)
+                    panda->x -= 1;
+                else
+                    panda->x += 1;
+            }
+        }
+        else if (collide(mouse, big_plank))
+        {
+            game_state = INACTIVE;
+            while (collide(mouse, big_plank)) {
+                if (isRightPressed)
+                    panda->x -= 1;
+                else
+                    panda->x += 1;
+            }
+        }
     }
 
+    if (game_state == JUMP)
+    {
+        y_time++;
 
-    if (game_state == JUMP){
-        jump_time++;
+        panda->y = ini_y - YSPEED * y_time + y_time * y_time * (GRAVITY) / 2;
+        panda->yspeed = YSPEED - GRAVITY * y_time;
 
-        mouse->y = ini_y - YSPEED * jump_time + jump_time * jump_time * (GRAVITY) / 2;
-        mouse->yspeed = YSPEED - GRAVITY * jump_time;
-
-        if (collide(mouse, block)){
-            game_state = FALL;
-            mouse->y = block->y+block->height[block->i];
-            printf("isAbove : %d\n", above(block));
-        }
-        else if (collide(mouse, little_plank)){
-            game_state = FALL;
-            mouse->y = little_plank->y+little_plank->height[little_plank->i];
-            printf("isAbove : %d\n", above(block));
-        }
-        else if (collide(mouse, big_plank)){
-            game_state = FALL;
-            mouse->y = big_plank->y + big_plank->height[big_plank->i];
-            printf("isAbove : %d\n", above(block));
-        }
-
-        else if (mouse->yspeed == 0)
+        if (collide(mouse, block))
         {
-            ini_y = mouse->y;
-            jump_time = 0;
+            game_state = FALL;
+            panda->y = block->y + block->height[block->i];
+        }
+        else if (collide(mouse, little_plank))
+        {
+            game_state = FALL;
+            panda->y = little_plank->y + little_plank->height[little_plank->i];
+        }
+        else if (collide(mouse, big_plank))
+        {
+            game_state = FALL;
+            panda->y = big_plank->y + big_plank->height[big_plank->i];
+        }
+
+        else if (panda->yspeed == 0)
+        {
+            ini_y = panda->y;
+            y_time = 0;
             game_state = FALL;
         }
     }
 
     else if (game_state == FALL)
     {
-        jump_time++;
-       
-        mouse->y = ini_y + jump_time * jump_time * (GRAVITY) / 2;
-        mouse->yspeed = GRAVITY * jump_time;
-         printf("(%d,%d,%d)\n", mouse->y, mouse->yspeed, jump_time);
+        y_time++;
 
-        if (collide(mouse, block)){
-            game_state = INACTIVE;
-            mouse->y = block->y-mouse->height[mouse->i];
-            printf("isAbove : %d\n", above(block));
-        }
-        else if (collide(mouse, little_plank)){
-            game_state = INACTIVE;
-            mouse->y = little_plank->y-mouse->height[mouse->i];
-            printf("isAbove : %d\n", above(block));
-        }
-        else if (collide(mouse, big_plank)){
-            game_state = INACTIVE;
-            mouse->y = big_plank->y-mouse->height[mouse->i];
-            printf("isAbove : %d\n", above(block));
-        }
-        else if (mouse->y  + mouse->height[mouse->i]>= 20 + MAP_HEIGHT){
-            mouse->y = 20 + MAP_HEIGHT - mouse->height[mouse->i];
-        }
-         if (above(block) || above(little_plank) || above(big_plank) || mouse->y + mouse->height[mouse->i] == 20 + MAP_HEIGHT)
+        panda->y = ini_y + y_time * y_time * (GRAVITY) / 2;
+        panda->yspeed = GRAVITY * y_time;
+
+        if (collide(mouse, block))
         {
             game_state = INACTIVE;
-            printf("isAbove : %d\n", above(block));
+            panda->y = block->y - panda->height[panda->i];
+        }
+        else if (collide(mouse, little_plank))
+        {
+            game_state = INACTIVE;
+            panda->y = little_plank->y - panda->height[panda->i];
+        }
+        else if (collide(mouse, big_plank))
+        {
+            game_state = INACTIVE;
+            panda->y = big_plank->y - panda->height[panda->i];
+        }
+        else if (panda->y + panda->height[panda->i] >= 20 + MAP_HEIGHT)
+        {
+            panda->y = 20 + MAP_HEIGHT - panda->height[panda->i];
+        }
+        if (above(block) || above(little_plank) || above(big_plank) || panda->y + panda->height[panda->i] == 20 + MAP_HEIGHT)
+        {
+            game_state = INACTIVE;
         }
     }
 }

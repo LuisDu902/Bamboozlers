@@ -4,7 +4,8 @@ int (draw_game_menu)()
 {    
     if (draw_map() != 0) return 1;
     if (draw_sprite(home)) return 1;
-    if (draw_sprite(mouse) != 0) return 1;
+    if(draw_sprite(panda) != 0) return 1;
+    //if (draw_sprite(mouse) != 0) return 1;
     if (draw_sprite(block) != 0) return 1;
     if (draw_sprite(little_plank) != 0) return 1;
     if (draw_sprite(big_plank) != 0) return 1;

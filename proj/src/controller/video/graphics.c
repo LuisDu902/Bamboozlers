@@ -127,11 +127,3 @@ void(free_drawing_buffer)()
     free(drawing_frame_buffer);
 }
 
-uint32_t(get_pixel_color)(uint16_t x, uint16_t y)
-{
-    unsigned int index = (xRes * y + x) * bytes_per_pixel;
-    uint32_t color;
-    memcpy(&color, &drawing_frame_buffer[index], bytes_per_pixel);
-    return color;
-}
-
