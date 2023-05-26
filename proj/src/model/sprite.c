@@ -55,3 +55,13 @@ void destroy_sprite(Sprite *sprite) {
     free(sprite);
     sprite = NULL;
 }
+
+uint32_t(get_pixel_color)(Sprite *sprite, uint16_t x, uint16_t y)
+{
+    unsigned int index = (sprite->width[sprite->i] * y + x) * bytes_per_pixel;
+    
+    uint32_t* pixmap = sprite->pixmap_array[sprite->i];
+    uint32_t color = pixmap[index];
+    return color;
+}
+

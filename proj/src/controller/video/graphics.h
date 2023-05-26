@@ -37,6 +37,4 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
 
 int(vg_clear)();
 
-uint32_t (get_pixel_color)(uint16_t x, uint16_t y);
-
 #endif
