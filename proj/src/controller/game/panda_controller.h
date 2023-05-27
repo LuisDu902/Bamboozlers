@@ -16,7 +16,7 @@ extern Sprite* item;
 
 Sprite* collide_item;
 
-extern Game_state game_state;
+extern Panda_state panda_state;
 
 extern bool isRightPressed;
 extern bool isLeftPressed   ;

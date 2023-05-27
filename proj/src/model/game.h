@@ -2,19 +2,15 @@
 #define _GAME_H_
 
 #include "sprite.h"
-#include "xpm/panda.xpm"
-#include "xpm/map0.xpm"
-#include "xpm/little_plank.xpm"
-#include "xpm/big_plank.xpm"
-#include "xpm/dirt.xpm"
-#include "xpm/background.xpm"
-#include "xpm/little_block.xpm"
-#include "xpm/big_block.xpm"
+#include "xpm/game/panda.xpm"
+#include "xpm/game/background.xpm"
+#include "xpm/game/block.xpm"
+#include "xpm/game/plank.xpm"
 #include "xpm/home.xpm"
 #include "xpm/numbers.xpm"
-#include "xpm/lava.xpm"
-#include "xpm/grama.xpm"
-#include "xpm/bamboo.xpm"
+#include "xpm/game/lava.xpm"
+#include "xpm/game/grama.xpm"
+#include "xpm/game/bamboo.xpm"
 
 Sprite *home;
 Sprite *background;
@@ -26,7 +22,6 @@ Sprite *big_plank;
 Sprite* lava;
 Sprite* grama;
 Sprite *panda;
-Sprite *map;
 Sprite *bamboo;
 Sprite *timer[4];
 

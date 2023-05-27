@@ -10,7 +10,7 @@ extern struct packet mouse_packet;
 extern uint16_t yRes, xRes;
 
 Item_state item_state = INIT;
-Game_state game_state = INACTIVE;
+Panda_state panda_state = INACTIVE;
 
 uint32_t y_time = 0;
 
@@ -37,37 +37,37 @@ void update_keyboard_game()
 
     case ARROW_UP:
         /* go to jump state */
-        if (game_state == INACTIVE || game_state == RUN)
+        if (panda_state == INACTIVE || panda_state == RUN)
         {
             y_time = 0;
             ini_y = panda->y;
-            game_state = JUMP;
+            panda_state = JUMP;
         }
         break;
 
     case ARROW_LEFT_PRESS:
         /* go to run state */
         isLeftPressed = true;
-        if (game_state == INACTIVE)
-            game_state = RUN;
+        if (panda_state == INACTIVE)
+            panda_state = RUN;
         break;
 
     case ARROW_LEFT_RELEASE:
         /* go back to idle state */
         panda->i = 3;
         isLeftPressed = false;
-        if (game_state == RUN)
+        if (panda_state == RUN)
         {
             
-            game_state = INACTIVE;
+            panda_state = INACTIVE;
         }
         break;
 
     case ARROW_RIGHT_PRESS:
         /* go to run state */
         isRightPressed = true;
-        if (game_state == INACTIVE)
-            game_state = RUN;
+        if (panda_state == INACTIVE)
+            panda_state = RUN;
         break;
 
     case ARROW_RIGHT_RELEASE:
@@ -75,10 +75,10 @@ void update_keyboard_game()
         panda->i = 0;
         isRightPressed = false;
     
-        if (game_state == RUN)
+        if (panda_state == RUN)
         {
            
-            game_state = INACTIVE;
+            panda_state = INACTIVE;
         }
         break;
     }
@@ -105,15 +105,23 @@ void update_mouse_game()
 void update_panda_state()
 {
 
+    if (collide(panda, bamboo)){
+        update_inventory();
+    }
     /* if there's nothing below the panda, it should fall */
-    if (game_state != JUMP && game_state != FALL && !above_any_item() && !hit_floor())
+    if (panda_state != JUMP && panda_state != FALL && !above_any_item())
     {
-        game_state = FALL;
+        panda_state = FALL;
         ini_y = panda->y;
         y_time = 0;
     }
 
-    switch (game_state)
+    if (hit_floor() || collide(panda, lava)){
+        panda_state = DEAD;
+        return;
+    }
+
+    switch (panda_state)
     {
     case JUMP:
 
@@ -129,7 +137,7 @@ void update_panda_state()
             fix_jump_collision();
 
             /* the panda should fall if it collides */
-            game_state = FALL;
+            panda_state = FALL;
             y_time = 0;
             ini_y = panda->y;
         }
@@ -139,7 +147,7 @@ void update_panda_state()
         {
             ini_y = panda->y;
             y_time = 0;
-            game_state = FALL;
+            panda_state = FALL;
         }
         break;
 
@@ -155,15 +163,14 @@ void update_panda_state()
 
             /* correct the panda pos */
             fix_fall_collision();
-            game_state = INACTIVE;
+            panda_state = INACTIVE;
         }
 
         /* if the panda hits the floor */
         else if (hit_floor())
         {
-            /* correct the panda pos */
-            handle_boundary_conditions();
-            game_state = INACTIVE;
+            panda_state = DEAD;
+            return;
         }
         break;
 
@@ -185,7 +192,7 @@ void update_panda_state()
         {
             /* correct the panda pos */
             fix_collision();
-            game_state = INACTIVE;
+            panda_state = INACTIVE;
         }
     }
 

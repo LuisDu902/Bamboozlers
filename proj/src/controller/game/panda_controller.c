@@ -159,7 +159,7 @@ void fix_fall_collision()
 void update_panda_animation()
 {
 
-    if (game_state == JUMP)
+    if (panda_state == JUMP)
     {
         panda->i = (isRightPressed) ? 6 : 7;
     }

@@ -14,6 +14,7 @@ void update_keyboard_menu()
     switch (scancode)
     {
     case ENTER:
+        map_set_up();
         menu_state = GAME;
         break;
     case ESC_BREAK:

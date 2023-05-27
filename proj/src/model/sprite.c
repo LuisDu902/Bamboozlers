@@ -57,3 +57,8 @@ void destroy_sprite(Sprite *sprite) {
     sprite = NULL;
 }
 
+void setPos(Sprite* sprite, int x, int y){
+  sprite->x = x;
+  sprite->y = y;
+}
+
