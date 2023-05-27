@@ -3,21 +3,20 @@
 void create_game_sprites()
 {
     xpm_map_t panda_pixmaps[] = {
-        (xpm_map_t)panda_right_1_xpm,
-        (xpm_map_t)panda_right_2_xpm,
-        (xpm_map_t)panda_right_3_xpm,
-        (xpm_map_t)panda_left_1_xpm,
-        (xpm_map_t)panda_left_2_xpm,
-        (xpm_map_t)panda_left_3_xpm,
-        (xpm_map_t)panda_right_jump_xpm,
-        (xpm_map_t)panda_left_jump_xpm,
+        (xpm_map_t)panda1_xpm,
+        (xpm_map_t)panda2_xpm,
+        (xpm_map_t)panda3_xpm,
+        (xpm_map_t)panda4_xpm,
+        (xpm_map_t)panda5_xpm,
+        (xpm_map_t)panda6_xpm,
+        (xpm_map_t)panda7_xpm,
+        (xpm_map_t)panda8_xpm,
     };
     xpm_map_t little_block_pixmaps[] = {(xpm_map_t)little_block_xpm};
     xpm_map_t big_block_pixmaps[] = {(xpm_map_t)big_block_xpm};
     xpm_map_t little_plank_pixmaps[] = {(xpm_map_t)little_plank_xpm, (xpm_map_t)little_plank_r1_xpm, (xpm_map_t)little_plank_r2_xpm, (xpm_map_t)little_plank_r3_xpm, (xpm_map_t)little_plank_r4_xpm, (xpm_map_t)little_plank_r5_xpm, (xpm_map_t)little_plank_r6_xpm, (xpm_map_t)little_plank_r7_xpm};
     xpm_map_t big_plank_pixmaps[] = {(xpm_map_t)big_plank_xpm, (xpm_map_t)big_plank_r1_xpm, (xpm_map_t)big_plank_r2_xpm, (xpm_map_t)big_plank_r3_xpm, (xpm_map_t)big_plank_r4_xpm, (xpm_map_t)big_plank_r5_xpm, (xpm_map_t)big_plank_r6_xpm, (xpm_map_t)big_plank_r7_xpm};
     
-
     xpm_map_t grama_pixmaps[] = {(xpm_map_t)grama_xpm};
     xpm_map_t background_pixmaps[] = {(xpm_map_t)background_xpm};
     xpm_map_t lava_pixmaps[] = {(xpm_map_t)lava_xpm};
@@ -42,25 +41,17 @@ void create_game_sprites()
    
     map = create_sprite_xpm(level_pixmaps, 1, 0, 0);
    
-    
-    //dirt_block_end = create_sprite_xpm(dirt_block_pixmaps, 1,340 ,150 );
-    //dirt_block_start = create_sprite_xpm(dirt_block_pixmaps, 1, 25,420 );
     little_block = create_sprite_xpm(little_block_pixmaps, 1, 400, 500);
     big_block = create_sprite_xpm(big_block_pixmaps, 1, 470, 500);
 
     little_plank = create_sprite_xpm(little_plank_pixmaps, 8, 500, 505);
-    bamboo = create_sprite_xpm(bamboo_pixmaps, 1, 350, 120);
+    bamboo = create_sprite_xpm(bamboo_pixmaps, 1, 360, 370);
 
     big_plank = create_sprite_xpm(big_plank_pixmaps, 8, 600, 505);
-    timer[0]=create_sprite_xpm(timer_pixmaps,10,100,505);
-    timer[1]=create_sprite_xpm(timer_pixmaps,10,130,505);
-    timer[2]=create_sprite_xpm(timer_pixmaps,10,160,505);
-    timer[3]=create_sprite_xpm(timer_pixmaps,10,190,505);
-    rtc[0]=create_sprite_xpm(timer_pixmaps,10,400,105);
-    rtc[1]=create_sprite_xpm(timer_pixmaps,10,430,105);
-    rtc[2]=create_sprite_xpm(timer_pixmaps,10,460,105);
-    rtc[3]=create_sprite_xpm(timer_pixmaps,10,490,105);
-
+    for (int i = 0; i < 4 ; i++){
+        timer[i] = create_sprite_xpm(timer_pixmaps, 10, 100 + i*30, 505);
+    }
+  
 }
 
 void destroy_game_sprites()
@@ -73,9 +64,6 @@ void destroy_game_sprites()
     destroy_sprite(little_plank);
     destroy_sprite(big_plank);
     destroy_sprite(bamboo);
-    for (int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++)
         destroy_sprite(timer[i]);
-        destroy_sprite(rtc[i]);
-    }
-    
 }

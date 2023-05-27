@@ -6,6 +6,7 @@
 Sprite *instructions_text_1;
 Sprite *instructions_text_2;
 Sprite *instructions_text_3;
+Sprite *instructions_text_4;
 
 
 void create_instructions_sprites();

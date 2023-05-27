@@ -56,7 +56,6 @@ void update_keyboard_game()
         /* go back to idle state */
         panda->i = 3;
         isLeftPressed = false;
-fix_collision();
         if (game_state == RUN)
         {
             
@@ -75,7 +74,7 @@ fix_collision();
         /* go back to idle state */
         panda->i = 0;
         isRightPressed = false;
-         fix_collision();
+    
         if (game_state == RUN)
         {
            
@@ -112,26 +111,6 @@ void update_panda_state()
         game_state = FALL;
         ini_y = panda->y;
         y_time = 0;
-    }
-
-    /* if the panda moves left or right */
-    if (isRightPressed || isLeftPressed)
-    {
-
-        /* update the panda pos */
-        isRightPressed ? move_right() : move_left();
-        update_panda_animation();
-
-        /* handle left and right bounds */
-        handle_boundary_conditions();
-
-        /* if the move causes a collision with any item */
-        if (collide_with_items())
-        {
-            /* correct the panda pos */
-            fix_collision();
-            game_state = INACTIVE;
-        }
     }
 
     switch (game_state)
@@ -191,5 +170,23 @@ void update_panda_state()
     default:
         break;
     }
-}
+     /* if the panda moves left or right */
+    if (isRightPressed || isLeftPressed)
+    {
+        /* update the panda pos */
+        isRightPressed ? move_right() : move_left();
+        update_panda_animation();
 
+        /* handle left and right bounds */
+        handle_boundary_conditions();
+
+        /* if the move causes a collision with any item */
+        if (collide_with_items())
+        {
+            /* correct the panda pos */
+            fix_collision();
+            game_state = INACTIVE;
+        }
+    }
+
+}

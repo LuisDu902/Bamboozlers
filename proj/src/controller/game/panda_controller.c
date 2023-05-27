@@ -6,28 +6,31 @@ extern uint16_t yRes;
 
 bool above(Sprite *item)
 {
-   
-    if (item->height[0] != 455 && panda->y + panda->height[panda->i] >= item->y +5) return false;
+
+    if (item->height[0] != 455 && panda->y + panda->height[panda->i] >= item->y +1)
+        return false;
     uint16_t feet = panda->height[panda->i] - 1;
-    
+
     uint16_t yAbs = panda->y + feet;
     uint16_t yPos = yAbs - item->y;
 
-    for (int i = 0; i < panda->width[panda->i]; i++) {
+    for (int i = 0; i < panda->width[panda->i]; i++)
+    {
         uint16_t xAbs = panda->x + i;
         uint16_t xPos = xAbs - item->x;
 
         // Check if the positions are within valid bounds
-        if (yPos < item->height[item->i] && xPos < item->width[item->i]) {
-
+        if (yPos < item->height[item->i] && xPos < item->width[item->i])
+        {
             uint32_t panda_color = panda->pixmap_array[panda->i][i + (feet * panda->width[panda->i])];
             uint32_t item_color = item->pixmap_array[item->i][xPos + (yPos * item->width[item->i])];
 
-            if (panda_color != TRANSPARENT && item_color != TRANSPARENT) {
+            if (panda_color != TRANSPARENT && item_color != TRANSPARENT)
+            {
                 return true;
             }
         }
-}
+    }
     return false;
 }
 
@@ -60,11 +63,7 @@ bool above_any_item()
 
 bool collide_with_items()
 {
-    if (collide(panda, grama))
-    {
-        collide_item = grama;
-        return true;
-    }
+    
 
     if (collide(panda, little_block))
     {
@@ -84,6 +83,11 @@ bool collide_with_items()
     else if (collide(panda, big_block))
     {
         collide_item = big_block;
+        return true;
+    }
+    if (collide(panda, grama))
+    {
+        collide_item = grama;
         return true;
     }
     return false;
@@ -106,13 +110,36 @@ void fix_collision()
 {
     if (!above(collide_item))
     {
-        while (collide(panda, collide_item))
+        if (isRightPressed)
         {
-            if (isRightPressed){
-                panda->x--;
+            if (collide_item->height[0] != 455 && panda->x < collide_item->x)
+                while (collide(panda, collide_item)){
+                    panda->x--;
+                }
+
+            else if (collide_item->height[0] == 455)
+                while (collide(panda, collide_item)){
+                    panda->x--;
+                }
+            else {
+                move_left();
             }
-            else
-                panda->x++;
+        }
+        else
+        {
+            if (collide_item->height[0] != 455 && panda->x + panda->width[panda->i] > collide_item->x + collide_item->width[collide_item->i])
+                while (collide(panda, collide_item))
+                {
+                    panda->x++;
+                }
+            else if (collide_item->height[0] == 455)
+                while (collide(panda, collide_item))
+                {
+                    panda->x++;
+                }
+            else {
+                move_right();
+            }
         }
     }
 }

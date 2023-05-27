@@ -3,7 +3,6 @@
 
 #include "viewer.h"
 #include "controller/timer/timer.h"
-#include "controller/RTC/rtc.h"
 
 extern Sprite* map;
 extern Sprite* lava;
@@ -22,5 +21,4 @@ extern Sprite* bamboo;
 int (draw_game_menu)();
 int (draw_map)();
 int (draw_timer)();
-int (draw_date)();
 #endif

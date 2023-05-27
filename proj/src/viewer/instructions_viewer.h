@@ -7,6 +7,7 @@
 extern Sprite* instructions_text_1;
 extern Sprite* instructions_text_2;
 extern Sprite* instructions_text_3;
+extern Sprite* instructions_text_4;
 
 
 int (draw_instructions_menu)();

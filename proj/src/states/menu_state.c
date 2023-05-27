@@ -19,6 +19,9 @@ void update_keyboard_menu()
     case ESC_BREAK:
         menu_state = EXIT;
         break;
+    case ARROW_DOWN:
+        menu_state = GAME_OVER;
+        break;
     default:
         break;
     }

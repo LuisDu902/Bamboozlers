@@ -42,7 +42,7 @@ int(draw_menu)()
         draw_game_menu();
         break;
     case GAME_OVER:
-        draw_game_menu();
+        draw_game_over_menu();
         break;
     case EXIT:
         return 0;

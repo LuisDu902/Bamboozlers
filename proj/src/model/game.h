@@ -18,8 +18,6 @@
 
 Sprite *home;
 Sprite *background;
-//Sprite *dirt_block_end;
-//Sprite *dirt_block_start;
 Sprite *little_block;
 Sprite *big_block;
 Sprite *little_plank;
@@ -31,7 +29,6 @@ Sprite *panda;
 Sprite *map;
 Sprite *bamboo;
 Sprite *timer[4];
-Sprite *rtc[4];
 
 void create_game_sprites();
 void destroy_game_sprites();
