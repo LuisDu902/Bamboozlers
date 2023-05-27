@@ -3,7 +3,7 @@
 Menu_state menu_state = MENU;
 
 extern uint8_t byte_no;
-
+extern int counter;
 extern struct packet mouse_packet;
 
 void update_keyboard_state()
@@ -92,4 +92,12 @@ bool select_item(Sprite* item)
 {
     return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
            cursor->y >= item->y && cursor->y <= item->y + item->height[item->i] ;        
+}
+
+
+void update_rtc_state(){
+    if(counter %30 == 0){
+        if(rtc_is_updating() != 0) return ;
+        if(rtc_update_time() != 0) return ;
+    }
 }

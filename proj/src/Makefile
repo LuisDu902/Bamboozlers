@@ -6,12 +6,13 @@ PROG=proj
 .PATH: ${.CURDIR}/controller/timer
 .PATH: ${.CURDIR}/controller/video
 .PATH: ${.CURDIR}/controller/KBC
+.PATH: ${.CURDIR}/controller/RTC
 .PATH: ${.CURDIR}/controller/game
 .PATH: ${.CURDIR}/model/
 .PATH: ${.CURDIR}/viewer/
 .PATH: ${.CURDIR}/states/
 
-SRCS = 	main.c timer.c utils.c graphics.c KBC.c keyboard.c mouse.c map_controller.c item_controller.c panda_controller.c model.c viewer.c sprite.c game.c menu.c instructions.c menu_viewer.c game_viewer.c instructions_viewer.c state.c menu_state.c game_state.c instructions_state.c
+SRCS = 	main.c timer.c utils.c graphics.c KBC.c keyboard.c mouse.c map_controller.c item_controller.c panda_controller.c model.c viewer.c sprite.c game.c menu.c instructions.c menu_viewer.c game_viewer.c instructions_viewer.c state.c menu_state.c game_state.c instructions_state.c rtc.c
 
 CFLAGS += -pedantic -D_LCOM_OPTIMIZED_ -O2
 

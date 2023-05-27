@@ -15,6 +15,8 @@ void create_instructions_sprites()
 
 void destroy_instructions_sprites()
 {
-    destroy_sprite(instructions_text);
+    destroy_sprite(instructions_text_1);
+    destroy_sprite(instructions_text_2);
+    destroy_sprite(instructions_text_3);
    
 }
