@@ -28,7 +28,7 @@ void(mouse_ih)()
 }
 
 void (sync_packet)(){
-    if (byte_no != 0 || (byte & BIT(3))) {
+    if (byte_no  || (byte & BIT(3))) {
         parse_packet();
         byte_no++;
     }
@@ -67,15 +67,15 @@ int disable_data_reporting()
     while (attempts--)
     {
 
-        if (write_command(KBC_IN_BUF, WRITE_BYTE_TO_MOUSE) != 0)
+        if (write_command(KBC_IN_BUF, WRITE_BYTE_TO_MOUSE) )
             return 1;
 
-        if (write_command(KBC_CMD_REG, DISABLE_DATA_REPORTING) != 0)
+        if (write_command(KBC_CMD_REG, DISABLE_DATA_REPORTING) )
             return 1;
 
         WAIT_KBC;
 
-        if (util_sys_inb(KBC_OUT_BUF, &cmd) != 0)
+        if (util_sys_inb(KBC_OUT_BUF, &cmd) )
             return 1;
 
         if (cmd == MOUSE_ACK)
@@ -93,15 +93,15 @@ int enable_data_reporting()
     while (attempts--)
     {
 
-        if (write_command(KBC_IN_BUF, WRITE_BYTE_TO_MOUSE) != 0)
+        if (write_command(KBC_IN_BUF, WRITE_BYTE_TO_MOUSE) )
             return 1;
 
-        if (write_command(KBC_CMD_REG, ENABLE_DATA_REPORTING) != 0)
+        if (write_command(KBC_CMD_REG, ENABLE_DATA_REPORTING) )
             return 1;
 
         WAIT_KBC;
 
-        if (util_sys_inb(KBC_OUT_BUF, &cmd) != 0)
+        if (util_sys_inb(KBC_OUT_BUF, &cmd) )
             return 1;
 
         if (cmd == MOUSE_ACK)

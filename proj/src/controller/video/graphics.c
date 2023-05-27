@@ -33,7 +33,7 @@ int(set_main_buffer)(uint16_t mode)
 
     /* Use VBE function 0x01 to initialize vram_base and vram_size */
     memset(&mode_info, 0, sizeof(mode_info));
-    if (vbe_get_mode_info(mode, &mode_info) != 0)
+    if (vbe_get_mode_info(mode, &mode_info) )
         return 1;
 
     yRes = mode_info.YResolution;
@@ -44,7 +44,7 @@ int(set_main_buffer)(uint16_t mode)
     mr.mr_base = mode_info.PhysBasePtr;
     mr.mr_limit = mr.mr_base + frame_size;
 
-    if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr) != 0)
+    if (sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr) )
         return 1;
 
     main_frame_buffer = vm_map_phys(SELF, (void *)mr.mr_base, frame_size);
@@ -68,7 +68,7 @@ int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
 {
     for (int i = 0; i < len; i++)
     {
-        if (vg_draw_pixel(x + i, y, color) != 0)
+        if (vg_draw_pixel(x + i, y, color) )
             return 1;
     }
     return 0;
@@ -78,7 +78,7 @@ int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
 {
     for (int i = 0; i < len; i++)
     {
-        if (vg_draw_pixel(x, y+i, color) != 0)
+        if (vg_draw_pixel(x, y+i, color) )
             return 1;
     }
     return 0;
@@ -88,7 +88,7 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
 {
     for (int i = 0; i < height; i++)
     {
-        if (vg_draw_hline(x, y + i, width, color) != 0)
+        if (vg_draw_hline(x, y + i, width, color) )
             return 1;
     }
     return 0;
@@ -100,7 +100,7 @@ int(vg_clear)()
     {
         for (int j = 0; j < yRes; j++)
         {
-            if (vg_draw_pixel(i, j, 0) != 0)
+            if (vg_draw_pixel(i, j, 0) )
                 return 1;
         }
     }

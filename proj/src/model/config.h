@@ -22,4 +22,5 @@ typedef enum {
 
 typedef enum {INIT, DRAG} Item_state;
 
+
 #endif /* _GAME_CONFIG_H_ */

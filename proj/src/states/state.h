@@ -4,10 +4,12 @@
 #include "menu_state.h"
 #include "game_state.h"
 #include "controller/RTC/rtc.h"
+#include "instructions_state.h"
 
 typedef enum {
     MENU,
-    LEVEL_SELECTION, 
+    LEVEL_SELECTION,
+    INSTRUCTIONS, 
     GAME,
     GAME_OVER,
     EXIT

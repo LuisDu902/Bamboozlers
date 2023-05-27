@@ -25,12 +25,12 @@ int (main)(int argc, char *argv[]) {
 
 int init() {
 
-    if (timer_set_frequency(0, 30) != 0) return 1;
+    if (timer_set_frequency(0, 30) ) return 1;
 
-    if (set_main_buffer(VBE_DIRECT_600p) != 0) return 1;
+    if (set_main_buffer(VBE_DIRECT_600p) ) return 1;
     set_drawing_buffer();
 
-    if (set_graphic_mode(VBE_DIRECT_600p) != 0) return 1;
+    if (set_graphic_mode(VBE_DIRECT_600p) ) return 1;
 
     create_sprites();
 
@@ -46,7 +46,7 @@ int init() {
 
 int cleanup() {
 
-    if (vg_exit() != 0) return 1;
+    if (vg_exit() ) return 1;
 
     destroy_sprites();
 
@@ -62,14 +62,14 @@ int cleanup() {
 
 int (proj_main_loop)(int argc, char *argv[]) {
   
-    if (init() != 0) return 1;
+    if (init() ) return 1;
 
     draw_menu();
 
     int ipc_status;
     message msg;
     while (menu_state != EXIT) {
-        if (driver_receive(ANY, &msg, &ipc_status) != 0) {
+        if (driver_receive(ANY, &msg, &ipc_status) ) {
             printf("Error");
             continue;
         }
@@ -85,7 +85,7 @@ int (proj_main_loop)(int argc, char *argv[]) {
         }
     }
     
-    if (cleanup() != 0) return 1;
+    if (cleanup() ) return 1;
 
     return 0;
 }

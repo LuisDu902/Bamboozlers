@@ -19,6 +19,9 @@ void update_keyboard_state()
     case GAME:
         update_keyboard_game();
         break;
+    case INSTRUCTIONS:
+         update_keyboard_instructions();
+         break;
     case GAME_OVER:
         // update_keyboard_menu();
         return;
@@ -44,8 +47,9 @@ void update_mouse_state()
         case GAME:
             update_mouse_game();
             break;
-        case LEVEL_SELECTION:
-        case GAME_OVER:
+        case INSTRUCTIONS:
+            update_mouse_instructions();
+            break;
         case EXIT:
             return;
         default:
@@ -59,7 +63,7 @@ void update_timer_state()
 {
     if (menu_state == GAME){
         timer_int_handler();
-        update_hero_pos();
+        update_panda_state();
     }
     draw_menu();
     draw_cursor();
@@ -87,8 +91,7 @@ void update_cursor_position(){
 bool select_item(Sprite* item)
 {
     return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
-           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i] ;
-           //&& get_pixel_color(cursor->x, cursor->y) != 0;           
+           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i] ;        
 }
 
 

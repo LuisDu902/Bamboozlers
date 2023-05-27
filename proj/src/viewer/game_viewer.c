@@ -6,18 +6,24 @@ extern int counter;
 extern real_time_clock_info rtc_info;
 int (draw_game_menu)()
 {    
-    if (draw_map() != 0) return 1;
-    if( draw_timer() != 0) return 1;
+    if (draw_map() ) return 1;
+    if (draw_sprite(background) ) return 1;
+    if (draw_sprite(lava)) return 1;
+    if (draw_sprite(bamboo)) return 1;
+    if( draw_timer() ) return 1;
     if (draw_sprite(home)) return 1;
-    if(draw_sprite(panda) != 0) return 1;
-    if (draw_sprite(block) != 0) return 1;
-    if (draw_sprite(little_plank) != 0) return 1;
-    if (draw_sprite(big_plank) != 0) return 1;
-    if( draw_date()!= 0) return 1;
+    if(draw_sprite(panda)) return 1;
+    if (draw_sprite(dirt_block_end) ) return 1;
+    if (draw_sprite(dirt_block_start) ) return 1;
+    if (draw_sprite(little_block) ) return 1;
+    if (draw_sprite(big_block) ) return 1;
+    if (draw_sprite(little_plank)) return 1;
+    if (draw_sprite(big_plank)) return 1;
+    if( draw_date()) return 1;
+ 
 
     return 0;
 }
-
 
 int(draw_map)() {
     for (int i = 0; i < BORDER_WIDTH; i++) {
@@ -42,10 +48,10 @@ int(draw_timer)(){
     timer[1]->i=minutes%10;
     timer[2]->i=seconds/10;
     timer[3]->i=seconds%10;
-    if(draw_sprite(timer[0])!= 0) return 1;
-    if(draw_sprite(timer[1])!= 0) return 1;
-    if(draw_sprite(timer[2])!= 0) return 1;
-    if(draw_sprite(timer[3])!= 0) return 1;
+    if(draw_sprite(timer[0])) return 1;
+    if(draw_sprite(timer[1])) return 1;
+    if(draw_sprite(timer[2])) return 1;
+    if(draw_sprite(timer[3])) return 1;
 
     return 0;
 }
@@ -55,10 +61,10 @@ int(draw_date)(){
     rtc[1]->i=rtc_info.hours & 0xF;
     rtc[2]->i=rtc_info.minutes>>4;
     rtc[3]->i=rtc_info.minutes & 0xF;
-    if(draw_sprite(rtc[0])!= 0) return 1;
-    if(draw_sprite(rtc[1])!= 0) return 1;
-    if(draw_sprite(rtc[2])!= 0) return 1;
-    if(draw_sprite(rtc[3])!= 0) return 1;
+    if(draw_sprite(rtc[0])) return 1;
+    if(draw_sprite(rtc[1])) return 1;
+    if(draw_sprite(rtc[2])) return 1;
+    if(draw_sprite(rtc[3])) return 1;
 
     return 0;
 }

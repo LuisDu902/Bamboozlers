@@ -17,11 +17,11 @@ int(timer_set_frequency)(uint8_t timer, uint32_t freq){
 
     uint8_t LSB, MSB;
 
-    if (util_get_LSB(counter, &LSB) != 0) return 1;
-    if (util_get_MSB(counter, &MSB) != 0) return 1;
+    if (util_get_LSB(counter, &LSB) ) return 1;
+    if (util_get_MSB(counter, &MSB) ) return 1;
 
     uint8_t config;
-    if (timer_get_conf(timer, &config) != 0) return 1;
+    if (timer_get_conf(timer, &config) ) return 1;
 
     config &= 0xF;
 
@@ -39,22 +39,22 @@ int(timer_set_frequency)(uint8_t timer, uint32_t freq){
             break;
     }
 
-    if (sys_outb(TIMER_CTRL, config) != 0) return 1;
+    if (sys_outb(TIMER_CTRL, config) ) return 1;
 
     switch (timer){
         case 0:{
-            if (sys_outb(TIMER_0, LSB) != 0) return 1;
-            if (sys_outb(TIMER_0, MSB) != 0) return 1;
+            if (sys_outb(TIMER_0, LSB) ) return 1;
+            if (sys_outb(TIMER_0, MSB) ) return 1;
             break;
         }
         case 1: {
-            if (sys_outb(TIMER_1, LSB) != 0) return 1;
-            if (sys_outb(TIMER_1, MSB) != 0) return 1;
+            if (sys_outb(TIMER_1, LSB) ) return 1;
+            if (sys_outb(TIMER_1, MSB) ) return 1;
             break;
         }
         case 2: {
-            if (sys_outb(TIMER_2, LSB) != 0) return 1;
-            if (sys_outb(TIMER_2, MSB) != 0) return 1;
+            if (sys_outb(TIMER_2, LSB) ) return 1;
+            if (sys_outb(TIMER_2, MSB) ) return 1;
             break;
         }
     }
@@ -66,7 +66,7 @@ int(timer_subscribe_interrupt)(uint32_t *timer_irq) {
 
     *timer_irq = BIT(timer_hook_id);
 
-    if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id) != 0) return 1;
+    if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id) ) return 1;
 
     return 0;
 }

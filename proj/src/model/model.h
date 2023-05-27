@@ -4,9 +4,8 @@
 
 #include "menu.h"
 #include "game.h"
+#include "instructions.h"
 #include "xpm/cursor.xpm"
-
-extern Sprite *mouse;
 
 Sprite* cursor;
 
