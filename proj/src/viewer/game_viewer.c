@@ -3,7 +3,7 @@
 int minutes=0;
 int seconds=0;
 extern int counter;
-
+extern real_time_clock_info rtc_info;
 int (draw_game_menu)()
 {    
     if (draw_map() != 0) return 1;
@@ -13,6 +13,8 @@ int (draw_game_menu)()
     if (draw_sprite(block) != 0) return 1;
     if (draw_sprite(little_plank) != 0) return 1;
     if (draw_sprite(big_plank) != 0) return 1;
+    if( draw_date()!= 0) return 1;
+
     return 0;
 }
 
@@ -47,3 +49,17 @@ int(draw_timer)(){
 
     return 0;
 }
+
+int(draw_date)(){
+    rtc[0]->i=rtc_info.hours>>4;
+    rtc[1]->i=rtc_info.hours & 0xF;
+    rtc[2]->i=rtc_info.minutes>>4;
+    rtc[3]->i=rtc_info.minutes & 0xF;
+    if(draw_sprite(rtc[0])!= 0) return 1;
+    if(draw_sprite(rtc[1])!= 0) return 1;
+    if(draw_sprite(rtc[2])!= 0) return 1;
+    if(draw_sprite(rtc[3])!= 0) return 1;
+
+    return 0;
+}
+

@@ -308,3 +308,4 @@ void update_hero_pos()
         }
     }
 }
+

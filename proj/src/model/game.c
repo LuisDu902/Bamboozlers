@@ -20,7 +20,7 @@ void create_game_sprites(){
     xpm_map_t big_plank_pixmaps[] = {(xpm_map_t) big_plank_xpm, (xpm_map_t) big_plank_r1_xpm, (xpm_map_t) big_plank_r2_xpm, (xpm_map_t) big_plank_r3_xpm, (xpm_map_t) big_plank_r4_xpm, (xpm_map_t) big_plank_r5_xpm, (xpm_map_t) big_plank_r6_xpm, (xpm_map_t) big_plank_r7_xpm};
     xpm_map_t home_pixmaps[] = {(xpm_map_t) home_xpm};
     xpm_map_t timer_pixmaps[]= {(xpm_map_t) number_0_xpm, (xpm_map_t) number_1_xpm, (xpm_map_t) number_2_xpm, (xpm_map_t) number_3_xpm, (xpm_map_t) number_4_xpm, (xpm_map_t) number_5_xpm, (xpm_map_t) number_6_xpm, (xpm_map_t) number_7_xpm, (xpm_map_t) number_8_xpm ,(xpm_map_t) number_9_xpm};
-
+   
     home = create_sprite_xpm(home_pixmaps, 1, 500, 30);
     mouse = create_sprite_xpm(mouse_pixmaps, 1, 50, 410);
     
@@ -34,6 +34,11 @@ void create_game_sprites(){
     timer[1]=create_sprite_xpm(timer_pixmaps,10,130,505);
     timer[2]=create_sprite_xpm(timer_pixmaps,10,160,505);
     timer[3]=create_sprite_xpm(timer_pixmaps,10,190,505);
+    rtc[0]=create_sprite_xpm(timer_pixmaps,10,400,105);
+    rtc[1]=create_sprite_xpm(timer_pixmaps,10,430,105);
+    rtc[2]=create_sprite_xpm(timer_pixmaps,10,460,105);
+    rtc[3]=create_sprite_xpm(timer_pixmaps,10,490,105);
+
 }
 
 void destroy_game_sprites(){
@@ -44,7 +49,10 @@ void destroy_game_sprites(){
     destroy_sprite(block);
     destroy_sprite(little_plank);
     destroy_sprite(big_plank);
-    for(int i=0;i<4;i++)
+    for(int i=0;i<4;i++){
         destroy_sprite(timer[i]);
+        destroy_sprite(rtc[i]);
+    }
+    
 }
 
