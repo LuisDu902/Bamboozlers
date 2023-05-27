@@ -14,6 +14,5 @@ extern Sprite* item;
 bool is_in_map(Sprite* item);
 bool collide(Sprite* s1, Sprite* s2);
 
-
 #endif 
 

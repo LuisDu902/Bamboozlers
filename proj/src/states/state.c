@@ -5,6 +5,7 @@ Menu_state menu_state = MENU;
 extern uint8_t byte_no;
 extern int counter;
 extern struct packet mouse_packet;
+extern Item_state item_state;
 
 void update_keyboard_state()
 {
@@ -63,7 +64,7 @@ void update_timer_state()
 {
     if (menu_state == GAME){
         timer_int_handler();
-        update_panda_state();
+        if (item_state == INIT) update_panda_state();
     }
     draw_menu();
     draw_cursor();

@@ -1,8 +1,34 @@
 #include "panda_controller.h"
 
-bool above()
+extern uint8_t *drawing_frame_buffer;
+extern uint16_t xRes;
+extern uint16_t yRes;
+
+bool above(Sprite *item)
 {
-    return (panda->y + panda->height[panda->i] >= (collide_item->y - 5));
+   
+    if (item->height[0] != 455 && panda->y + panda->height[panda->i] >= item->y +5) return false;
+    uint16_t feet = panda->height[panda->i] - 1;
+    
+    uint16_t yAbs = panda->y + feet;
+    uint16_t yPos = yAbs - item->y;
+
+    for (int i = 0; i < panda->width[panda->i]; i++) {
+        uint16_t xAbs = panda->x + i;
+        uint16_t xPos = xAbs - item->x;
+
+        // Check if the positions are within valid bounds
+        if (yPos < item->height[item->i] && xPos < item->width[item->i]) {
+
+            uint32_t panda_color = panda->pixmap_array[panda->i][i + (feet * panda->width[panda->i])];
+            uint32_t item_color = item->pixmap_array[item->i][xPos + (yPos * item->width[item->i])];
+
+            if (panda_color != TRANSPARENT && item_color != TRANSPARENT) {
+                return true;
+            }
+        }
+}
+    return false;
 }
 
 void move_left()
@@ -27,19 +53,19 @@ void fall(uint32_t time, uint32_t y)
     panda->yspeed = GRAVITY * time;
 }
 
+bool above_any_item()
+{
+    return above(grama);
+}
+
 bool collide_with_items()
 {
-    if (collide(panda, dirt_block_start))
+    if (collide(panda, grama))
     {
-        collide_item = dirt_block_start;
+        collide_item = grama;
         return true;
-    }  
-    if (collide(panda, dirt_block_end))
-    {
-        collide_item = dirt_block_end;
-        return true;
-    }    
-    
+    }
+
     if (collide(panda, little_block))
     {
         collide_item = little_block;
@@ -78,13 +104,17 @@ void handle_boundary_conditions()
 
 void fix_collision()
 {
-    printf("FIXING COLISIO\n");
-   if (!above()){
-        printf("IT IS NOT ABOVE\n");
+    if (!above(collide_item))
+    {
         while (collide(panda, collide_item))
-            panda->x += isRightPressed ? -1 : 1;
-}
-    
+        {
+            if (isRightPressed){
+                panda->x--;
+            }
+            else
+                panda->x++;
+        }
+    }
 }
 
 void fix_jump_collision()
@@ -104,7 +134,7 @@ void update_panda_animation()
 
     if (game_state == JUMP)
     {
-         panda->i = (isRightPressed) ? 6 : 7 ;
+        panda->i = (isRightPressed) ? 6 : 7;
     }
     else
     {
