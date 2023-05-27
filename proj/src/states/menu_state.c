@@ -31,9 +31,9 @@ void update_mouse_menu()
             menu_state = GAME;
         }
     }
-    if (select_item (instructions)){
+    else if (select_item (instructions)){
         if (mouse_packet.lb){
-            menu_state = GAME;
+            menu_state = INSTRUCTIONS;
         }
     }
 }

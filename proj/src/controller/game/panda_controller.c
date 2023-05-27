@@ -2,8 +2,7 @@
 
 bool above()
 {
-    return panda->y + panda->height[panda->i] >= (collide_item->y -5) && 
-    (panda->y + panda->height[panda->i] <= (collide_item->y +5 ));
+    return (panda->y + panda->height[panda->i] >= (collide_item->y - 5));
 }
 
 void move_left()
@@ -30,11 +29,17 @@ void fall(uint32_t time, uint32_t y)
 
 bool collide_with_items()
 {
-    if (collide(panda, dirt_block))
+    if (collide(panda, dirt_block_start))
     {
-        collide_item = dirt_block;
+        collide_item = dirt_block_start;
+        return true;
+    }  
+    if (collide(panda, dirt_block_end))
+    {
+        collide_item = dirt_block_end;
         return true;
     }    
+    
     if (collide(panda, little_block))
     {
         collide_item = little_block;
@@ -73,15 +78,12 @@ void handle_boundary_conditions()
 
 void fix_collision()
 {
-    printf("FIXING COLISION\n");
+    printf("FIXING COLISIO\n");
    if (!above()){
         printf("IT IS NOT ABOVE\n");
         while (collide(panda, collide_item))
             panda->x += isRightPressed ? -1 : 1;
-   }
-    else {
-        printf("IT IS ABOVE %d, %d, %d\n", panda->y, panda->y + panda->height[panda->i], collide_item->y);
-    }
+}
     
 }
 
@@ -102,7 +104,7 @@ void update_panda_animation()
 
     if (game_state == JUMP)
     {
-        panda->i = 6;
+         panda->i = (isRightPressed) ? 6 : 7 ;
     }
     else
     {

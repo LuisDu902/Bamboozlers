@@ -24,7 +24,6 @@ void update_keyboard_game(){
 
     switch (scancode){
         case R_KEY: case E_KEY:
-            if (item_state == DRAG)
             update_item_animation();
             break;
 
@@ -33,7 +32,8 @@ void update_keyboard_game(){
             break;
 
         case ARROW_UP:
-             if (game_state == INACTIVE || game_state == RUN){
+         printf("CHECKING COLLISIONS???\n");
+            if (game_state == INACTIVE || game_state == RUN){
                 y_time = 0;
                 ini_y = panda->y;
                 game_state = JUMP;
@@ -89,8 +89,9 @@ void update_panda_state(){
         isRightPressed ? move_right() : move_left();
         update_panda_animation();
         handle_boundary_conditions();
+        printf("CHECKING COLLISIONS\n");
         if (collide_with_items()){
-             printf("COLLIDED\n");
+             printf("SHOULD\n");
             fix_collision();
             game_state = INACTIVE;
         }

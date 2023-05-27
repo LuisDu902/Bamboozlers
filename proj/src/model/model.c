@@ -5,12 +5,14 @@ void create_sprites()
     create_mouse_sprites();
     create_menu_sprites();
     create_game_sprites();
+    create_instructions_sprites();
 }
 
 void destroy_sprites()
 {
     destroy_menu_sprites();
     destroy_game_sprites();
+    destroy_instructions_sprites();
     destroy_sprite(cursor);
 }
 

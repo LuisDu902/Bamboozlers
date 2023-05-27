@@ -6,6 +6,7 @@
 #include "states/state.h"
 #include "game_viewer.h"
 #include "menu_viewer.h"
+#include "instructions_viewer.h"
 
 int (draw_sprite)(Sprite *sprite);
 

@@ -10,10 +10,11 @@ int (draw_game_menu)()
     
     if (draw_sprite(background) ) return 1;
     if (draw_sprite(lava)) return 1;
+    if (draw_sprite(bamboo)) return 1;
     if( draw_timer() ) return 1;
     if (draw_sprite(home)) return 1;
     if(draw_sprite(panda) ) return 1;
-    if (draw_sprite(dirt_block) ) return 1;
+    if (draw_sprite(dirt_block_end) ) return 1;
     if (draw_sprite(dirt_block_start) ) return 1;
     if (draw_sprite(little_block) ) return 1;
     if (draw_sprite(big_block) ) return 1;

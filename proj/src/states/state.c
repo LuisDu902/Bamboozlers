@@ -19,6 +19,9 @@ void update_keyboard_state()
     case GAME:
         update_keyboard_game();
         break;
+    case INSTRUCTIONS:
+         update_keyboard_instructions();
+         break;
     case GAME_OVER:
         // update_keyboard_menu();
         return;
@@ -44,8 +47,9 @@ void update_mouse_state()
         case GAME:
             update_mouse_game();
             break;
-        case LEVEL_SELECTION:
-        case GAME_OVER:
+        case INSTRUCTIONS:
+            update_mouse_instructions();
+            break;
         case EXIT:
             return;
         default:

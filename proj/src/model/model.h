@@ -4,6 +4,7 @@
 
 #include "menu.h"
 #include "game.h"
+#include "instructions.h"
 #include "xpm/cursor.xpm"
 
 Sprite* cursor;

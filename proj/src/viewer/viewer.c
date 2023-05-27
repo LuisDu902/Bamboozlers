@@ -35,6 +35,9 @@ int(draw_menu)()
     case LEVEL_SELECTION:
         draw_game_menu();
         break;
+    case INSTRUCTIONS:
+        draw_instructions_menu();
+        break;
     case GAME:
         draw_game_menu();
         break;
@@ -56,13 +59,7 @@ int(draw_cursor)()
             cursor->i = 1;
             menu_play->i = 1;
         }
-        else
-        {
-            cursor->i = 0;
-            menu_play->i = 0;
-        }
-        
-        if (select_item(instructions)){
+        else if (select_item(instructions)){
             cursor->i = 1;
             instructions->i = 1;
         }
@@ -70,6 +67,7 @@ int(draw_cursor)()
         {
             cursor->i = 0;
             instructions->i = 0;
+            menu_play->i = 0;
         }
         return draw_sprite(cursor);
         break;
@@ -92,7 +90,10 @@ int(draw_cursor)()
         }
         return draw_sprite(cursor);
     case LEVEL_SELECTION:
-
+    case INSTRUCTIONS:
+    cursor->i = 0;
+    return draw_sprite(cursor);
+        
     case GAME_OVER:
     case EXIT:
         return 0;
