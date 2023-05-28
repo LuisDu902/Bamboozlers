@@ -1,29 +1,31 @@
 #include "game_viewer.h"
 
-int minutes=0;
-int seconds=0;
+ int minutes=0;
+ int seconds=0;
 extern int counter;
-extern bool Darkmode;
-extern bool alarmInterrupt;
+extern bool darkMode;
+extern uint8_t hour;
+extern Menu_state menu_state;
 
-void handle_alarm_int(bool* alarmInterrupt){
-    if(*alarmInterrupt){
-        set_darkMode_alarm();
-        *alarmInterrupt=false;
-    }
-}
+
 int (draw_game_menu)()
 {    
     if (draw_map() ) return 1;
-    if(Darkmode){
-    if (draw_sprite(background) ) return 1;}
+    if (draw_inventory()) return 1;
+    if(darkMode){
+        background->i=2;
+         if (draw_sprite(background) ) return 1;}
+    else {
+        background->i=0;
+        if (draw_sprite(background) ) return 1;
+    }
+    if (draw_sprite(grama)) return 1;
     if (draw_sprite(lava)) return 1;
     if (draw_sprite(bamboo)) return 1;
-    if( draw_timer() ) return 1;
+    if( draw_timer()) return 1;
     if (draw_sprite(home)) return 1;
-    if(draw_sprite(panda)) return 1;
-    if (draw_sprite(dirt_block_end) ) return 1;
-    if (draw_sprite(dirt_block_start) ) return 1;
+    if(draw_sprite(panda) ) return 1;
+    
     if (draw_sprite(little_block) ) return 1;
     if (draw_sprite(big_block) ) return 1;
     if (draw_sprite(little_plank)) return 1;
@@ -43,6 +45,15 @@ int(draw_map)() {
     return 0;
 }
 
+int (draw_inventory)(){
+    if (vg_draw_rectangle(500,500, 80, 80, GREY)) return 1;
+    if (vg_draw_rectangle(500,500, 80, 80, GREY)) return 1;
+    if (vg_draw_rectangle(500,500, 80, 80, GREY)) return 1;
+    return 0;
+}
+
+
+
 int(draw_timer)(){
     
     if(counter % 30==0){
@@ -56,6 +67,7 @@ int(draw_timer)(){
     timer[1]->i=minutes%10;
     timer[2]->i=seconds/10;
     timer[3]->i=seconds%10;
+
     if(draw_sprite(timer[0])) return 1;
     if(draw_sprite(timer[1])) return 1;
     if(draw_sprite(timer[2])) return 1;

@@ -15,10 +15,8 @@ typedef enum {
     RUN,
     JUMP,
     FALL,
-    WALL_CLIMB,
-    CARRY,
-    DIE
-} Game_state;
+    DEAD,
+} Panda_state;
 
 typedef enum {INIT, DRAG} Item_state;
 

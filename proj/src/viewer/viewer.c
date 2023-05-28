@@ -17,7 +17,7 @@ int(draw_sprite)(Sprite *sprite)
             color = sprite->pixmap_array[sprite->i][col + row * width];
             if (color == TRANSPARENT)
                 continue;
-            if (vg_draw_pixel(x + col, y + row, color) )
+            if (vg_draw_pixel(x + col, y + row, color))
                 return 1;
         }
     }
@@ -42,7 +42,7 @@ int(draw_menu)()
         draw_game_menu();
         break;
     case GAME_OVER:
-        draw_game_menu();
+        draw_game_over_menu();
         break;
     case EXIT:
         return 0;
@@ -55,11 +55,13 @@ int(draw_cursor)()
     switch (menu_state)
     {
     case MENU:
-        if (select_item(menu_play)){
+        if (select_item(menu_play))
+        {
             cursor->i = 1;
             menu_play->i = 1;
         }
-        else if (select_item(instructions)){
+        else if (select_item(instructions))
+        {
             cursor->i = 1;
             instructions->i = 1;
         }
@@ -74,13 +76,15 @@ int(draw_cursor)()
     case GAME:
         if (item_state == INIT)
         {
-            if ((select_item(little_block) && !is_in_map(little_block)) || 
-                (select_item(little_plank) && !is_in_map(little_plank)) || 
-                (select_item(big_plank) && !is_in_map(big_plank)) 
-            ){
+            if ((select_item(little_block) && !is_in_map(little_block)) ||
+                (select_item(little_plank) && !is_in_map(little_plank)) ||
+                (select_item(big_block) && !is_in_map(big_block)) ||
+                (select_item(big_plank) && !is_in_map(big_plank)))
+            {
                 cursor->i = 1;
             }
-            else{
+            else
+            {
                 cursor->i = 0;
             }
         }
@@ -91,10 +95,29 @@ int(draw_cursor)()
         return draw_sprite(cursor);
     case LEVEL_SELECTION:
     case INSTRUCTIONS:
-    cursor->i = 0;
-    return draw_sprite(cursor);
-        
+        cursor->i = 0;
+        return draw_sprite(cursor);
+
     case GAME_OVER:
+        if (select_item(play_again))
+        {
+            cursor->i = 1;
+            play_again->i = 1;
+        }
+        else if (select_item(game_over_exit))
+        {
+            cursor->i = 1;
+            game_over_exit->i = 1;
+        }
+        else
+        {
+            cursor->i = 0;
+            game_over_exit->i = 0;
+            play_again->i = 0;
+        }
+        return draw_sprite(cursor);
+        break;
+
     case EXIT:
         return 0;
     }

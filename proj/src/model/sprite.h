@@ -14,5 +14,6 @@ typedef struct {
 
 Sprite *create_sprite_xpm(xpm_map_t *sprites, int num_sprites, int x, int y);
 void destroy_sprite(Sprite *sprite);
+void setPos(Sprite* sprite, int x, int y);
 
 #endif

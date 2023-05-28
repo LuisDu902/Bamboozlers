@@ -3,9 +3,10 @@
 Menu_state menu_state = MENU;
 
 extern uint8_t byte_no;
-extern int counter;
+
 extern struct packet mouse_packet;
-extern bool alarmInterrupt;
+
+extern Item_state item_state;
 
 void update_keyboard_state()
 {
@@ -21,10 +22,10 @@ void update_keyboard_state()
         update_keyboard_game();
         break;
     case INSTRUCTIONS:
-         update_keyboard_instructions();
-         break;
+        update_keyboard_instructions();
+        break;
     case GAME_OVER:
-        // update_keyboard_menu();
+        update_keyboard_game_over();
         return;
     case EXIT:
         return;
@@ -37,7 +38,8 @@ void update_mouse_state()
 {
     mouse_ih();
     sync_packet();
-    if (byte_no == 3){
+    if (byte_no == 3)
+    {
         byte_no = 0;
         update_cursor_position();
         switch (menu_state)
@@ -51,20 +53,32 @@ void update_mouse_state()
         case INSTRUCTIONS:
             update_mouse_instructions();
             break;
+        case GAME_OVER:
+            update_mouse_game_over();
         case EXIT:
             return;
         default:
             break;
         }
     }
-    
 }
 
 void update_timer_state()
 {
-    if (menu_state == GAME){
-        timer_int_handler();
-        update_panda_state();
+    if (menu_state == GAME)
+    {
+        if (panda_state == DEAD)
+        {
+            menu_state = GAME_OVER;
+        }
+        else if (collide(panda, home) && !is_in_map(bamboo))
+            menu_state = MENU;
+        else
+        {
+            timer_int_handler();
+            if (item_state == INIT)
+                update_panda_state();
+        }
     }
     draw_menu();
     draw_cursor();
@@ -72,10 +86,7 @@ void update_timer_state()
     clear_drawing_buffer();
 }
 
-void rtc_handler(){
-  rtc_ih();
-  handle_alarm_int(&alarmInterrupt);
-}
+
 
 void update_cursor_position(){
     if (mouse_packet.y_ov|| mouse_packet.x_ov) return;
@@ -83,20 +94,23 @@ void update_cursor_position(){
     int16_t new_x = cursor->x + mouse_packet.delta_x;
     int16_t new_y = cursor->y - mouse_packet.delta_y;
 
-    if (new_x < 0) cursor->x = 0;
-    else if (new_x >= (xRes-cursor->width[cursor->i])) cursor->x = (xRes-cursor->width[cursor->i]);
-    else cursor->x = new_x;
+    if (new_x < 0)
+        cursor->x = 0;
+    else if (new_x >= (xRes - cursor->width[cursor->i]))
+        cursor->x = (xRes - cursor->width[cursor->i]);
+    else
+        cursor->x = new_x;
 
-    if (new_y < 0) cursor->y = 0;
-    else if (new_y >= (yRes-cursor->height[cursor->i])) cursor->y = (yRes-cursor->height[cursor->i]);
-    else cursor->y = new_y;
-
+    if (new_y < 0)
+        cursor->y = 0;
+    else if (new_y >= (yRes - cursor->height[cursor->i]))
+        cursor->y = (yRes - cursor->height[cursor->i]);
+    else
+        cursor->y = new_y;
 }
 
-bool select_item(Sprite* item)
+bool select_item(Sprite *item)
 {
     return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
-           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i] ;        
+           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i];
 }
-
-

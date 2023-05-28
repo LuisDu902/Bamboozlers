@@ -8,12 +8,14 @@ int16_t item_x, item_y, off_x, off_y;
 
 extern Sprite* little_plank;
 extern Sprite* big_plank;
-extern Sprite* dirt_block_start;
-extern Sprite* dirt_block_end;
+extern Sprite* bamboo;
+extern Sprite* home;
+extern Sprite* lava;
 extern Sprite* little_block;
 extern Sprite* big_block;
 extern Sprite* panda;
 extern Sprite* cursor;
+extern Sprite* grama;
 extern uint8_t scancode;
 
 Sprite* item;
@@ -24,6 +26,7 @@ void check_item_pos();
 void update_item_pos();
 
 void update_item_animation();
+void update_inventory();
 
 #endif 
 

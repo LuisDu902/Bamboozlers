@@ -3,8 +3,9 @@
 
 #include "menu_state.h"
 #include "game_state.h"
-#include "controller/RTC/rtc.h"
 #include "instructions_state.h"
+#include "game_over_state.h"
+#include "controller/RTC/rtc.h"
 
 typedef enum {
     MENU,
@@ -19,7 +20,7 @@ void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();
 void update_cursor_position();
-void rtc_handler();
+
 bool select_item(Sprite* item);
 
 #endif

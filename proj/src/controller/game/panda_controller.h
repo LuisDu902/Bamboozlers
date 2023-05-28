@@ -5,9 +5,10 @@
 
 
 extern Sprite* panda;
-extern Sprite* dirt_block_start;
-extern Sprite* dirt_block_end;
+//extern Sprite* dirt_block_start;
+//extern Sprite* dirt_block_end;
 extern Sprite* little_plank;
+extern Sprite* grama;
 extern Sprite* big_plank;
 extern Sprite* little_block;
 extern Sprite* big_block;
@@ -15,11 +16,12 @@ extern Sprite* item;
 
 Sprite* collide_item;
 
-extern Game_state game_state;
+extern Panda_state panda_state;
 
 extern bool isRightPressed;
+extern bool isLeftPressed   ;
 
-bool above();
+bool above(Sprite* item);
 
 void move_left();
 void move_right();
@@ -30,7 +32,7 @@ void fall(uint32_t time, uint32_t y);
 bool hit_floor();
 void handle_boundary_conditions();
 bool collide_with_items();
-
+bool above_any_item();
 void fix_collision();
 void fix_jump_collision();
 void fix_fall_collision();

@@ -1,19 +1,14 @@
-#include <lcom/lcf.h>
 #include "rtc.h"
 
+int hook_rtc = 3;
 
-typedef struct {
-    uint8_t hours;
-    uint8_t minutes;
-    uint8_t seconds;
-} real_time_clock_info;
-int hook_rtc = 5;
-real_time_clock_info rtc_info;
-bool Darkmode=false;
-bool alarmInterrupt=false;
+uint8_t hour = 0, minute = 0, second = 0;
 
 
-int (rtc_subscribe_int)(uint32_t *bit_no) {
+bool alarmInterrupt = false;
+bool darkMode=false;
+
+int (rtc_subscribe_int)(uint8_t *bit_no) {
   *bit_no=BIT(hook_rtc);
   return sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &hook_rtc);
 }
@@ -53,41 +48,24 @@ int disable_update(){
     return sys_outb(RTC_DATA_REG,reg);
 }
 
-int set_rtc_interrupt( bool value){
+int set_rtc_interrupts(interruptType interrupt, bool value){
     uint8_t reg;
     sys_outb(RTC_ADDR_REG, RTC_REG_B);
     util_sys_inb(RTC_DATA_REG, &reg);
-
-    reg = value ? (RTC_AIE | reg) : (reg & (~RTC_AIE));
-
+    switch(interrupt){
+        case UPDATE:
+            reg = value ? (RTC_UIE | reg) : (reg & (~RTC_UIE));
+            break;
+        case ALARM:
+            reg = value ? (RTC_AIE | reg) : (reg & (~RTC_AIE));
+            break;
+        case PERIODIC:
+            reg = value ? (RTC_PIE | reg) : (reg & (~RTC_PIE));
+            break;
+    }
     sys_outb(RTC_ADDR_REG, RTC_REG_B);
     sys_outb(RTC_DATA_REG, reg);
     return 0;
-}
-void set_darkMode_alarm(){
-    uint8_t darkMode_alarm;
-
-    if(rtc_read_info(RTC_REG_HOUR, &darkMode_alarm)){
-        printf("Could not read the second to alarm!");
-    }
-    if(darkMode_alarm <6 || darkMode >19){
-        darkMode_alarm=6;
-        darkMode=true;
-    }
-    else {
-        darkMode=false; 
-        darkMode_alarm=20;
-    }
-
-    darkMode_alarm=decimal_to_bcd(darkMode_alarm);
-    sys_outb(RTC_ADDR_REG, RTC_REG_SEC_ALRM);
-    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
-
-    sys_outb(RTC_ADDR_REG, RTC_REG_MIN_ALRM);
-    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
-
-    sys_outb(RTC_ADDR_REG, RTC_REG_HOUR_ALRM);
-    sys_outb(RTC_DATA_REG, darkMode_alarm);
 }
 
 void (rtc_ih)(){
@@ -95,14 +73,16 @@ void (rtc_ih)(){
     sys_outb(RTC_ADDR_REG, RTC_REG_C);
     util_sys_inb(RTC_DATA_REG, &reg);
 
+    if(reg & RTC_UF)
+       rtc_updater();
+
     if(reg & RTC_AF)
         rtc_alarm();
 
+    if(reg & RTC_PF)
+        rtc_periodic();
 }
-void (rtc_alarm)(){
-    printf("alarm! ");
-    alarmInterrupt = true;
-}
+
 int (rtc_read_info)(uint8_t reg, uint8_t* value){
     if(OK != wait_until_finished_update()){
         printf("Could not wait for the end of update!");
@@ -120,19 +100,77 @@ int (rtc_read_info)(uint8_t reg, uint8_t* value){
     return OK;
 }
 
-void (rtc_updater)(){
-
-    disable_update();
-
-    if(rtc_read_info(RTC_REG_HOUR, &rtc_info.hour) || rtc_read_info(RTC_REG_MIN, &rtc_info.minute) || rtc_read_info(RTC_REG_SEC, &rtc_info.second)){
-        printf("Could not update the time!");
+int (bcd_to_decimal)(uint8_t hex){
+    if((((hex & 0xF0) >> 4) >= 10) || ((hex & 0x0F) >= 10)){
+        printf("Invalid BCD value!");
+        return !OK;
     }
+    return ((hex & 0xF0) >> 4) * 10 + (hex & 0x0F);
 
-    enable_update();
 }
 
 int (decimal_to_bcd)(uint8_t dec){
     return ((dec%10)) | ((dec/10) << 4);
 }
 
+void set_power_up_alarm(){
+    uint8_t hour_to_alarm;
 
+    if(rtc_read_info(RTC_REG_HOUR, &hour_to_alarm)){
+        printf("Could not read the second to alarm!");
+    }
+
+    if(hour >=19 || hour <6){
+        hour_to_alarm=decimal_to_bcd(6);
+        darkMode=true;
+    }else{
+        darkMode=false;
+    }
+    printf( "%d\n", minute);
+
+    printf("%d\n", hour);
+
+    printf("%d\n", second);
+
+    sys_outb(RTC_ADDR_REG, RTC_REG_SEC_ALRM);
+    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
+
+    sys_outb(RTC_ADDR_REG, RTC_REG_MIN_ALRM);
+    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
+
+    sys_outb(RTC_ADDR_REG, RTC_REG_HOUR_ALRM);
+    sys_outb(RTC_DATA_REG, hour_to_alarm);
+}
+
+
+
+void (rtc_updater)(){
+
+    disable_update();
+
+    if(rtc_read_info(RTC_REG_HOUR, &hour) || rtc_read_info(RTC_REG_MIN, &minute) || rtc_read_info(RTC_REG_SEC, &second)){
+        printf("Could not update the time!");
+    }
+
+
+    hour = bcd_to_decimal(hour);
+    minute = bcd_to_decimal(minute);
+    second = bcd_to_decimal(second);
+
+    enable_update();
+}
+
+void (rtc_alarm)(){
+    set_power_up_alarm();
+}
+
+void (rtc_periodic)(){
+}
+
+
+
+uint8_t get_second(){
+    rtc_read_info(RTC_REG_SEC, &second);
+    second = bcd_to_decimal(second);
+    return second;
+}

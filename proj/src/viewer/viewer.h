@@ -7,6 +7,7 @@
 #include "game_viewer.h"
 #include "menu_viewer.h"
 #include "instructions_viewer.h"
+#include "game_over_viewer.h"
 
 int (draw_sprite)(Sprite *sprite);
 
