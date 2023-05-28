@@ -1,12 +1,29 @@
 #include "menu_viewer.h"
 
-extern uint16_t xRes, yRes;
-
-int (draw_main_menu)()
+int(draw_main_menu)()
 {
-    if (draw_sprite(menu_title) ) return vg_exit();
-    if (draw_sprite(menu_play) ) return vg_exit();
-    if (draw_sprite(instructions) ) return vg_exit();
-    
+    if (draw_sprite(logo)) return 1;
+    if (draw_sprite(instructions))
+        return vg_exit();
+    if (draw_sprite(levels)) return vg_exit();
     return 0;
+}
+
+int(draw_menu_cursor)()
+{
+    if (select_item(levels))
+    {
+        cursor->i = levels->i = 1;
+        instructions->i = 0;
+    }
+    else if (select_item(instructions))
+    {
+        cursor->i = instructions->i = 1;
+        levels->i = 0;
+    }
+    else
+    {
+        cursor->i = instructions->i = levels->i = 0;
+    }
+    return draw_sprite(cursor);
 }

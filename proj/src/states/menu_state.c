@@ -14,8 +14,7 @@ void update_keyboard_menu()
     switch (scancode)
     {
     case ENTER:
-        map_set_up();
-        menu_state = GAME;
+        menu_state = LEVEL_SELECTION;
         break;
     case ESC_BREAK:
         menu_state = EXIT;
@@ -29,10 +28,9 @@ void update_mouse_menu()
 {
     if (mouse_packet.lb)
     {
-        if (select_item(menu_play))
+        if (select_item(levels))
         {
-            map_set_up();
-            menu_state = GAME;
+            menu_state = LEVEL_SELECTION;
         }
 
         else if (select_item(instructions))

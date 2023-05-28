@@ -17,10 +17,9 @@ void create_game_sprites()
     xpm_map_t little_plank_pixmaps[] = {(xpm_map_t)little_plank_xpm, (xpm_map_t)little_plank_r1_xpm, (xpm_map_t)little_plank_r2_xpm, (xpm_map_t)little_plank_r3_xpm, (xpm_map_t)little_plank_r4_xpm, (xpm_map_t)little_plank_r5_xpm, (xpm_map_t)little_plank_r6_xpm, (xpm_map_t)little_plank_r7_xpm};
     xpm_map_t big_plank_pixmaps[] = {(xpm_map_t)big_plank_xpm, (xpm_map_t)big_plank_r1_xpm, (xpm_map_t)big_plank_r2_xpm, (xpm_map_t)big_plank_r3_xpm, (xpm_map_t)big_plank_r4_xpm, (xpm_map_t)big_plank_r5_xpm, (xpm_map_t)big_plank_r6_xpm, (xpm_map_t)big_plank_r7_xpm};
     
-    xpm_map_t grama_pixmaps[] = {(xpm_map_t)grama_xpm};
-    xpm_map_t background_pixmaps[] = {(xpm_map_t)background_xpm,(xpm_map_t)background_2_xpm,(xpm_map_t)background_3_xpm};
-    xpm_map_t lava_pixmaps[] = {(xpm_map_t)lava_xpm};
-   
+    xpm_map_t maps_pixmaps[] = {(xpm_map_t)grama_xpm, (xpm_map_t)rock_xpm, (xpm_map_t)sand_xpm};
+    xpm_map_t background_pixmaps[] = {(xpm_map_t)background_xpm};
+    xpm_map_t lava_pixmaps[] = {(xpm_map_t)lava_xpm, (xpm_map_t)lava2_xpm, (xpm_map_t)lava3_xpm};
    
     xpm_map_t home_pixmaps[] = {(xpm_map_t)home_xpm};
     xpm_map_t bamboo_pixmaps[] = {(xpm_map_t)bamboo_xpm};
@@ -29,13 +28,12 @@ void create_game_sprites()
 
 
     background = create_sprite_xpm(background_pixmaps, 1, 25, 25);
-    lava = create_sprite_xpm(lava_pixmaps, 1, 25, 25);
-    grama = create_sprite_xpm(grama_pixmaps, 1, 25, 25);
-
+    lava = create_sprite_xpm(lava_pixmaps, 3, 25, 25);
+    map = create_sprite_xpm(maps_pixmaps, 3, 25, 25);
 
     home = create_sprite_xpm(home_pixmaps, 1, 680, 250);
 
-    panda = create_sprite_xpm(panda_pixmaps, 8, 25, 100);
+    panda = create_sprite_xpm(panda_pixmaps, 8, 40, 100);
    
    
     little_block = create_sprite_xpm(little_block_pixmaps, 1, 360, 520);
@@ -47,7 +45,7 @@ void create_game_sprites()
 
 
     for (int i = 0; i < 4 ; i++){
-        timer[i] = create_sprite_xpm(timer_pixmaps, 10, 100 + i*30, 525);
+        timer[i] = create_sprite_xpm(timer_pixmaps, 10, 40 + i*30, 525);
     }
     
 }

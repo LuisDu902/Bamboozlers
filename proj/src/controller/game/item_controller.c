@@ -34,7 +34,7 @@ void check_item_pos()
     if (!is_in_map(item) || collide(item, panda) || 
         collide(item, little_block) || collide(item, big_block) || 
         collide(item, little_plank) || collide(item, big_plank) || 
-        collide(item, grama) || collide(item, lava) || 
+        collide(item, map) || collide(item, lava) || 
         collide(item, home) || collide(item, bamboo))
     {
         item->x = item_x;
@@ -54,6 +54,11 @@ void update_item_animation()
 }
 
 void update_inventory(){
-    bamboo->x = 300; 
-    bamboo->y = 525;
+    setPos(bamboo, 190, 515);
+}
+
+bool select_item(Sprite *item)
+{
+    return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
+           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i];
 }

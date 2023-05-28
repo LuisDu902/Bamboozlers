@@ -7,6 +7,7 @@ void create_sprites()
     create_game_sprites();
     create_instructions_sprites();
     create_game_over_sprites();
+    create_level_select_sprites();
 }
 
 void destroy_sprites()
@@ -15,6 +16,7 @@ void destroy_sprites()
     destroy_game_sprites();
     destroy_instructions_sprites();
     destroy_game_over_sprites();
+    destroy_level_select_sprites();
     destroy_sprite(cursor);
 }
 

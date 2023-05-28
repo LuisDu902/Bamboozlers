@@ -16,6 +16,7 @@
 #define ENTER 0x1C
 #define R_KEY 0x13
 #define E_KEY 0x12
+#define Q_KEY 0x10
 
 /* KBC register ports */
 #define KBC_OUT_BUF 0x60

@@ -31,12 +31,12 @@ int init() {
     set_rtc_interrupts(UPDATE, true);
     set_rtc_interrupts(PERIODIC, true);
 
-    if (timer_set_frequency(0, 30) ) return 1;
+    if (timer_set_frequency(0, 30)) return 1;
 
-    if (set_main_buffer(VBE_DIRECT_600p) ) return 1;
+    if (set_main_buffer(VBE_DIRECT_600p)) return 1;
     set_drawing_buffer();
 
-    if (set_graphic_mode(VBE_DIRECT_600p) ) return 1;
+    if (set_graphic_mode(VBE_DIRECT_600p)) return 1;
 
     create_sprites();
 

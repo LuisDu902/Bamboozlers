@@ -1,9 +1,6 @@
 #include "viewer.h"
 
 extern Menu_state menu_state;
-extern Item_state item_state;
-
-extern Sprite *item;
 
 int(draw_sprite)(Sprite *sprite)
 {
@@ -33,7 +30,7 @@ int(draw_menu)()
         draw_main_menu();
         break;
     case LEVEL_SELECTION:
-        draw_game_menu();
+        draw_level_select_menu();
         break;
     case INSTRUCTIONS:
         draw_instructions_menu();
@@ -55,69 +52,18 @@ int(draw_cursor)()
     switch (menu_state)
     {
     case MENU:
-        if (select_item(menu_play))
-        {
-            cursor->i = 1;
-            menu_play->i = 1;
-        }
-        else if (select_item(instructions))
-        {
-            cursor->i = 1;
-            instructions->i = 1;
-        }
-        else
-        {
-            cursor->i = 0;
-            instructions->i = 0;
-            menu_play->i = 0;
-        }
-        return draw_sprite(cursor);
-        break;
+        return draw_menu_cursor();
     case GAME:
-        if (item_state == INIT)
-        {
-            if ((select_item(little_block) && !is_in_map(little_block)) ||
-                (select_item(little_plank) && !is_in_map(little_plank)) ||
-                (select_item(big_block) && !is_in_map(big_block)) ||
-                (select_item(big_plank) && !is_in_map(big_plank)))
-            {
-                cursor->i = 1;
-            }
-            else
-            {
-                cursor->i = 0;
-            }
-        }
-        else if (item_state == DRAG)
-        {
-            cursor->i = 2;
-        }
-        return draw_sprite(cursor);
+        return draw_game_cursor();
     case LEVEL_SELECTION:
+        return draw_level_cursor();
+       
     case INSTRUCTIONS:
         cursor->i = 0;
         return draw_sprite(cursor);
 
     case GAME_OVER:
-        if (select_item(play_again))
-        {
-            cursor->i = 1;
-            play_again->i = 1;
-        }
-        else if (select_item(game_over_exit))
-        {
-            cursor->i = 1;
-            game_over_exit->i = 1;
-        }
-        else
-        {
-            cursor->i = 0;
-            game_over_exit->i = 0;
-            play_again->i = 0;
-        }
-        return draw_sprite(cursor);
-        break;
-
+        return draw_game_over_cursor();
     case EXIT:
         return 0;
     }

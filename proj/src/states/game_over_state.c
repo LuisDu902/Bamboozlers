@@ -12,7 +12,7 @@ void update_keyboard_game_over()
 
     switch (scancode)
     {
-    case ENTER:
+    case ENTER: case Q_KEY:
         menu_state = MENU;
         break;
     case ESC_BREAK:
@@ -29,11 +29,10 @@ void update_mouse_game_over()
     {
         if (select_item(play_again))
         {
-            map_set_up();
-            menu_state = GAME;
+            menu_state = LEVEL_SELECTION;
         }
 
-        else if (select_item(game_over_exit))
+        else if (select_item(game_exit))
         {
             menu_state = EXIT;
         }

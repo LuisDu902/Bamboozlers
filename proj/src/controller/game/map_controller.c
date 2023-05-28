@@ -32,15 +32,36 @@ bool collide(Sprite *s1, Sprite *s2)
     return false;
 }
 
-void map_set_up(){
+void map_set_up(int level)
+{
     panda_state = INACTIVE;
     panda->i = big_plank->i = little_plank->i = counter = seconds = minutes = 0;
-    setPos(panda, 25, 100);
-    setPos(little_block, 360, 520);
-    setPos(big_block, 410, 510);
-    setPos(little_plank, 480, 535);
-    setPos(big_plank, 585, 535);
-    setPos(bamboo, 360, 350);
+
+    switch (level)
+    {
+    case 0:
+        setPos(panda, 40, 100);
+        setPos(home, 370, 50);
+        setPos(bamboo, 370, 350);
+
+        break;
+    case 1:
+        setPos(panda, 230, 100);
+        setPos(home, 405, 307);
+        setPos(bamboo, 320, 310);
+        break;
+    case 2:
+        setPos(panda, 40, 100);
+        setPos(home, 530, 330);
+        setPos(bamboo, 580, 90);
+        break;
+    }
+
+    setPos(little_block, 282, 520);
+    setPos(big_block, 364, 512);
+    setPos(little_plank, 455, 535);
+    setPos(big_plank, 582, 535);
     isRightPressed = isLeftPressed = false;
 
+    map->i = lava->i = level;
 }

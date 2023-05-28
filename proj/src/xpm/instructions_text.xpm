@@ -1,7 +1,7 @@
 /* XPM */
 static char * instructions_text_1_xpm[] = {
 "570 57 10 1",
-" 	c None",
+" 	c #FFFFFE",
 ".	c #FFFFFF",
 "+	c #4B4DBD",
 "@	c #4B4DBD",
@@ -72,7 +72,7 @@ static char * instructions_text_1_xpm[] = {
 /* XPM */
 static char * instructions_text_2_xpm[] = {
 "514 57 10 1",
-" 	c None",
+" 	c #FFFFFE",
 ".	c #FFFFFF",
 "+	c #4B4DBD",
 "@	c #4B4DBD",
@@ -143,7 +143,7 @@ static char * instructions_text_2_xpm[] = {
 /* XPM */
 static char * instructions_text_3_xpm[] = {
 "621 57 10 1",
-" 	c None",
+" 	c #FFFFFE",
 ".	c #FFFFFF",
 "+	c #4B4DBD",
 "@	c #4B4DBD",
@@ -214,7 +214,7 @@ static char * instructions_text_3_xpm[] = {
 /* XPM */
 static char * instructions_text_4_xpm[] = {
 "700 57 10 1",
-" 	c None",
+" 	c #FFFFFE",
 ".	c #FFFFFF",
 "+	c #4B4DBD",
 "@	c #4B4DBD",
@@ -285,7 +285,7 @@ static char * instructions_text_4_xpm[] = {
 /* XPM */
 static char * instructions_text_5_xpm[] = {
 "707 57 10 1",
-" 	c None",
+" 	c #FFFFFE",
 ".	c #FFFFFF",
 "+	c #4B4DBD",
 "@	c #4B4DBD",
@@ -356,7 +356,7 @@ static char * instructions_text_5_xpm[] = {
 /* XPM */
 static char * instructions_text_6_xpm[] = {
 "376 57 10 1",
-" 	c None",
+" 	c #FFFFFE",
 ".	c #FFFFFF",
 "+	c #4B4DBD",
 "@	c #4B4DBD",
