@@ -5,6 +5,7 @@ Menu_state menu_state = MENU;
 extern uint8_t byte_no;
 extern int counter;
 extern struct packet mouse_packet;
+extern bool alarmInterrupt;
 
 void update_keyboard_state()
 {
@@ -71,6 +72,10 @@ void update_timer_state()
     clear_drawing_buffer();
 }
 
+void rtc_handler(){
+  rtc_ih();
+  handle_alarm_int(&alarmInterrupt);
+}
 
 void update_cursor_position(){
     if (mouse_packet.y_ov|| mouse_packet.x_ov) return;
@@ -95,9 +100,3 @@ bool select_item(Sprite* item)
 }
 
 
-void update_rtc_state(){
-    if(counter %30 == 0){
-        if(rtc_is_updating() != 0) return ;
-        if(rtc_update_time() != 0) return ;
-    }
-}

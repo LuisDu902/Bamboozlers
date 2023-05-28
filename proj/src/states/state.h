@@ -18,9 +18,8 @@ typedef enum {
 void update_keyboard_state();
 void update_mouse_state();
 void update_timer_state();
-void update_rtc_state();
 void update_cursor_position();
-
+void rtc_handler();
 bool select_item(Sprite* item);
 
 #endif

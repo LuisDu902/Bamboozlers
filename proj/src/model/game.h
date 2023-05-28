@@ -29,7 +29,6 @@ Sprite *panda;
 Sprite *map;
 Sprite *bamboo;
 Sprite *timer[4];
-Sprite *rtc[4];
 
 void create_game_sprites();
 void destroy_game_sprites();
