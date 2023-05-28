@@ -88,7 +88,6 @@ int(timer_get_conf)(uint8_t timer, uint8_t *status) {
     return util_sys_inb(0x40 + timer, status);
 }
 
-
 void (timer_int_handler)(){
     counter++;
 }

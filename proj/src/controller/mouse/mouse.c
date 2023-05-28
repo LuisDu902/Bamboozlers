@@ -11,13 +11,13 @@ uint8_t byte;
 
 struct packet mouse_packet;
 
-int mouse_subscribe_int(uint32_t *bit_no)
+int (mouse_subscribe_int)(uint32_t *bit_no)
 {
     *bit_no = BIT(mouse_hook_id);
     return sys_irqsetpolicy(MOUSE_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &mouse_hook_id);
 }
 
-int mouse_unsubscribe_int()
+int (mouse_unsubscribe_int)()
 {
     return sys_irqrmpolicy(&mouse_hook_id);
 }
@@ -58,7 +58,7 @@ void(parse_packet)()
     }
 }
 
-int disable_data_reporting()
+int (disable_data_reporting)()
 {
 
     uint8_t cmd;
@@ -84,7 +84,7 @@ int disable_data_reporting()
     return 1;
 }
 
-int enable_data_reporting()
+int (enable_data_reporting)()
 {
 
     uint8_t cmd;

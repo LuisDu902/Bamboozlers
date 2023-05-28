@@ -3,11 +3,16 @@
 #include "controller/keyboard/keyboard.h"
 #include "controller/mouse/mouse.h"
 #include "controller/KBC/KBC.h"
+#include "controller/RTC/rtc.h"
 #include "model/model.h"
 #include "model/sprite.h"
+#include "viewer/menu_viewer.h"
+#include "viewer/game_viewer.h"
 #include "states/state.h"
 
-extern Menu_state menu_state;
+
+extern Menu_state menu_state; 
+uint8_t rtc_mask;
 uint32_t timer_mask, keyboard_mask, mouse_mask;
 
 int (main)(int argc, char *argv[]) {
@@ -22,7 +27,8 @@ int (main)(int argc, char *argv[]) {
 int init() {
 
     if (timer_set_frequency(0, 30)) return 1;
-
+    if (set_rtc_interrupt(true)) return 1;
+    
     if (set_main_buffer(VBE_DIRECT_600p)) return 1;
     set_drawing_buffer();
 
@@ -30,11 +36,15 @@ int init() {
 
     create_sprites();
 
-    if (timer_subscribe_interrupt(&timer_mask) ) return 1;
-    if (keyboard_subscribe_int(&keyboard_mask) ) return 1;
-    if (mouse_subscribe_int(&mouse_mask) ) return 1;
-
-    if (enable_data_reporting() ) return 1;
+    if (timer_subscribe_interrupt(&timer_mask)) return 1;
+    if (keyboard_subscribe_int(&keyboard_mask)) return 1;
+    if (mouse_subscribe_int(&mouse_mask)) return 1;
+    if (rtc_subscribe_int(&rtc_mask)) return 1;
+    
+    if (enable_data_reporting()) return 1;
+    
+    rtc_upd();
+    set_darkMode_alarm();
 
     return 0;
 }
@@ -42,15 +52,17 @@ int init() {
 
 int cleanup() {
 
-    if (set_text_mode() ) return 1;
+    if (set_rtc_interrupt(false)) return 1;
+    if (set_text_mode()) return 1;
 
     destroy_sprites();
 
-    if (timer_unsubscribe_int() ) return 1;
-    if (keyboard_unsubscribe_int() ) return 1;
-    if (mouse_unsubscribe_int() ) return 1;
+    if (timer_unsubscribe_int()) return 1;
+    if (keyboard_unsubscribe_int()) return 1;
+    if (mouse_unsubscribe_int()) return 1;
+    if (rtc_unsubscribe_int()!= 0) return 1;
 
-    if (disable_data_reporting() ) return 1;
+    if (disable_data_reporting()) return 1;
 
     return 0;
 }
@@ -75,11 +87,12 @@ int (proj_main_loop)(int argc, char *argv[]) {
                     if (msg.m_notify.interrupts & timer_mask) update_timer_state();
                     if (msg.m_notify.interrupts & keyboard_mask) update_keyboard_state();
                     if (msg.m_notify.interrupts & mouse_mask)  update_mouse_state();
+                    if (msg.m_notify.interrupts & rtc_mask) rtc_ih();
             }
         }
     }
     
-    if (cleanup() ) return 1;
+    if (cleanup()) return 1;
 
     return 0;
 }

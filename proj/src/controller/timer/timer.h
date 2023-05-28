@@ -13,7 +13,6 @@
  * @{
  */
 
-
 /**
  * @brief Sets the frequency of a timer.
  *
