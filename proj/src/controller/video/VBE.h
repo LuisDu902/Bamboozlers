@@ -4,6 +4,7 @@
 #include <lcom/lcf.h>
 
 #define TRANSPARENT 0xFFFFFE
+#define GREY 0x3B3838
 
 #define VIDEO_SERVICES 0x10
 

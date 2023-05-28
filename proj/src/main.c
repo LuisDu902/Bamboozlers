@@ -1,4 +1,3 @@
-#include <lcom/lcf.h>
 #include "controller/timer/timer.h"
 #include "controller/video/graphics.h"
 #include "controller/keyboard/keyboard.h"

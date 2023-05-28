@@ -7,7 +7,7 @@ extern int counter;
 int (draw_game_menu)()
 {    
     if (draw_map() ) return 1;
-    
+    if (draw_inventory()) return 1;
     if (draw_sprite(background) ) return 1;
     if (draw_sprite(grama)) return 1;
     if (draw_sprite(lava)) return 1;
@@ -32,6 +32,15 @@ int(draw_map)() {
     }
     return 0;
 }
+
+int (draw_inventory)(){
+    if (vg_draw_rectangle(500,500, 80, 80, GREY)) return 1;
+    if (vg_draw_rectangle(500,500, 80, 80, GREY)) return 1;
+    if (vg_draw_rectangle(500,500, 80, 80, GREY)) return 1;
+    return 0;
+}
+
+
 
 int(draw_timer)(){
     

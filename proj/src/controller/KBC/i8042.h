@@ -1,8 +1,6 @@
 #ifndef _LCOM_I8042_H_
 #define _LCOM_I8042_H_
 
-#include <lcom/lcf.h>
-
 /* IRQ lines */
 #define KEYBOARD_IRQ 1
 #define MOUSE_IRQ 12

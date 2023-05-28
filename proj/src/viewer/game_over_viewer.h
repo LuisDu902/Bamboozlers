@@ -5,6 +5,8 @@
 
 
 extern Sprite* game_over_text;
+extern Sprite* play_again;
+extern Sprite* game_over_exit;
 
 
 

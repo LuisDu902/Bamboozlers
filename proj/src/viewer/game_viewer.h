@@ -18,5 +18,7 @@ extern Sprite* bamboo;
 
 int (draw_game_menu)();
 int (draw_map)();
+int (draw_inventory)();
+int (draw_map)();
 int (draw_timer)();
 #endif

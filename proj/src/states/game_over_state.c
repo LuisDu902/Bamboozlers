@@ -25,5 +25,17 @@ void update_keyboard_game_over()
 void update_mouse_game_over()
 {
    
-   
+   if (mouse_packet.lb)
+    {
+        if (select_item(play_again))
+        {
+            map_set_up();
+            menu_state = GAME;
+        }
+
+        else if (select_item(game_over_exit))
+        {
+            menu_state = EXIT;
+        }
+    }
 }

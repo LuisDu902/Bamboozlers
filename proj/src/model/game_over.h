@@ -4,6 +4,8 @@
 #include "sprite.h"
 
 Sprite *game_over_text;
+Sprite *play_again;
+Sprite *game_over_exit;
 
 
 

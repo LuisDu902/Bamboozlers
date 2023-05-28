@@ -99,6 +99,25 @@ int(draw_cursor)()
         return draw_sprite(cursor);
 
     case GAME_OVER:
+        if (select_item(play_again))
+        {
+            cursor->i = 1;
+            play_again->i = 1;
+        }
+        else if (select_item(game_over_exit))
+        {
+            cursor->i = 1;
+            game_over_exit->i = 1;
+        }
+        else
+        {
+            cursor->i = 0;
+            game_over_exit->i = 0;
+            play_again->i = 0;
+        }
+        return draw_sprite(cursor);
+        break;
+
     case EXIT:
         return 0;
     }

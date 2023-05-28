@@ -20,9 +20,6 @@ void update_keyboard_menu()
     case ESC_BREAK:
         menu_state = EXIT;
         break;
-    case ARROW_DOWN:
-        menu_state = GAME_OVER;
-        break;
     default:
         break;
     }
@@ -30,13 +27,16 @@ void update_keyboard_menu()
 
 void update_mouse_menu()
 {
-    if (select_item (menu_play)){
-        if (mouse_packet.lb){
+    if (mouse_packet.lb)
+    {
+        if (select_item(menu_play))
+        {
+            map_set_up();
             menu_state = GAME;
         }
-    }
-    else if (select_item (instructions)){
-        if (mouse_packet.lb){
+
+        else if (select_item(instructions))
+        {
             menu_state = INSTRUCTIONS;
         }
     }
