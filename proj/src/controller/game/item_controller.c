@@ -34,7 +34,7 @@ void check_item_pos()
     if (!is_in_map(item) || collide(item, panda) || 
         collide(item, little_block) || collide(item, big_block) || 
         collide(item, little_plank) || collide(item, big_plank) || 
-        collide(item, grama) || collide(item, lava) || 
+        collide(item, map) || collide(item, lava) || 
         collide(item, home) || collide(item, bamboo))
     {
         item->x = item_x;

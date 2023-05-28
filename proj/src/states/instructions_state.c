@@ -13,7 +13,7 @@ void update_keyboard_instructions()
 
     switch (scancode)
     {
-    case ENTER:
+    case ENTER: case Q_KEY: 
         menu_state = MENU;
         break;
     case ESC_BREAK:
@@ -23,8 +23,4 @@ void update_keyboard_instructions()
     }
 }
 
-void update_mouse_instructions()
-{
-   
-   
-}
+

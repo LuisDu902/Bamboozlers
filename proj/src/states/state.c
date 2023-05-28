@@ -50,9 +50,6 @@ void update_mouse_state()
         case LEVEL_SELECTION:
             update_mouse_level();
             break;
-        case INSTRUCTIONS:
-            update_mouse_instructions();
-            break;
         case GAME_OVER:
             update_mouse_game_over();
             break;

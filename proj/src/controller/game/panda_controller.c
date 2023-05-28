@@ -58,7 +58,7 @@ void fall(uint32_t time, uint32_t y)
 
 bool above_any_item()
 {
-    return above(grama);
+    return above(map);
 }
 
 bool collide_with_items()
@@ -84,9 +84,9 @@ bool collide_with_items()
         collide_item = big_block;
         return true;
     }
-    if (collide(panda, grama))
+    if (collide(panda, map))
     {
-        collide_item = grama;
+        collide_item = map;
         return true;
     }
     return false;

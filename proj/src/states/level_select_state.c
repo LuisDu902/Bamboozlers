@@ -14,6 +14,9 @@ void update_keyboard_level()
 
     switch (scancode)
     {
+    case Q_KEY:
+        menu_state = MENU;
+        break;
     case ESC_BREAK:
         menu_state = EXIT;
         break;
@@ -24,24 +27,24 @@ void update_keyboard_level()
 
 void update_mouse_level()
 {
-   
-   if (mouse_packet.lb)
+
+    if (mouse_packet.lb)
     {
         if (select_item(level_one))
         {
-            map_set_up();
+            map_set_up(0);
             menu_state = GAME;
         }
 
         else if (select_item(level_two) && level_state != LEVEL_ONE)
         {
-            map_set_up();
+            map_set_up(1);
             menu_state = GAME;
         }
 
         else if (select_item(level_three) && level_state == LEVEL_THREE)
         {
-            map_set_up();
+            map_set_up(2);
             menu_state = GAME;
         }
     }

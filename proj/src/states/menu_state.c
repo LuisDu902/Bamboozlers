@@ -28,7 +28,7 @@ void update_mouse_menu()
 {
     if (mouse_packet.lb)
     {
-        if (select_item(menu_play))
+        if (select_item(levels))
         {
             menu_state = LEVEL_SELECTION;
         }

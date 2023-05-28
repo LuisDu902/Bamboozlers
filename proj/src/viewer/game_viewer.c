@@ -14,7 +14,7 @@ int(draw_game_menu)()
         return 1;
     if (draw_sprite(background))
         return 1;
-    if (draw_sprite(grama))
+    if (draw_sprite(map))
         return 1;
     if (draw_sprite(lava))
         return 1;

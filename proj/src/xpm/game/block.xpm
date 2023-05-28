@@ -1116,7 +1116,7 @@ static char * little_block_xpm[] = {
 /* XPM */
 static char * big_block_xpm[] = {
 "55 55 1842 2",
-"  	c None",
+"  	c #FFFFFE",
 ". 	c #4F3823",
 "+ 	c #533C26",
 "@ 	c #543C26",

@@ -14,8 +14,8 @@ uint32_t timer_mask, keyboard_mask, mouse_mask;
 
 int (main)(int argc, char *argv[]) {
     lcf_set_language("EN-US");
-    lcf_trace_calls("/home/lcom/labs/src/debug/trace.txt");
-    lcf_log_output("/home/lcom/labs/src/debug/output.txt");
+    lcf_trace_calls("/home/lcom/labs/project/debug/trace.txt");
+    lcf_log_output("/home/lcom/labs/project/debug/output.txt");
     if (lcf_start(argc, argv)) return 1;
     lcf_cleanup();
     return 0;
@@ -23,12 +23,12 @@ int (main)(int argc, char *argv[]) {
 
 int init() {
 
-    if (timer_set_frequency(0, 30) ) return 1;
+    if (timer_set_frequency(0, 30)) return 1;
 
-    if (set_main_buffer(VBE_DIRECT_600p) ) return 1;
+    if (set_main_buffer(VBE_DIRECT_600p)) return 1;
     set_drawing_buffer();
 
-    if (set_graphic_mode(VBE_DIRECT_600p) ) return 1;
+    if (set_graphic_mode(VBE_DIRECT_600p)) return 1;
 
     create_sprites();
 

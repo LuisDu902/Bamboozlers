@@ -26,6 +26,9 @@ void update_keyboard_game()
 
     switch (scancode)
     {
+    case Q_KEY:
+        menu_state = LEVEL_SELECTION;
+        break;
     case R_KEY:
     case E_KEY:
         if (item_state == DRAG)

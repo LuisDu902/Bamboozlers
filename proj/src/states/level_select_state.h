@@ -9,8 +9,13 @@
 #include "state.h"
 
 extern Sprite* cursor;
-
+/**
+ * @brief Updates the menu state based on the keyboard input in the instructions menu.
+ */
 void update_keyboard_level();
+/**
+ * @brief Updates the menu state based on the mouse input in the instructions menu.
+ */
 void update_mouse_level();
 
 typedef enum {
