@@ -9,6 +9,7 @@ int16_t item_x, item_y, off_x, off_y;
 extern Sprite* little_plank;
 extern Sprite* big_plank;
 extern Sprite* bamboo;
+extern Sprite* cursor;
 extern Sprite* home;
 extern Sprite* lava;
 extern Sprite* little_block;
@@ -27,6 +28,8 @@ void update_item_pos();
 
 void update_item_animation();
 void update_inventory();
+
+bool select_item(Sprite *item);
 
 #endif 
 

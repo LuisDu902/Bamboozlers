@@ -5,6 +5,7 @@
 #include "game_state.h"
 #include "instructions_state.h"
 #include "game_over_state.h"
+#include "level_select_state.h"
 
 typedef enum {
     MENU,

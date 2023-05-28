@@ -9,6 +9,8 @@
 
 void update_keyboard_game();
 void update_mouse_game();
+void update_timer_game();
 
 void update_panda_state();
+
 #endif

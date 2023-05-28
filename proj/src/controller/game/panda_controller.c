@@ -7,7 +7,7 @@ extern uint16_t yRes;
 bool above(Sprite *item)
 {
 
-    if (item->height[0] != 455 && panda->y + panda->height[panda->i] >= item->y +1)
+    if (item->height[0] != 455 && panda->y + panda->height[panda->i] >= item->y + 1)
         return false;
     uint16_t feet = panda->height[panda->i] - 1;
 
@@ -63,7 +63,6 @@ bool above_any_item()
 
 bool collide_with_items()
 {
-    
 
     if (collide(panda, little_block))
     {
@@ -100,6 +99,8 @@ void handle_boundary_conditions()
 {
     if (panda->x < 25)
         panda->x = 25;
+    if (panda->y < 25)
+        panda->y = 25;
     if (panda->x + panda->width[panda->i] > 15 + MAP_WIDTH)
         panda->x = 15 + MAP_WIDTH - panda->width[panda->i];
     if (panda->y + panda->height[panda->i] >= 20 + MAP_HEIGHT)
@@ -113,15 +114,18 @@ void fix_collision()
         if (isRightPressed)
         {
             if (collide_item->height[0] != 455 && panda->x < collide_item->x)
-                while (collide(panda, collide_item)){
+                while (collide(panda, collide_item))
+                {
                     panda->x--;
                 }
 
             else if (collide_item->height[0] == 455)
-                while (collide(panda, collide_item)){
+                while (collide(panda, collide_item))
+                {
                     panda->x--;
                 }
-            else {
+            else
+            {
                 move_left();
             }
         }
@@ -137,7 +141,8 @@ void fix_collision()
                 {
                     panda->x++;
                 }
-            else {
+            else
+            {
                 move_right();
             }
         }

@@ -6,6 +6,7 @@
 #include "game.h"
 #include "instructions.h"
 #include "game_over.h"
+#include "level_select.h"
 #include "xpm/cursor.xpm"
 
 Sprite* cursor;

@@ -35,11 +35,11 @@ bool collide(Sprite *s1, Sprite *s2)
 void map_set_up(){
     panda_state = INACTIVE;
     panda->i = big_plank->i = little_plank->i = counter = seconds = minutes = 0;
-    setPos(panda, 25, 100);
-    setPos(little_block, 360, 520);
-    setPos(big_block, 410, 510);
-    setPos(little_plank, 480, 535);
-    setPos(big_plank, 585, 535);
+    setPos(panda, 40, 100);
+    setPos(little_block, 282, 520);
+    setPos(big_block, 364, 512);
+    setPos(little_plank, 455, 535);
+    setPos(big_plank, 582, 535);
     setPos(bamboo, 360, 350);
     isRightPressed = isLeftPressed = false;
 

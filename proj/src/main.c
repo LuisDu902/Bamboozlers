@@ -44,7 +44,7 @@ int init() {
 
 int cleanup() {
 
-    if (vg_exit() ) return 1;
+    if (set_text_mode() ) return 1;
 
     destroy_sprites();
 

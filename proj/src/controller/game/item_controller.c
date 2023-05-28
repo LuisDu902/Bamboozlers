@@ -54,6 +54,11 @@ void update_item_animation()
 }
 
 void update_inventory(){
-    bamboo->x = 300; 
-    bamboo->y = 525;
+    setPos(bamboo, 190, 515);
+}
+
+bool select_item(Sprite *item)
+{
+    return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
+           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i];
 }

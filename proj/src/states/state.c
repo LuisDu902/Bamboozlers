@@ -15,8 +15,8 @@ void update_keyboard_state()
         update_keyboard_menu();
         break;
     case LEVEL_SELECTION:
-        // update_keyboard_menu();
-        return;
+        update_keyboard_level();
+        break;
     case GAME:
         update_keyboard_game();
         break;
@@ -26,10 +26,8 @@ void update_keyboard_state()
     case GAME_OVER:
         update_keyboard_game_over();
         return;
-    case EXIT:
-        return;
     default:
-        break;
+        return;
     }
 }
 
@@ -49,13 +47,15 @@ void update_mouse_state()
         case GAME:
             update_mouse_game();
             break;
+        case LEVEL_SELECTION:
+            update_mouse_level();
+            break;
         case INSTRUCTIONS:
             update_mouse_instructions();
             break;
         case GAME_OVER:
             update_mouse_game_over();
-        case EXIT:
-            return;
+            break;
         default:
             break;
         }
@@ -66,18 +66,7 @@ void update_timer_state()
 {
     if (menu_state == GAME)
     {
-        if (panda_state == DEAD)
-        {
-            menu_state = GAME_OVER;
-        }
-        else if (collide(panda, home) && !is_in_map(bamboo))
-            menu_state = MENU;
-        else
-        {
-            timer_int_handler();
-            if (item_state == INIT)
-                update_panda_state();
-        }
+        update_timer_game();
     }
     draw_menu();
     draw_cursor();
@@ -87,8 +76,7 @@ void update_timer_state()
 
 void update_cursor_position()
 {
-    if (mouse_packet.y_ov || mouse_packet.x_ov)
-        return;
+    if (mouse_packet.y_ov || mouse_packet.x_ov) return;
 
     int16_t new_x = cursor->x + mouse_packet.delta_x;
     int16_t new_y = cursor->y - mouse_packet.delta_y;
@@ -106,10 +94,4 @@ void update_cursor_position()
         cursor->y = (yRes - cursor->height[cursor->i]);
     else
         cursor->y = new_y;
-}
-
-bool select_item(Sprite *item)
-{
-    return cursor->x >= item->x && cursor->x <= item->x + item->width[item->i] &&
-           cursor->y >= item->y && cursor->y <= item->y + item->height[item->i];
 }

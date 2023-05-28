@@ -3,6 +3,7 @@
 extern uint8_t scancode;
 
 extern Menu_state menu_state;
+extern Level_state level_state;
 
 extern uint8_t *drawing_frame_buffer;
 extern struct packet mouse_packet;
@@ -58,7 +59,7 @@ void update_keyboard_game()
         isLeftPressed = false;
         if (panda_state == RUN)
         {
-            
+
             panda_state = INACTIVE;
         }
         break;
@@ -74,10 +75,10 @@ void update_keyboard_game()
         /* go back to idle state */
         panda->i = 0;
         isRightPressed = false;
-    
+
         if (panda_state == RUN)
         {
-           
+
             panda_state = INACTIVE;
         }
         break;
@@ -102,10 +103,28 @@ void update_mouse_game()
     }
 }
 
+void update_timer_game()
+{
+    if (panda_state == DEAD)
+        menu_state = GAME_OVER;
+    else if (collide(panda, home) && !is_in_map(bamboo))
+    {
+        menu_state = MENU;
+        level_state = (level_state == LEVEL_ONE) ? LEVEL_TWO : LEVEL_THREE;
+    }
+    else
+    {
+        timer_int_handler();
+        if (item_state == INIT)
+            update_panda_state();
+    }
+}
+
 void update_panda_state()
 {
 
-    if (collide(panda, bamboo)){
+    if (collide(panda, bamboo))
+    {
         update_inventory();
     }
     /* if there's nothing below the panda, it should fall */
@@ -116,7 +135,8 @@ void update_panda_state()
         y_time = 0;
     }
 
-    if (hit_floor() || collide(panda, lava)){
+    if (hit_floor() || collide(panda, lava))
+    {
         panda_state = DEAD;
         return;
     }
@@ -128,6 +148,15 @@ void update_panda_state()
         /* update the panda pos */
         y_time++;
         jump(y_time, ini_y);
+
+        /* if the panda hits the roof */
+        if (panda->y < 25)
+        {
+            handle_boundary_conditions();
+            panda_state = FALL;
+            y_time = 0;
+            ini_y = panda->y;
+        }
 
         /* if the move causes a collision with any item */
         if (collide_with_items())
@@ -177,7 +206,7 @@ void update_panda_state()
     default:
         break;
     }
-     /* if the panda moves left or right */
+    /* if the panda moves left or right */
     if (isRightPressed || isLeftPressed)
     {
         /* update the panda pos */
@@ -195,5 +224,4 @@ void update_panda_state()
             panda_state = INACTIVE;
         }
     }
-
 }

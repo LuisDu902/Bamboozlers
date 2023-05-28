@@ -10,4 +10,5 @@ extern Sprite* cursor;
 
 int (draw_main_menu)();
 
+int (draw_menu_cursor)();
 #endif

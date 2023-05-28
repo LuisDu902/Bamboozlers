@@ -1,4 +1,3 @@
-#include <lcom/lcf.h>
 #include "graphics.h"
 
 int(set_graphic_mode)(uint16_t mode)
@@ -74,15 +73,6 @@ int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
     return 0;
 }
 
-int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
-{
-    for (int i = 0; i < len; i++)
-    {
-        if (vg_draw_pixel(x, y+i, color) )
-            return 1;
-    }
-    return 0;
-}
 
 int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color)
 {
