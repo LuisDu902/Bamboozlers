@@ -632,7 +632,7 @@ static char* background_xpm[] = {
 
 
 /* XPM */
-static char * background_3_xpm[] = {
+static char * background_dark_xpm[] = {
 "750 455 7223 2",
 "  	c #20334A",
 ". 	c #20334B",

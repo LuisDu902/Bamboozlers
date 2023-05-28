@@ -21,7 +21,5 @@
 #define AF BIT(5)
 #define UF BIT(4)
 
-
-
 #endif
 
