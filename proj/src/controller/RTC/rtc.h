@@ -12,34 +12,27 @@ int (rtc_subscribe_int)(uint8_t* bit_no);
 int (rtc_unsubscribe_int)();
 
 
-int set_rtc_interrupts( bool value);
+int (set_rtc_interrupt)( bool value);
 
 
-int (wait_until_finished_update)();
+int (wait_valid_rtc)();
 
 
 void (rtc_ih)();
 
 
-int disable_update();
+int (disable_update)();
 
 
-int enable_update();
+int (enable_update)();
 
 
-int (rtc_read_info)(uint8_t reg, uint8_t* value);
-
-
-void set_darkMode_alarm();
-
-
-
-int (bcd_to_decimal)(uint8_t hex);
-
-
-int (decimal_to_bcd)(uint8_t dec);
+int (rtc_read_hours)(uint8_t reg, uint8_t* value);
 
 void (rtc_upd)();
+
+void (set_darkMode_alarm)();
+
 
 
 

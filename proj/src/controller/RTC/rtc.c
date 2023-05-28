@@ -15,128 +15,117 @@ int (rtc_unsubscribe_int)() {
   return sys_irqrmpolicy(&hook_rtc);
 }
 
-int (wait_until_finished_update)(){
+int (enable_update)(){
+    uint8_t regB;
+    if(sys_outb(ADDR_REG,REG_B) != 0) return 0;
+    if(util_sys_inb(DATA_REG,&regB) != 0) return 0;
+    regB = (regB & ~SET) | UIE;
+    return sys_outb(DATA_REG,regB);
+}
+
+int (disable_update)(){
+    uint8_t regB;
+    if( sys_outb(ADDR_REG,REG_B) != 0) return 1;
+    if( util_sys_inb(DATA_REG,&regB) != 0) return 1;
+    regB |= SET;
+    return sys_outb(DATA_REG,regB);
+}
 
 
-  uint8_t reg;
+int (wait_valid_rtc)(){
+
+  uint8_t regA=0;
 
   do{
       if(disable_update() != 0) return 1;
-      if( 0 != sys_outb(RTC_ADDR_REG,RTC_REG_A)) return 1;
-      if( 0 != util_sys_inb(RTC_DATA_REG,&reg)) return 1;
-
-  }while(reg & RTC_UIP);
+      if( 0 != sys_outb(ADDR_REG,REG_A)) return 1;
+      if( 0 != util_sys_inb(DATA_REG,&regA)) return 1;
+      if(enable_update() != 0) return 1;
+  }while(regA & UIP);
 
   return 0;
 }
+void (rtc_ih)(){
+    uint8_t regB;
+    if(sys_outb(ADDR_REG, REG_C)!= 0) return ;
+    if(util_sys_inb(DATA_REG, &regB) != 0) return ;
 
-int enable_update(){
-    uint8_t reg;
-    if( 0 != sys_outb(RTC_ADDR_REG,RTC_REG_B)) return 0;
-    if( 0 != util_sys_inb(RTC_DATA_REG,&reg)) return 0;
-    reg = (reg & ~RTC_SET) | RTC_UIE;
-    return sys_outb(RTC_DATA_REG,reg);
+    if(regB & UF)
+       rtc_upd();
+
+    if(regB & AF)
+        set_darkMode_alarm();
+
 }
 
-int disable_update(){
-    uint8_t reg;
-    if( OK != sys_outb(RTC_ADDR_REG,RTC_REG_B)) return !OK;
-    if( OK != util_sys_inb(RTC_DATA_REG,&reg)) return !OK;
-    reg |= RTC_SET;
-    return sys_outb(RTC_DATA_REG,reg);
-}
+int (set_rtc_interrupt)(bool value){
+    uint8_t regB;
+    if(sys_outb(ADDR_REG, REG_B)!= 0) return 1;
+    if(util_sys_inb(DATA_REG, &regB)!= 0) return 1;
+    if(value){
+        regB= (UIE | regB);
+        regB= (AIE | regB);
+    }
+    else{
+        regB= (regB & (~UIE));
+        regB= (regB & (~AIE));;
+    }
 
-int set_rtc_interrupts(bool value){
-    uint8_t reg;
-    sys_outb(RTC_ADDR_REG, RTC_REG_B);
-    util_sys_inb(RTC_DATA_REG, &reg);
-
-    reg = value ? (RTC_UIE | reg) : (reg & (~RTC_UIE));
-
-
-    reg = value ? (RTC_AIE | reg) : (reg & (~RTC_AIE));
-
-
-    
-    sys_outb(RTC_ADDR_REG, RTC_REG_B);
-    sys_outb(RTC_DATA_REG, reg);
+    if(sys_outb(ADDR_REG, REG_B) != 0) return 1;
+    if( sys_outb(DATA_REG, regB) != 0) return 1;
     return 0;
 }
 
-void (rtc_ih)(){
-    uint8_t reg;
-    sys_outb(RTC_ADDR_REG, RTC_REG_C);
-    util_sys_inb(RTC_DATA_REG, &reg);
 
-    if(reg & RTC_UF)
-       rtc_updater();
 
-    if(reg & RTC_AF)
-        set_darkMode_alarm();;
-
-}
-
-int (rtc_read_info)(uint8_t reg, uint8_t* value){
-    if( wait_until_finished_update() != 0){
-        return 1;
-    }
-    if(sys_outb(RTC_ADDR_REG, reg)!= 0){
+int (rtc_read_hours)(uint8_t reg, uint8_t* hours){
+    if(sys_outb(ADDR_REG, reg)!= 0){
 
         return 1;
     }
-    if( 0 != util_sys_inb(RTC_DATA_REG, value)){
+    if( 0 != util_sys_inb(DATA_REG, hours)){
         return 1;
     };
 
     return 0;
 }
+void (rtc_upd)(){
 
-int (bcd_to_decimal)(uint8_t hex){
-    if((((hex & 0xF0) >> 4) >= 10) || ((hex & 0x0F) >= 10)){
-        return !OK;
+    disable_update();
+    if( wait_valid_rtc() != 0){
+        return ;
     }
-    return ((hex & 0xF0) >> 4) * 10 + (hex & 0x0F);
-
+    if(rtc_read_hours(REG_HOUR, &hour)){
+        return ;
+    }
+    hour = ((hour & 0xF0) >> 4) * 10 + (hour & 0x0F);
+    enable_update();
 }
-
-int (decimal_to_bcd)(uint8_t dec){
-    return ((dec%10)) | ((dec/10) << 4);
-}
-
-void set_darkMode_alarm(){
-    uint8_t hour_to_alarm;
-
-    if(rtc_read_info(RTC_REG_HOUR, &hour_to_alarm)){
+void (set_darkMode_alarm)(){
+    uint8_t hour_alarm;
+    if(wait_valid_rtc() != 0) return ;
+    if(rtc_read_hours(REG_HOUR, &hour_alarm)){
         return;
     }
 
     if(hour >=20 || hour <6){
-        hour_to_alarm=decimal_to_bcd(6);
+        hour_alarm=((hour%10)) | ((hour/10) << 4);
         darkMode=true;
     }else{
         darkMode=false;
-        hour_to_alarm=decimal_to_bcd(20);
+        hour_alarm=((hour%10)) | ((hour/10) << 4);
     }
 
-    sys_outb(RTC_ADDR_REG, RTC_REG_SEC_ALRM);
-    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
+    if(sys_outb(ADDR_REG, REG_SEC_ALARM) != 0) return;
+    if(sys_outb(DATA_REG, 0xFF) != 0) return;
 
-    sys_outb(RTC_ADDR_REG, RTC_REG_MIN_ALRM);
-    sys_outb(RTC_DATA_REG, RTC_DONT_CARE);
+    if(sys_outb(ADDR_REG, REG_MIN_ALARM) != 0) return;
+    if(sys_outb(DATA_REG, 0xFF) != 0) return;
 
-    sys_outb(RTC_ADDR_REG, RTC_REG_HOUR_ALRM);
-    sys_outb(RTC_DATA_REG, hour_to_alarm);
+    if(sys_outb(ADDR_REG, REG_HOUR_ALARM)!= 0) return;
+    if(sys_outb(DATA_REG, hour_alarm)!= 0)return;
 }
 
 
 
-void (rtc_upd)(){
 
-    disable_update();
-
-    if(rtc_read_info(RTC_REG_HOUR, &hour)){
-        return ;
-    }
-    hour = bcd_to_decimal(hour);
-    enable_update();
-}

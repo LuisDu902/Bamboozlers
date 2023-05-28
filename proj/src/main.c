@@ -6,8 +6,6 @@
 #include "controller/RTC/rtc.h"
 #include "model/model.h"
 #include "model/sprite.h"
-#include "viewer/menu_viewer.h"
-#include "viewer/game_viewer.h"
 #include "states/state.h"
 
 
@@ -27,7 +25,7 @@ int (main)(int argc, char *argv[]) {
 
 int init() {
    
-    set_rtc_interrupts(true);
+    if(set_rtc_interrupt(true)) return 1;
 
 
     if (timer_set_frequency(0, 30)) return 1;
@@ -44,7 +42,7 @@ int init() {
     if (mouse_subscribe_int(&mouse_mask) != 0) return 1;
     if(rtc_subscribe_int(&rtc_mask)!=0) return 1;
     if (enable_data_reporting() != 0) return 1;
-    rtc_updater();
+    rtc_upd();
     set_darkMode_alarm();
     return 0;
 }
@@ -52,7 +50,7 @@ int init() {
 
 int cleanup() {
     
-  set_rtc_interrupts(false);
+   if(set_rtc_interrupt(false)) return 1;
 
     if (vg_exit() ) return 1;
 
