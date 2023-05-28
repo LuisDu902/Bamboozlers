@@ -18,8 +18,8 @@ uint8_t rtc_mask;
 
 int (main)(int argc, char *argv[]) {
     lcf_set_language("EN-US");
-    lcf_trace_calls("/home/lcom/labs/proj/src/debug/trace.txt");
-    lcf_log_output("/home/lcom/labs/proj/src/debug/output.txt");
+    lcf_trace_calls("/home/lcom/labs/src/debug/trace.txt");
+    lcf_log_output("/home/lcom/labs/src/debug/output.txt");
     if (lcf_start(argc, argv)) return 1;
     lcf_cleanup();
     return 0;
@@ -27,9 +27,8 @@ int (main)(int argc, char *argv[]) {
 
 int init() {
    
-    set_rtc_interrupts(ALARM, true);
-    set_rtc_interrupts(UPDATE, true);
-    set_rtc_interrupts(PERIODIC, true);
+    set_rtc_interrupts(true);
+
 
     if (timer_set_frequency(0, 30)) return 1;
 
@@ -46,16 +45,15 @@ int init() {
     if(rtc_subscribe_int(&rtc_mask)!=0) return 1;
     if (enable_data_reporting() != 0) return 1;
     rtc_updater();
-    set_power_up_alarm();
+    set_darkMode_alarm();
     return 0;
 }
 
 
 int cleanup() {
     
-  set_rtc_interrupts(ALARM, false);
-  set_rtc_interrupts(UPDATE, false);
-  set_rtc_interrupts(PERIODIC, false);
+  set_rtc_interrupts(false);
+
     if (vg_exit() ) return 1;
 
     destroy_sprites();

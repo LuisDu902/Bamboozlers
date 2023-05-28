@@ -16,10 +16,6 @@
 #define RTC_REG_MIN_ALRM 0x03
 #define RTC_REG_HOUR 0x04
 #define RTC_REG_HOUR_ALRM 0x05
-#define RTC_REG_DAY_WEEK 0x06
-#define RTC_REG_DAY_MONTH 0x07
-#define RTC_REG_MONTH 0x08
-#define RTC_REG_YEAR 0x09
 #define RTC_REG_A 0x0A
 #define RTC_REG_B 0x0B
 #define RTC_REG_C 0x0C
@@ -32,14 +28,11 @@
 #define RTC_PIE BIT(6)
 #define RTC_AIE BIT(5)
 #define RTC_UIE BIT(4)
-#define RTC_SQWE BIT(3)
 #define RTC_IRQF BIT(7)
-#define RTC_PF BIT(6)
 #define RTC_AF BIT(5)
 #define RTC_UF BIT(4)
-#define RTC_DONT_CARE 0xFF
 
-#define UPDATE_TIME_MICRO 244
+
 
 #endif
 

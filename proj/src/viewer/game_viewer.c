@@ -19,9 +19,7 @@ int(draw_game_menu)()
     if(darkMode){
         background->i=2;
     }
-    else{
-        background->i=0;
-    }
+    else background->i=0;
     if (draw_sprite(background))
         return 1;
     if (draw_sprite(map))

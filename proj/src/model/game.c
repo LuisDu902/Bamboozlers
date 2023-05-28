@@ -18,7 +18,7 @@ void create_game_sprites()
     xpm_map_t big_plank_pixmaps[] = {(xpm_map_t)big_plank_xpm, (xpm_map_t)big_plank_r1_xpm, (xpm_map_t)big_plank_r2_xpm, (xpm_map_t)big_plank_r3_xpm, (xpm_map_t)big_plank_r4_xpm, (xpm_map_t)big_plank_r5_xpm, (xpm_map_t)big_plank_r6_xpm, (xpm_map_t)big_plank_r7_xpm};
     
     xpm_map_t maps_pixmaps[] = {(xpm_map_t)grama_xpm, (xpm_map_t)rock_xpm, (xpm_map_t)sand_xpm};
-    xpm_map_t background_pixmaps[] = {(xpm_map_t)background_xpm};
+    xpm_map_t background_pixmaps[] = {(xpm_map_t)background_xpm,(xpm_map_t)background_2_xpm,(xpm_map_t)background_3_xpm};
     xpm_map_t lava_pixmaps[] = {(xpm_map_t)lava_xpm, (xpm_map_t)lava2_xpm, (xpm_map_t)lava3_xpm};
    
     xpm_map_t home_pixmaps[] = {(xpm_map_t)home_xpm};
@@ -27,7 +27,7 @@ void create_game_sprites()
     xpm_map_t timer_pixmaps[] = {(xpm_map_t)number_0_xpm, (xpm_map_t)number_1_xpm, (xpm_map_t)number_2_xpm, (xpm_map_t)number_3_xpm, (xpm_map_t)number_4_xpm, (xpm_map_t)number_5_xpm, (xpm_map_t)number_6_xpm, (xpm_map_t)number_7_xpm, (xpm_map_t)number_8_xpm, (xpm_map_t)number_9_xpm};
 
 
-    background = create_sprite_xpm(background_pixmaps, 1, 25, 25);
+    background = create_sprite_xpm(background_pixmaps, 3, 25, 25);
     lava = create_sprite_xpm(lava_pixmaps, 3, 25, 25);
     map = create_sprite_xpm(maps_pixmaps, 3, 25, 25);
 
