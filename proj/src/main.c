@@ -5,8 +5,6 @@
 #include "controller/KBC/KBC.h"
 #include "model/model.h"
 #include "model/sprite.h"
-#include "viewer/menu_viewer.h"
-#include "viewer/game_viewer.h"
 #include "states/state.h"
 
 extern Menu_state menu_state;

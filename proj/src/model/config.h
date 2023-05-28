@@ -11,14 +11,31 @@
 #define BORDER_WIDTH 5
 
 typedef enum {
-    INACTIVE, 
-    RUN,
-    JUMP,
-    FALL,
-    DEAD,
+  INACTIVE,
+  RUN,
+  JUMP,
+  FALL,
+  DEAD,
 } Panda_state;
 
-typedef enum {INIT, DRAG} Item_state;
+typedef enum {
+  MENU,
+  LEVEL_SELECTION,
+  INSTRUCTIONS,
+  GAME,
+  GAME_OVER,
+  EXIT
+} Menu_state;
 
+typedef enum {
+  LEVEL_ONE,
+  LEVEL_TWO,
+  LEVEL_THREE,
+} Level_state;
+
+typedef enum {
+  INIT,
+  DRAG
+} Item_state;
 
 #endif /* _GAME_CONFIG_H_ */
