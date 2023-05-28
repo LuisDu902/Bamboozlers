@@ -8,7 +8,9 @@
 
 #include "viewer.h"
 
-
+/** @defgroup game_over_viewer game_over_viewer
+ * @{
+  */
 extern Sprite* game_over;
 extern Sprite* play_again;
 extern Sprite* game_exit;

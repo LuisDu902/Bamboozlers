@@ -1,0 +1,11 @@
+<map id="destroy_sprite" name="destroy_sprite">
+<area shape="rect" id="node1" title="Destroys a sprite and frees its resources." alt="" coords="719,136,833,163"/>
+<area shape="rect" id="node2" href="$group__game__over.html#gafd8aead7980399e61de4aebaf08c52e5" title="Destroys the game over screen sprites." alt="" coords="468,5,671,32"/>
+<area shape="rect" id="node3" href="$model_8c.html#a4f202337f90040263c518c9fbc82d2f3" title="Destroys all sprites used in the game." alt="" coords="297,136,420,163"/>
+<area shape="rect" id="node6" href="$group__game.html#gab49f8cb06ae575901db9bf1194f2ab72" title="Destroys the game sprites." alt="" coords="486,107,653,133"/>
+<area shape="rect" id="node7" href="$group__instructions.html#gabdc245a9f1f0284c917267f29c85f5cb" title="Destroys the instruction screen sprites." alt="" coords="492,158,647,199"/>
+<area shape="rect" id="node8" href="$group__level__select.html#ga09be19091ce84ca252a566af88afe406" title="Destroys the level select screen sprites." alt="" coords="491,223,647,265"/>
+<area shape="rect" id="node9" href="$menu_8c.html#ae07a33199be53d226b0122ba0888d5bf" title="Destroys the menu screen sprites." alt="" coords="486,289,653,316"/>
+<area shape="rect" id="node4" href="$main_8c.html#adb873dc3613b921f4e9ab97a5faf0a27" title=" " alt="" coords="176,136,249,163"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,136,128,163"/>
+</map>

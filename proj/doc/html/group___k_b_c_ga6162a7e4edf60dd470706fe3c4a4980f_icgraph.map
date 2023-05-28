@@ -1,0 +1,14 @@
+<map id="read_output" name="read_output">
+<area shape="rect" id="node1" title="Reads the output data from a given port." alt="" coords="869,56,969,83"/>
+<area shape="rect" id="node2" href="$group__keyboard.html#gaea8c84a7a49b9c04949ad011bd18a688" title="Enables keyboard interrupts." alt="" coords="664,5,821,32"/>
+<area shape="rect" id="node3" href="$group__mouse.html#ga210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="700,56,785,83"/>
+<area shape="rect" id="node6" href="$group__keyboard.html#ga08867b9a8652864d7f1134d4c0452688" title="Reads the scancode from the keyboard." alt="" coords="683,144,802,171"/>
+<area shape="rect" id="node4" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="184,56,343,83"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,119,128,145"/>
+<area shape="rect" id="node7" href="$group__game__state.html#ga7715241367f26a74f1509c3b29068b5c" title="Updates the game state based on the keyboard input." alt="" coords="418,68,597,95"/>
+<area shape="rect" id="node9" href="$group__game__over__state.html#ga7bdcebfde151484d2738ee286c5f4112" title="Updates the keyboard input in the game over state." alt="" coords="400,119,615,145"/>
+<area shape="rect" id="node10" href="$group__instructions__state.html#ga81f90d18d90e8fc234025ee2a2507c1a" title="Updates the menu state based on the keyboard input in the instructions menu." alt="" coords="399,169,616,196"/>
+<area shape="rect" id="node11" href="$group__level__select__state.html#gac561c828724a058164505b208dd6cd40" title="Updates the menu state based on the keyboard input in the instructions menu." alt="" coords="421,220,594,247"/>
+<area shape="rect" id="node12" href="$group__menu__state.html#gaa14a1b534554f691bcc09ed45295db0a" title="Updates the menu state based on the keyboard input in the main menu." alt="" coords="418,271,597,297"/>
+<area shape="rect" id="node8" href="$group__state.html#gabca9bf2889587ddccfa0d25169da762d" title="Updates the state based on the keyboard input." alt="" coords="176,144,351,171"/>
+</map>

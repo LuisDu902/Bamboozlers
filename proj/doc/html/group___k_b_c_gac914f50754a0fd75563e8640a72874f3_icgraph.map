@@ -1,0 +1,20 @@
+<map id="get_KBC_status" name="get_KBC_status">
+<area shape="rect" id="node1" title="Retrieves the status register of the KBC." alt="" coords="1057,231,1181,257"/>
+<area shape="rect" id="node2" href="$group___k_b_c.html#ga6162a7e4edf60dd470706fe3c4a4980f" title="Reads the output data from a given port." alt="" coords="896,193,996,220"/>
+<area shape="rect" id="node14" href="$group___k_b_c.html#ga1cf2ac5152e50a2fb53919df386523c5" title="Writes a command to a given port." alt="" coords="883,256,1009,283"/>
+<area shape="rect" id="node3" href="$group__keyboard.html#gaea8c84a7a49b9c04949ad011bd18a688" title="Enables keyboard interrupts." alt="" coords="671,221,828,248"/>
+<area shape="rect" id="node4" href="$group__mouse.html#ga210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="707,44,792,71"/>
+<area shape="rect" id="node7" href="$group__keyboard.html#ga08867b9a8652864d7f1134d4c0452688" title="Reads the scancode from the keyboard." alt="" coords="690,161,809,188"/>
+<area shape="rect" id="node5" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="184,41,343,68"/>
+<area shape="rect" id="node6" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,192,128,219"/>
+<area shape="rect" id="node8" href="$group__game__state.html#ga7715241367f26a74f1509c3b29068b5c" title="Updates the game state based on the keyboard input." alt="" coords="418,28,597,55"/>
+<area shape="rect" id="node10" href="$group__game__over__state.html#ga7bdcebfde151484d2738ee286c5f4112" title="Updates the keyboard input in the game over state." alt="" coords="400,79,615,105"/>
+<area shape="rect" id="node11" href="$group__instructions__state.html#ga81f90d18d90e8fc234025ee2a2507c1a" title="Updates the menu state based on the keyboard input in the instructions menu." alt="" coords="399,129,616,156"/>
+<area shape="rect" id="node12" href="$group__level__select__state.html#gac561c828724a058164505b208dd6cd40" title="Updates the menu state based on the keyboard input in the instructions menu." alt="" coords="421,180,594,207"/>
+<area shape="rect" id="node13" href="$group__menu__state.html#gaa14a1b534554f691bcc09ed45295db0a" title="Updates the menu state based on the keyboard input in the main menu." alt="" coords="418,231,597,257"/>
+<area shape="rect" id="node9" href="$group__state.html#gabca9bf2889587ddccfa0d25169da762d" title="Updates the state based on the keyboard input." alt="" coords="176,155,351,181"/>
+<area shape="rect" id="node15" href="$group__mouse.html#ga213d5f0c93d25fe21ae6ee3ba7b50a15" title="Disables data reporting for the mouse." alt="" coords="664,281,835,308"/>
+<area shape="rect" id="node17" href="$group__mouse.html#gabe20128c397b0e728b58316a8e1a6e14" title="Enables data reporting for the mouse." alt="" coords="665,332,833,359"/>
+<area shape="rect" id="node16" href="$main_8c.html#adb873dc3613b921f4e9ab97a5faf0a27" title=" " alt="" coords="227,217,300,244"/>
+<area shape="rect" id="node18" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="242,293,285,320"/>
+</map>

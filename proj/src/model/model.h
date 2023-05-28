@@ -13,6 +13,9 @@
 #include "game_over.h"
 #include "xpm/cursor.xpm"
 
+/** @defgroup model model
+ * @{
+  */
 Sprite* cursor;
 
 /**

@@ -1,0 +1,8 @@
+<map id="move_left" name="move_left">
+<area shape="rect" id="node1" title="Moves the panda character to the left." alt="" coords="924,31,1011,57"/>
+<area shape="rect" id="node2" href="$group__panda__controller.html#ga959045326863d1ba5dceafcf5f1b498e" title="Fixes the collision between the panda and the collided item." alt="" coords="777,5,876,32"/>
+<area shape="rect" id="node3" href="$group__game__state.html#gaccc7b78020e47721c6d83038c9af3e48" title="Updates the state of the panda character." alt="" coords="575,31,729,57"/>
+<area shape="rect" id="node4" href="$group__game__state.html#ga502531ceb516d571ad7a91b766070112" title="Updates the game state based on the timer interrupt." alt="" coords="373,31,527,57"/>
+<area shape="rect" id="node5" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="176,31,325,57"/>
+<area shape="rect" id="node6" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,128,57"/>
+</map>

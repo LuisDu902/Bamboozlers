@@ -3,12 +3,15 @@
 
 /**
  * @file graphics.h
- * @brief Graphics interface functions.
+ * @brief Header file containing graphics interface functions.
  */
 
 #include <lcom/lcf.h>
 #include "VBE.h"
 
+/** @defgroup graphics graphics
+ * @{
+ */
 vbe_mode_info_t mode_info;
 uint8_t *main_frame_buffer;
 uint8_t *drawing_frame_buffer;
@@ -16,6 +19,8 @@ uint16_t xRes;
 uint16_t yRes;
 unsigned int bytes_per_pixel;
 unsigned int frame_size;
+
+
 
 /**
  * @brief Sets the graphic mode.
@@ -92,13 +97,6 @@ int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
  * @return 0 on success, non-zero value on failure.
  */
 int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
-
-/**
- * @brief Clears the screen by setting all pixels to black.
- *
- * @return 0 on success, non-zero value on failure.
- */
-int(vg_clear)();
 
 /** @} */ // end of Graphics group
 

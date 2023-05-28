@@ -1,0 +1,11 @@
+<map id="vg_draw_rectangle" name="vg_draw_rectangle">
+<area shape="rect" id="node1" title="Draws a rectangle starting at the specified coordinates with the given width, height,..." alt="" coords="1052,56,1197,83"/>
+<area shape="rect" id="node2" href="$group__game__viewer.html#ga345eae12bd1a50f184626e675dd4e734" title="Draws a container at the specified position and with the given width." alt="" coords="881,5,1004,32"/>
+<area shape="rect" id="node8" href="$group__game__viewer.html#gac4bcef6eb2b4c839c3b0c57171759a8e" title="Draws the map borders." alt="" coords="727,56,817,83"/>
+<area shape="rect" id="node9" href="$group__game__viewer.html#ga9eb831ba2a514ba15a974586e8f80364" title="Draws the timer in the game menu." alt="" coords="895,107,991,133"/>
+<area shape="rect" id="node3" href="$group__game__viewer.html#gacb26a649ac4b917d41c8a86ef1b37541" title="Draws the inventory containers." alt="" coords="711,5,833,32"/>
+<area shape="rect" id="node4" href="$group__game__viewer.html#ga87b7bdb3212593972316d18d5aa8e02e" title="Draws the game menu including the map, inventory, background, timer, home, and other sprites." alt="" coords="520,56,663,83"/>
+<area shape="rect" id="node5" href="$group__viewer.html#ga707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="373,56,472,83"/>
+<area shape="rect" id="node6" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,128,83"/>
+<area shape="rect" id="node7" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="176,81,325,108"/>
+</map>

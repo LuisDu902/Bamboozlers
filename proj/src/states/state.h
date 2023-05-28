@@ -12,6 +12,10 @@
 #include "game_over_state.h"
 #include "level_select_state.h"
 
+/** @defgroup state state
+ * @{
+  */
+
 typedef enum {
     MENU,
     LEVEL_SELECTION,

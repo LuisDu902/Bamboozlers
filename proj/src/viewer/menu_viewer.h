@@ -8,6 +8,10 @@
 
 #include "viewer.h"
 
+/** @defgroup menu_viewer menu_viewer
+ * @{
+  */
+  
 extern Sprite* levels;
 extern Sprite* instructions;
 extern Sprite* logo;

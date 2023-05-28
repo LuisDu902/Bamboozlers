@@ -10,7 +10,7 @@
 #include "../KBC/i8042.h"
 #include "../KBC/KBC.h"
 
-/** @defgroup Keyboard Keyboard
+/** @defgroup keyboard keyboard
  * @{
  */
 

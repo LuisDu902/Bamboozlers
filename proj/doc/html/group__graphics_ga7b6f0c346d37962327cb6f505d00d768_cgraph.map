@@ -1,0 +1,4 @@
+<map id="vg_clear" name="vg_clear">
+<area shape="rect" id="node1" title="Clears the screen by setting all pixels to black." alt="" coords="5,5,83,32"/>
+<area shape="rect" id="node2" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="131,5,245,32"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="select_item" name="select_item">
+<area shape="rect" id="node1" title="Selects an item based on the cursor&#39;s position." alt="" coords="1056,183,1155,209"/>
+<area shape="rect" id="node2" href="$group__game__viewer.html#ga9e10eacfcda98bc74247832d523edb39" title="Draws the game cursor based on the item state." alt="" coords="845,5,990,32"/>
+<area shape="rect" id="node7" href="$group__game__over__viewer.html#ga2473522ee5ab26881e4495a6a5666136" title="Draws the cursor in the game over menu and updates its position based on the selected item." alt="" coords="827,56,1008,83"/>
+<area shape="rect" id="node8" href="$group__level__select__viewer.html#gac864d3006142e4bd4cb28f77ec914395" title="Draws the level cursor based on the selected level." alt="" coords="847,107,987,133"/>
+<area shape="rect" id="node9" href="$group__menu__viewer.html#ga590d6557df299779778ad5526a5ec6eb" title="Draws the menu cursor based on the selected menu option." alt="" coords="845,157,990,184"/>
+<area shape="rect" id="node10" href="$group__item__controller.html#ga53068643b88f37744998d177e83bae33" title="Checks if an item is selected and updates the item&#39;s position." alt="" coords="851,208,983,235"/>
+<area shape="rect" id="node13" href="$group__game__over__state.html#gaea49a2c9042bfa1865ee18ab182f4690" title="Updates the mouse input in the game over state." alt="" coords="580,259,779,285"/>
+<area shape="rect" id="node14" href="$group__level__select__state.html#ga0d14765d4f61f5165372d6027b5cff2e" title="Updates the menu state based on the mouse input in the instructions menu." alt="" coords="601,309,758,336"/>
+<area shape="rect" id="node15" href="$group__menu__state.html#ga0bddbc36bfdf68fffd6da345019680cd" title="Updates the menu state based on the mouse input in the main menu." alt="" coords="598,360,761,387"/>
+<area shape="rect" id="node3" href="$group__viewer.html#ga1209cc537c04f860f7bf0301ad7a4987" title="Draws the cursor on the screen based on the current menu state." alt="" coords="629,107,730,133"/>
+<area shape="rect" id="node4" href="$group__viewer.html#ga707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="403,107,502,133"/>
+<area shape="rect" id="node6" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="176,157,325,184"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,157,128,184"/>
+<area shape="rect" id="node11" href="$group__game__state.html#ga44e04f1f35ab1c6e24d40d3f68f81a99" title="Updates the game state based on the mouse input." alt="" coords="598,208,761,235"/>
+<area shape="rect" id="node12" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="373,259,532,285"/>
+</map>

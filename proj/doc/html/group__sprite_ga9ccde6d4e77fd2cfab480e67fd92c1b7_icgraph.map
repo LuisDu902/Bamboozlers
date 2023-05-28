@@ -1,0 +1,12 @@
+<map id="create_sprite_xpm" name="create_sprite_xpm">
+<area shape="rect" id="node1" title="Creates a sprite from XPM sprites." alt="" coords="672,148,815,175"/>
+<area shape="rect" id="node2" href="$group__game__over.html#gaf9ec056011ec595ee6de8265977f52ad" title="Creates the game over screen sprites." alt="" coords="429,5,624,32"/>
+<area shape="rect" id="node6" href="$group__game.html#gac276f8bc4fe067dfb30eb09ec5602588" title="Creates the game sprites." alt="" coords="447,56,606,83"/>
+<area shape="rect" id="node7" href="$group__instructions.html#gac035dc12b522a4a0e00642568617864f" title="Creates the instruction screen sprites." alt="" coords="453,107,600,149"/>
+<area shape="rect" id="node8" href="$group__level__select.html#gafc39badb2c1eb005efaca17ccdc87a95" title="Creates the level select screen sprites." alt="" coords="453,173,601,214"/>
+<area shape="rect" id="node9" href="$group__menu.html#gaca64b4929ba4582259b4789bace2f734" title="Creates the menu screen sprites." alt="" coords="447,239,606,265"/>
+<area shape="rect" id="node10" href="$group__model.html#ga29929e5bb1ef04bd53eae6e940f3e3a3" title="Creates the mouse cursor sprites." alt="" coords="444,289,609,316"/>
+<area shape="rect" id="node3" href="$group__model.html#ga6fc80920964e58c717dfc56fe6254e82" title="Creates all sprites used in the game." alt="" coords="267,148,381,175"/>
+<area shape="rect" id="node4" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="176,148,219,175"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,148,128,175"/>
+</map>

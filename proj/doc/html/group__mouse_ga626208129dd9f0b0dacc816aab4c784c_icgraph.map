@@ -1,0 +1,6 @@
+<map id="parse_packet" name="parse_packet">
+<area shape="rect" id="node1" title="Parses the mouse packet." alt="" coords="533,5,641,32"/>
+<area shape="rect" id="node2" href="$group__mouse.html#gafe0c067c4db301d97a99cb9f7af647e5" title="Synchronizes mouse packets." alt="" coords="383,5,485,32"/>
+<area shape="rect" id="node3" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="176,5,335,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>

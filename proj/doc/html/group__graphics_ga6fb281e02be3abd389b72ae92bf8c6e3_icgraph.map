@@ -1,0 +1,23 @@
+<map id="vg_draw_pixel" name="vg_draw_pixel">
+<area shape="rect" id="node1" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="1508,413,1623,440"/>
+<area shape="rect" id="node2" href="$group__viewer.html#ga0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="992,273,1091,300"/>
+<area shape="rect" id="node17" href="$group__graphics.html#ga5e5b25bd525250f61f40b9e9f212d5e6" title="Draws a horizontal line starting at the specified coordinates with the given length and color." alt="" coords="1344,439,1460,465"/>
+<area shape="rect" id="node3" href="$group__viewer.html#ga1209cc537c04f860f7bf0301ad7a4987" title="Draws the cursor on the screen based on the current menu state." alt="" coords="561,147,662,173"/>
+<area shape="rect" id="node7" href="$group__game__viewer.html#ga9e10eacfcda98bc74247832d523edb39" title="Draws the game cursor based on the item state." alt="" coords="769,45,914,72"/>
+<area shape="rect" id="node8" href="$group__game__viewer.html#ga87b7bdb3212593972316d18d5aa8e02e" title="Draws the game menu including the map, inventory, background, timer, home, and other sprites." alt="" coords="540,501,683,528"/>
+<area shape="rect" id="node9" href="$group__game__over__viewer.html#ga2473522ee5ab26881e4495a6a5666136" title="Draws the cursor in the game over menu and updates its position based on the selected item." alt="" coords="751,96,932,123"/>
+<area shape="rect" id="node10" href="$group__game__over__viewer.html#gab4dfd5cac05ded2669eba91c4755e7da" title="Draws the game over menu." alt="" coords="522,248,701,275"/>
+<area shape="rect" id="node11" href="$group__instructions__viewer.html#gaa4d38432f695ccbcb04a63e78b87897a" title="Draws the instructions menu with the instruction texts." alt="" coords="521,299,702,325"/>
+<area shape="rect" id="node12" href="$group__level__select__viewer.html#gac864d3006142e4bd4cb28f77ec914395" title="Draws the level cursor based on the selected level." alt="" coords="771,147,911,173"/>
+<area shape="rect" id="node13" href="$group__level__select__viewer.html#ga8ec35ca14990ff5ff6ea318e6b6a19cd" title="Draws the level selection menu with the level options." alt="" coords="520,349,703,376"/>
+<area shape="rect" id="node14" href="$group__menu__viewer.html#ga827220a6b9f738eba8b094586855b0b7" title="Draws the main menu with the menu options." alt="" coords="542,400,681,427"/>
+<area shape="rect" id="node15" href="$group__menu__viewer.html#ga590d6557df299779778ad5526a5ec6eb" title="Draws the menu cursor based on the selected menu option." alt="" coords="769,197,914,224"/>
+<area shape="rect" id="node16" href="$group__game__viewer.html#ga9eb831ba2a514ba15a974586e8f80364" title="Draws the timer in the game menu." alt="" coords="793,501,889,528"/>
+<area shape="rect" id="node4" href="$group__viewer.html#ga707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="373,299,472,325"/>
+<area shape="rect" id="node6" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="176,248,325,275"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,273,128,300"/>
+<area shape="rect" id="node18" href="$group__graphics.html#ga99d2da2559e11200c6b40c469e9977ec" title="Draws a rectangle starting at the specified coordinates with the given width, height,..." alt="" coords="1151,527,1296,553"/>
+<area shape="rect" id="node19" href="$group__game__viewer.html#ga345eae12bd1a50f184626e675dd4e734" title="Draws a container at the specified position and with the given width." alt="" coords="980,552,1103,579"/>
+<area shape="rect" id="node21" href="$group__game__viewer.html#gac4bcef6eb2b4c839c3b0c57171759a8e" title="Draws the map borders." alt="" coords="996,603,1087,629"/>
+<area shape="rect" id="node20" href="$group__game__viewer.html#gacb26a649ac4b917d41c8a86ef1b37541" title="Draws the inventory containers." alt="" coords="780,552,903,579"/>
+</map>

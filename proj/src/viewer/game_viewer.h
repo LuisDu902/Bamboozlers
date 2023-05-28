@@ -9,6 +9,9 @@
 #include "viewer.h"
 #include "controller/timer/timer.h"
 
+/** @defgroup game_viewer game_viewer
+ * @{
+  */
 extern Sprite* map;
 extern Sprite* lava;
 extern Sprite* map;

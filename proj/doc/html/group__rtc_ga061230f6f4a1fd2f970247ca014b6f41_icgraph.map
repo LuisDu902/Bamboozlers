@@ -1,0 +1,6 @@
+<map id="rtc_upd" name="rtc_upd">
+<area shape="rect" id="node1" title="Updates the RTC time." alt="" coords="283,31,353,57"/>
+<area shape="rect" id="node2" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="184,5,227,32"/>
+<area shape="rect" id="node4" href="$group__rtc.html#ga75dad42881d64cf07cf1bdc2979a7056" title="RTC interrupt handler." alt="" coords="176,56,235,83"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,128,57"/>
+</map>

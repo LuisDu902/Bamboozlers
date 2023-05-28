@@ -1,5 +1,3 @@
-
-
 #ifndef RTC_H_
 #define RTC_H_
 /**
@@ -11,6 +9,10 @@
 #include <stdbool.h>
 
 #include "rtc_macros.h"
+
+/** @defgroup rtc rtc
+ * @{
+ */
 
 /**
  * @brief Subscribes RTC interrupts.
@@ -59,7 +61,7 @@ void rtc_ih();
  * @param value Value to set for the interrupts (true or false).
  * @return Return 0 upon success and non-zero otherwise.
  */
-int set_rtc_interrupt(bool value);
+int set_alarm_upd_interrupt(bool value);
 
 /**
  * @brief Reads the hours value from the specified RTC register.
@@ -79,5 +81,7 @@ void rtc_upd();
  * @brief Sets the power-up alarm based on the current time.
  */
 void set_darkMode_alarm();
+
+/** @} */ // end of rtc
 
 #endif

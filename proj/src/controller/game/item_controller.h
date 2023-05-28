@@ -4,7 +4,7 @@
 /**
  * @file item_controller.h
  *
- * @brief Functions for controlling and updating game items in the game.
+ * @brief Header file containing functions for controlling and updating game items in the game.
  */
 
 #include "map_controller.h"
@@ -24,6 +24,10 @@ extern Sprite* panda;
 extern Sprite* cursor;
 extern Sprite* map;
 extern uint8_t scancode;
+
+/** @defgroup item_controller item_controller
+ * @{
+ */
 
 Sprite* item;
 /**

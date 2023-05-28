@@ -1,0 +1,9 @@
+<map id="update_mouse_game" name="update_mouse_game">
+<area shape="rect" id="node1" title="Updates the game state based on the mouse input." alt="" coords="5,81,168,108"/>
+<area shape="rect" id="node2" href="$group__item__controller.html#gac8176cead38b324d33e5ccb8d22bcf1a" title="Checks the position of the selected item and handles collisions." alt="" coords="220,31,347,57"/>
+<area shape="rect" id="node5" href="$group__item__controller.html#ga53068643b88f37744998d177e83bae33" title="Checks if an item is selected and updates the item&#39;s position." alt="" coords="217,81,349,108"/>
+<area shape="rect" id="node7" href="$group__item__controller.html#gaf18a694c0a2450b1f25b5ba301fbe7bb" title="Updates the position of the selected item based on the cursor position." alt="" coords="216,132,351,159"/>
+<area shape="rect" id="node3" href="$group__map__controller.html#ga02f2f989c3627d1012fe3c97faba404b" title="Checks if two sprites collide." alt="" coords="415,5,481,32"/>
+<area shape="rect" id="node4" href="$group__map__controller.html#ga9da7618ca657dae2e8b844a9b9fee998" title="Checks if an item is within the map boundaries." alt="" coords="404,56,492,83"/>
+<area shape="rect" id="node6" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="399,107,497,133"/>
+</map>

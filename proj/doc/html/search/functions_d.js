@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['select_5fitem_534',['select_item',['../group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8',1,'select_item(Sprite *item):&#160;item_controller.c'],['../group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8',1,'select_item(Sprite *item):&#160;item_controller.c']]],
+  ['set_5falarm_5fupd_5finterrupt_535',['set_alarm_upd_interrupt',['../group__rtc.html#gaf7ad1adef6fab0acdbb82fe65bdd7c30',1,'set_alarm_upd_interrupt(bool value):&#160;rtc.c'],['../group__rtc.html#gaf7ad1adef6fab0acdbb82fe65bdd7c30',1,'set_alarm_upd_interrupt(bool value):&#160;rtc.c']]],
+  ['set_5fdarkmode_5falarm_536',['set_darkMode_alarm',['../group__rtc.html#gaba6e92914293f2cd8d6300509252dc18',1,'set_darkMode_alarm():&#160;rtc.c'],['../group__rtc.html#gaba6e92914293f2cd8d6300509252dc18',1,'set_darkMode_alarm():&#160;rtc.c']]],
+  ['set_5fdrawing_5fbuffer_537',['set_drawing_buffer',['../group__graphics.html#gac0f40150364b223d22b4524c479f3d0a',1,'set_drawing_buffer():&#160;graphics.c'],['../group__graphics.html#gac0f40150364b223d22b4524c479f3d0a',1,'set_drawing_buffer():&#160;graphics.c']]],
+  ['set_5fgraphic_5fmode_538',['set_graphic_mode',['../group__graphics.html#gaa2ac3ebc7870950bab4c0fc90f113155',1,'set_graphic_mode(uint16_t mode):&#160;graphics.c'],['../group__graphics.html#gaa2ac3ebc7870950bab4c0fc90f113155',1,'set_graphic_mode(uint16_t mode):&#160;graphics.c']]],
+  ['set_5fmain_5fbuffer_539',['set_main_buffer',['../group__graphics.html#ga4b490080675dfe3d4048a03e521f2906',1,'set_main_buffer(uint16_t mode):&#160;graphics.c'],['../group__graphics.html#ga4b490080675dfe3d4048a03e521f2906',1,'set_main_buffer(uint16_t mode):&#160;graphics.c']]],
+  ['set_5ftext_5fmode_540',['set_text_mode',['../group__graphics.html#ga62f63672fd06c462a0873e30f5e32ef8',1,'set_text_mode():&#160;graphics.c'],['../group__graphics.html#ga62f63672fd06c462a0873e30f5e32ef8',1,'set_text_mode():&#160;graphics.c']]],
+  ['setpos_541',['setPos',['../group__sprite.html#ga0bb9f4b019dbaabf93664db54d901827',1,'setPos(Sprite *sprite, int x, int y):&#160;sprite.c'],['../group__sprite.html#ga0bb9f4b019dbaabf93664db54d901827',1,'setPos(Sprite *sprite, int x, int y):&#160;sprite.c']]],
+  ['swap_5fbuffers_542',['swap_buffers',['../group__graphics.html#gaa3eb82d3b44f0375e27216392595fdb3',1,'swap_buffers():&#160;graphics.c'],['../group__graphics.html#gaa3eb82d3b44f0375e27216392595fdb3',1,'swap_buffers():&#160;graphics.c']]],
+  ['sync_5fpacket_543',['sync_packet',['../group__mouse.html#gafe0c067c4db301d97a99cb9f7af647e5',1,'sync_packet():&#160;mouse.c'],['../group__mouse.html#gafe0c067c4db301d97a99cb9f7af647e5',1,'sync_packet():&#160;mouse.c']]]
+];

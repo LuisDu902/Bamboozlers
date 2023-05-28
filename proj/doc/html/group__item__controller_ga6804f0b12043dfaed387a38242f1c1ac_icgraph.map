@@ -1,0 +1,6 @@
+<map id="update_item_animation" name="update_item_animation">
+<area shape="rect" id="node1" title="Updates the animation of the selected item." alt="" coords="625,5,803,32"/>
+<area shape="rect" id="node2" href="$group__game__state.html#ga7715241367f26a74f1509c3b29068b5c" title="Updates the game state based on the keyboard input." alt="" coords="399,5,577,32"/>
+<area shape="rect" id="node3" href="$group__state.html#gabca9bf2889587ddccfa0d25169da762d" title="Updates the state based on the keyboard input." alt="" coords="176,5,351,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>

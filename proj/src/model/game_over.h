@@ -11,6 +11,10 @@
 #include "xpm/game_over/play_again.xpm"
 #include "xpm/game_over/game_over.xpm"
 
+/** @defgroup game_over game_over
+ * @{
+ */
+
 Sprite *game_over;
 Sprite *play_again;
 Sprite *game_exit;

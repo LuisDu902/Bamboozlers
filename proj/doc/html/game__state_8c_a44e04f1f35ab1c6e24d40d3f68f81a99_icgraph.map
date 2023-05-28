@@ -1,0 +1,5 @@
+<map id="update_mouse_game" name="update_mouse_game">
+<area shape="rect" id="node1" title="Updates the game state based on the mouse input." alt="" coords="383,5,545,32"/>
+<area shape="rect" id="node2" href="$state_8c.html#a8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="176,5,335,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>

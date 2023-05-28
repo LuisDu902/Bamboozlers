@@ -1,0 +1,11 @@
+<map id="setPos" name="setPos">
+<area shape="rect" id="node1" title="Sets the position of a sprite." alt="" coords="973,31,1039,57"/>
+<area shape="rect" id="node2" href="$group__map__controller.html#ga2a73a7f2b0434d6bb3444a93609e86f8" title="Sets up the game map for a specific level." alt="" coords="807,5,908,32"/>
+<area shape="rect" id="node6" href="$group__item__controller.html#ga65e6a0a109d61b5b12d11ad9d8cde508" title="Updates the inventory." alt="" coords="789,56,925,83"/>
+<area shape="rect" id="node3" href="$group__level__select__state.html#ga0d14765d4f61f5165372d6027b5cff2e" title="Updates the menu state based on the mouse input in the instructions menu." alt="" coords="584,5,741,32"/>
+<area shape="rect" id="node4" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="176,5,335,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,128,57"/>
+<area shape="rect" id="node7" href="$group__game__state.html#gaccc7b78020e47721c6d83038c9af3e48" title="Updates the state of the panda character." alt="" coords="585,56,740,83"/>
+<area shape="rect" id="node8" href="$group__game__state.html#ga502531ceb516d571ad7a91b766070112" title="Updates the game state based on the timer interrupt." alt="" coords="383,56,536,83"/>
+<area shape="rect" id="node9" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="181,56,330,83"/>
+</map>

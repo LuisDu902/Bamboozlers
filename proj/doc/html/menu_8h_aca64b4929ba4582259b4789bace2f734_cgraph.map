@@ -1,0 +1,4 @@
+<map id="create_menu_sprites" name="create_menu_sprites">
+<area shape="rect" id="node1" title="Creates the menu screen sprites." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="node2" href="$sprite_8c.html#a9ccde6d4e77fd2cfab480e67fd92c1b7" title="Creates a sprite from XPM sprites." alt="" coords="212,5,355,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="destroy_game_over_sprites" name="destroy_game_over_sprites">
+<area shape="rect" id="node1" title="Destroys the game over screen sprites." alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga607cfeb4f019a84c346eb3bce9da0420" title="Destroys a sprite and frees its resources." alt="" coords="256,5,371,32"/>
+</map>

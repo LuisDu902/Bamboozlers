@@ -6,11 +6,20 @@
 #include "controller/RTC/rtc.h"
 #include "model/model.h"
 #include "model/sprite.h"
-#include "viewer/menu_viewer.h"
-#include "viewer/game_viewer.h"
 #include "states/state.h"
 
-
+/**
+ * @mainpage Game Documentation
+ *
+ * Bamboozlers is an adaptation of the game Transformice, where the user takes on the role of a panda
+ * instead of a mouse. The objective is to build a path using planks and wooden boxes so that the 
+ * panda can reach its food, bamboo. After collecting it, the panda must return home in order
+* to complete a level of the game.
+ *
+ * Each level presents a unique combination of platforms and traps that require strategic thinking
+  * and must be overcome within a time limit. Additionally, the number of planks and boxes that 
+  * the panda can use is also limited.
+ */
 extern Menu_state menu_state; 
 uint8_t rtc_mask;
 uint32_t timer_mask, keyboard_mask, mouse_mask;
@@ -27,7 +36,7 @@ int (main)(int argc, char *argv[]) {
 int init() {
 
     if (timer_set_frequency(0, 30)) return 1;
-    if (set_rtc_interrupt(true)) return 1;
+    if (set_alarm_upd_interrupt(true)) return 1;
     
     if (set_main_buffer(VBE_DIRECT_600p)) return 1;
     set_drawing_buffer();
@@ -52,7 +61,7 @@ int init() {
 
 int cleanup() {
 
-    if (set_rtc_interrupt(false)) return 1;
+    if (set_alarm_upd_interrupt(false)) return 1;
     if (set_text_mode()) return 1;
 
     destroy_sprites();
@@ -96,5 +105,3 @@ int (proj_main_loop)(int argc, char *argv[]) {
 
     return 0;
 }
-
-  

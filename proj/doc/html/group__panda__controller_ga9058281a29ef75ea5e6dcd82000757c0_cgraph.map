@@ -1,0 +1,4 @@
+<map id="collide_with_items" name="collide_with_items">
+<area shape="rect" id="node1" title="Checks if the panda collides with any items." alt="" coords="5,5,149,32"/>
+<area shape="rect" id="node2" href="$group__map__controller.html#ga02f2f989c3627d1012fe3c97faba404b" title="Checks if two sprites collide." alt="" coords="197,5,263,32"/>
+</map>

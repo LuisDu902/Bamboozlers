@@ -1,0 +1,19 @@
+<map id="update_panda_state" name="update_panda_state">
+<area shape="rect" id="node1" title="Updates the state of the panda character." alt="" coords="5,335,160,361"/>
+<area shape="rect" id="node2" href="$group__panda__controller.html#ga144565a588c341a814971556dd542fcf" title="Checks if the panda is above any item." alt="" coords="247,5,377,32"/>
+<area shape="rect" id="node4" href="$group__map__controller.html#ga02f2f989c3627d1012fe3c97faba404b" title="Checks if two sprites collide." alt="" coords="479,157,545,184"/>
+<area shape="rect" id="node5" href="$group__panda__controller.html#ga9058281a29ef75ea5e6dcd82000757c0" title="Checks if the panda collides with any items." alt="" coords="240,208,384,235"/>
+<area shape="rect" id="node6" href="$group__panda__controller.html#ga9b876f521a53fcfb081a3e403d552b85" title="Makes the panda character fall." alt="" coords="291,411,333,437"/>
+<area shape="rect" id="node7" href="$group__panda__controller.html#ga959045326863d1ba5dceafcf5f1b498e" title="Fixes the collision between the panda and the collided item." alt="" coords="263,259,361,285"/>
+<area shape="rect" id="node8" href="$group__panda__controller.html#gaa9b6d0b7897eec3788b04e783cb11739" title="Moves the panda character to the left." alt="" coords="469,271,555,297"/>
+<area shape="rect" id="node9" href="$group__panda__controller.html#gab96f9f75e97d03c5682995c854ec4cb5" title="Moves the panda character to the left." alt="" coords="464,347,560,373"/>
+<area shape="rect" id="node10" href="$group__panda__controller.html#gaadcbd7769f77292471f99850796e7489" title="Fixes the collision between the panda and the collided item during a fall." alt="" coords="249,56,375,83"/>
+<area shape="rect" id="node11" href="$group__panda__controller.html#gaa7d8d77d5aa0271b47adbbbcffeb1517" title="Fixes the collision between the panda and the collided item during a jump." alt="" coords="243,107,381,133"/>
+<area shape="rect" id="node12" href="$group__panda__controller.html#gad7c2d8881ede8b56ccfcc4b3b2a475b3" title="Handles the boundary conditions for the panda character." alt="" coords="208,461,416,488"/>
+<area shape="rect" id="node13" href="$group__panda__controller.html#ga2c6d1dd259c937c3a8194b97ed3a6698" title="Checks if the panda hits the floor." alt="" coords="275,512,349,539"/>
+<area shape="rect" id="node14" href="$group__panda__controller.html#ga2a8ae329702e1bac41c8551d1e86bd77" title="Makes the panda character jump." alt="" coords="285,563,339,589"/>
+<area shape="rect" id="node15" href="$group__item__controller.html#ga65e6a0a109d61b5b12d11ad9d8cde508" title="Updates the inventory." alt="" coords="244,613,380,640"/>
+<area shape="rect" id="node17" href="$group__panda__controller.html#ga52e159828216bfe07c652074c314455c" title="Updates the panda character&#39;s animation frame." alt="" coords="219,664,405,691"/>
+<area shape="rect" id="node3" href="$group__panda__controller.html#ga7248171b38c62ae744d602c53b51d390" title="Checks if the panda is above a given item." alt="" coords="481,56,543,83"/>
+<area shape="rect" id="node16" href="$group__sprite.html#ga0bb9f4b019dbaabf93664db54d901827" title="Sets the position of a sprite." alt="" coords="479,613,545,640"/>
+</map>

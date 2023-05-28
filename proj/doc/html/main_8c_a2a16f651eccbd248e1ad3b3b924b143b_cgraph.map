@@ -1,0 +1,52 @@
+<map id="proj_main_loop" name="proj_main_loop">
+<area shape="rect" id="node1" title=" " alt="" coords="5,1065,128,1091"/>
+<area shape="rect" id="node2" href="$main_8c.html#adb873dc3613b921f4e9ab97a5faf0a27" title=" " alt="" coords="227,862,300,889"/>
+<area shape="rect" id="node12" href="$group__viewer.html#ga707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="458,1065,557,1091"/>
+<area shape="rect" id="node19" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="242,381,285,407"/>
+<area shape="rect" id="node32" href="$group__rtc.html#ga75dad42881d64cf07cf1bdc2979a7056" title="RTC interrupt handler." alt="" coords="234,77,293,103"/>
+<area shape="rect" id="node33" href="$group__state.html#gabca9bf2889587ddccfa0d25169da762d" title="Updates the state based on the keyboard input." alt="" coords="176,1394,351,1421"/>
+<area shape="rect" id="node39" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="184,1698,343,1725"/>
+<area shape="rect" id="node47" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="189,1141,338,1167"/>
+<area shape="rect" id="node3" href="$group__model.html#ga4f202337f90040263c518c9fbc82d2f3" title="Destroys all sprites used in the game." alt="" coords="446,913,569,939"/>
+<area shape="rect" id="node4" href="$group__mouse.html#ga213d5f0c93d25fe21ae6ee3ba7b50a15" title="Disables data reporting for the mouse." alt="" coords="422,710,593,737"/>
+<area shape="rect" id="node6" href="$group__keyboard.html#ga32cc4de66854f8a7bd909e7aa8b901ed" title="Unsubscribes from keyboard interrupts." alt="" coords="412,963,603,990"/>
+<area shape="rect" id="node7" href="$group__mouse.html#ga3ecf823d80520009ae5e0d76ae40a3c3" title="Unsubscribes from mouse interrupts." alt="" coords="420,1014,595,1041"/>
+<area shape="rect" id="node8" href="$group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title="Unsubscribes RTC interrupts." alt="" coords="433,761,581,787"/>
+<area shape="rect" id="node9" href="$group__rtc.html#gaf7ad1adef6fab0acdbb82fe65bdd7c30" title="Sets the RTC interrupts." alt="" coords="417,659,598,686"/>
+<area shape="rect" id="node10" href="$group__graphics.html#ga62f63672fd06c462a0873e30f5e32ef8" title="Sets the text mode." alt="" coords="448,811,567,838"/>
+<area shape="rect" id="node11" href="$group__timer.html#gafabd21de449be154dd65d5fdb2d8045d" title="Unsubscribes from timer interrupts." alt="" coords="424,862,591,889"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="706,634,805,661"/>
+<area shape="rect" id="node13" href="$group__viewer.html#ga1209cc537c04f860f7bf0301ad7a4987" title="Draws the cursor on the screen based on the current menu state." alt="" coords="705,1166,806,1193"/>
+<area shape="rect" id="node14" href="$group__game__viewer.html#ga87b7bdb3212593972316d18d5aa8e02e" title="Draws the game menu including the map, inventory, background, timer, home, and other sprites." alt="" coords="684,963,827,990"/>
+<area shape="rect" id="node15" href="$group__game__over__viewer.html#gab4dfd5cac05ded2669eba91c4755e7da" title="Draws the game over menu." alt="" coords="666,1014,845,1041"/>
+<area shape="rect" id="node16" href="$group__instructions__viewer.html#gaa4d38432f695ccbcb04a63e78b87897a" title="Draws the instructions menu with the instruction texts." alt="" coords="665,1065,846,1091"/>
+<area shape="rect" id="node17" href="$group__level__select__viewer.html#ga8ec35ca14990ff5ff6ea318e6b6a19cd" title="Draws the level selection menu with the level options." alt="" coords="664,1115,847,1142"/>
+<area shape="rect" id="node18" href="$group__menu__viewer.html#ga827220a6b9f738eba8b094586855b0b7" title="Draws the main menu with the menu options." alt="" coords="686,913,825,939"/>
+<area shape="rect" id="node20" href="$group__model.html#ga6fc80920964e58c717dfc56fe6254e82" title="Creates all sprites used in the game." alt="" coords="450,355,565,382"/>
+<area shape="rect" id="node21" href="$group__mouse.html#gabe20128c397b0e728b58316a8e1a6e14" title="Enables data reporting for the mouse." alt="" coords="423,609,591,635"/>
+<area shape="rect" id="node22" href="$group__keyboard.html#gac94ccd7f9de1d3a961c5a7517aad170c" title="Subscribes to keyboard interrupts." alt="" coords="420,406,595,433"/>
+<area shape="rect" id="node23" href="$group__mouse.html#gaf9bb904d89df66614ea0a8440d38e26e" title="Subscribes to mouse interrupts." alt="" coords="428,457,587,483"/>
+<area shape="rect" id="node24" href="$group__rtc.html#ga5171a9c0f54940fe60f7500896afcc86" title="Subscribes RTC interrupts." alt="" coords="441,507,573,534"/>
+<area shape="rect" id="node25" href="$group__rtc.html#ga061230f6f4a1fd2f970247ca014b6f41" title="Updates the RTC time." alt="" coords="472,51,543,78"/>
+<area shape="rect" id="node26" href="$group__rtc.html#gaba6e92914293f2cd8d6300509252dc18" title="Sets the power&#45;up alarm based on the current time." alt="" coords="428,102,587,129"/>
+<area shape="rect" id="node27" href="$group__graphics.html#gac0f40150364b223d22b4524c479f3d0a" title="Sets the drawing buffer for subsequent drawing operations." alt="" coords="434,558,581,585"/>
+<area shape="rect" id="node28" href="$group__graphics.html#gaa2ac3ebc7870950bab4c0fc90f113155" title="Sets the graphic mode." alt="" coords="437,153,578,179"/>
+<area shape="rect" id="node29" href="$group__graphics.html#ga4b490080675dfe3d4048a03e521f2906" title="Sets the main buffer for drawing operations." alt="" coords="444,203,571,230"/>
+<area shape="rect" id="node30" href="$group__timer.html#gaf2c04fa8e97ffa748fd3f612886a92a7" title="Sets the frequency of a timer." alt="" coords="429,254,585,281"/>
+<area shape="rect" id="node31" href="$group__timer.html#ga163a1baffdf1b28000ff7bc08fd09ee0" title="Subscribes to timer interrupts." alt="" coords="413,305,602,331"/>
+<area shape="rect" id="node34" href="$group__game__state.html#ga7715241367f26a74f1509c3b29068b5c" title="Updates the game state based on the keyboard input." alt="" coords="418,1521,597,1547"/>
+<area shape="rect" id="node35" href="$group__game__over__state.html#ga7bdcebfde151484d2738ee286c5f4112" title="Updates the keyboard input in the game over state." alt="" coords="400,1318,615,1345"/>
+<area shape="rect" id="node36" href="$group__instructions__state.html#ga81f90d18d90e8fc234025ee2a2507c1a" title="Updates the menu state based on the keyboard input in the instructions menu." alt="" coords="399,1369,616,1395"/>
+<area shape="rect" id="node37" href="$group__level__select__state.html#gac561c828724a058164505b208dd6cd40" title="Updates the menu state based on the keyboard input in the instructions menu." alt="" coords="421,1419,594,1446"/>
+<area shape="rect" id="node38" href="$group__menu__state.html#gaa14a1b534554f691bcc09ed45295db0a" title="Updates the menu state based on the keyboard input in the main menu." alt="" coords="418,1470,597,1497"/>
+<area shape="rect" id="node40" href="$group__mouse.html#ga210374b50462acdedab00df64d5cea3c" title="Mouse interrupt handler." alt="" coords="465,1673,550,1699"/>
+<area shape="rect" id="node41" href="$group__mouse.html#gafe0c067c4db301d97a99cb9f7af647e5" title="Synchronizes mouse packets." alt="" coords="456,1723,559,1750"/>
+<area shape="rect" id="node42" href="$group__state.html#gac004c5f05abe832000997985d18059be" title="Updates the cursor position based on the mouse input." alt="" coords="421,1774,594,1801"/>
+<area shape="rect" id="node43" href="$group__game__state.html#ga44e04f1f35ab1c6e24d40d3f68f81a99" title="Updates the game state based on the mouse input." alt="" coords="426,1825,589,1851"/>
+<area shape="rect" id="node44" href="$group__game__over__state.html#gaea49a2c9042bfa1865ee18ab182f4690" title="Updates the mouse input in the game over state." alt="" coords="408,1875,607,1902"/>
+<area shape="rect" id="node45" href="$group__level__select__state.html#ga0d14765d4f61f5165372d6027b5cff2e" title="Updates the menu state based on the mouse input in the instructions menu." alt="" coords="429,1571,586,1598"/>
+<area shape="rect" id="node46" href="$group__menu__state.html#ga0bddbc36bfdf68fffd6da345019680cd" title="Updates the menu state based on the mouse input in the main menu." alt="" coords="426,1622,589,1649"/>
+<area shape="rect" id="node48" href="$group__graphics.html#ga3b1e8cd1261ca12581d1c26be45ea309" title="Clears the drawing buffer by setting all pixels to black." alt="" coords="428,1267,587,1294"/>
+<area shape="rect" id="node49" href="$group__graphics.html#gaa3eb82d3b44f0375e27216392595fdb3" title="Swaps the drawing buffer with the main buffer, updating the screen." alt="" coords="453,1115,561,1142"/>
+<area shape="rect" id="node50" href="$group__game__state.html#ga502531ceb516d571ad7a91b766070112" title="Updates the game state based on the timer interrupt." alt="" coords="431,1217,584,1243"/>
+</map>

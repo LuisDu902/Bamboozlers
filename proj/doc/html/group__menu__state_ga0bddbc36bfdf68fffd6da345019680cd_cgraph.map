@@ -1,0 +1,4 @@
+<map id="update_mouse_menu" name="update_mouse_menu">
+<area shape="rect" id="node1" title="Updates the menu state based on the mouse input in the main menu." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="216,5,315,32"/>
+</map>

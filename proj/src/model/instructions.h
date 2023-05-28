@@ -9,6 +9,10 @@
 #include "sprite.h"
 #include "xpm/instructions_text.xpm"
 
+/** @defgroup instructions instructions
+ * @{
+  */
+
 Sprite *instructions_text_1;
 Sprite *instructions_text_2;
 Sprite *instructions_text_3;

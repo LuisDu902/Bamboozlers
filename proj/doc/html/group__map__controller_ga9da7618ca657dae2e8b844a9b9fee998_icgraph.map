@@ -1,0 +1,13 @@
+<map id="is_in_map" name="is_in_map">
+<area shape="rect" id="node1" title="Checks if an item is within the map boundaries." alt="" coords="933,81,1021,108"/>
+<area shape="rect" id="node2" href="$group__item__controller.html#gac8176cead38b324d33e5ccb8d22bcf1a" title="Checks the position of the selected item and handles collisions." alt="" coords="749,5,876,32"/>
+<area shape="rect" id="node6" href="$group__game__viewer.html#ga9e10eacfcda98bc74247832d523edb39" title="Draws the game cursor based on the item state." alt="" coords="740,107,885,133"/>
+<area shape="rect" id="node10" href="$group__item__controller.html#ga53068643b88f37744998d177e83bae33" title="Checks if an item is selected and updates the item&#39;s position." alt="" coords="747,56,879,83"/>
+<area shape="rect" id="node11" href="$group__game__state.html#ga502531ceb516d571ad7a91b766070112" title="Updates the game state based on the timer interrupt." alt="" coords="534,157,687,184"/>
+<area shape="rect" id="node3" href="$group__game__state.html#ga44e04f1f35ab1c6e24d40d3f68f81a99" title="Updates the game state based on the mouse input." alt="" coords="529,5,692,32"/>
+<area shape="rect" id="node4" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="176,5,335,32"/>
+<area shape="rect" id="node5" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,128,83"/>
+<area shape="rect" id="node7" href="$group__viewer.html#ga1209cc537c04f860f7bf0301ad7a4987" title="Draws the cursor on the screen based on the current menu state." alt="" coords="560,107,661,133"/>
+<area shape="rect" id="node8" href="$group__viewer.html#ga707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="383,56,481,83"/>
+<area shape="rect" id="node9" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="181,107,330,133"/>
+</map>

@@ -11,6 +11,9 @@
 #include "xpm/levels/level2.xpm"
 #include "xpm/levels/level3.xpm"
 
+/** @defgroup level_select level_select
+ * @{
+  */
 Sprite *level_one;
 Sprite *level_two;
 Sprite *level_three;

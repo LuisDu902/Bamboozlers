@@ -4,7 +4,7 @@
 /**
  * @file panda_controller.h
  *
- * @brief Functions for controlling the panda character, including movement, collision detection, and animation.
+ * @brief Header file containing functions for controlling the panda character, including movement, collision detection, and animation.
  */
 
 
@@ -25,6 +25,10 @@ extern Panda_state panda_state;
 
 extern bool isRightPressed;
 extern bool isLeftPressed;
+
+/** @defgroup panda_controller panda_controller
+ * @{
+ */
 
 /**
  * @brief Checks if the panda is above a given item.

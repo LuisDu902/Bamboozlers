@@ -1,0 +1,34 @@
+<map id="init" name="init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,809,48,836"/>
+<area shape="rect" id="node2" href="$group__model.html#ga6fc80920964e58c717dfc56fe6254e82" title="Creates all sprites used in the game." alt="" coords="133,180,248,207"/>
+<area shape="rect" id="node10" href="$group__mouse.html#gabe20128c397b0e728b58316a8e1a6e14" title="Enables data reporting for the mouse." alt="" coords="107,708,275,735"/>
+<area shape="rect" id="node15" href="$group__keyboard.html#gac94ccd7f9de1d3a961c5a7517aad170c" title="Subscribes to keyboard interrupts." alt="" coords="103,809,278,836"/>
+<area shape="rect" id="node16" href="$group__mouse.html#gaf9bb904d89df66614ea0a8440d38e26e" title="Subscribes to mouse interrupts." alt="" coords="111,860,270,887"/>
+<area shape="rect" id="node17" href="$group__rtc.html#ga5171a9c0f54940fe60f7500896afcc86" title="Subscribes RTC interrupts." alt="" coords="125,911,257,937"/>
+<area shape="rect" id="node18" href="$group__rtc.html#ga061230f6f4a1fd2f970247ca014b6f41" title="Updates the RTC time." alt="" coords="155,441,226,468"/>
+<area shape="rect" id="node23" href="$group__rtc.html#gaf7ad1adef6fab0acdbb82fe65bdd7c30" title="Sets the RTC interrupts." alt="" coords="576,796,757,823"/>
+<area shape="rect" id="node24" href="$group__rtc.html#gaba6e92914293f2cd8d6300509252dc18" title="Sets the power&#45;up alarm based on the current time." alt="" coords="111,391,270,417"/>
+<area shape="rect" id="node25" href="$group__graphics.html#gac0f40150364b223d22b4524c479f3d0a" title="Sets the drawing buffer for subsequent drawing operations." alt="" coords="117,961,264,988"/>
+<area shape="rect" id="node26" href="$group__graphics.html#gaa2ac3ebc7870950bab4c0fc90f113155" title="Sets the graphic mode." alt="" coords="120,1012,261,1039"/>
+<area shape="rect" id="node27" href="$group__graphics.html#ga4b490080675dfe3d4048a03e521f2906" title="Sets the main buffer for drawing operations." alt="" coords="127,1063,254,1089"/>
+<area shape="rect" id="node28" href="$group__timer.html#gaf2c04fa8e97ffa748fd3f612886a92a7" title="Sets the frequency of a timer." alt="" coords="113,632,269,659"/>
+<area shape="rect" id="node32" href="$group__timer.html#ga163a1baffdf1b28000ff7bc08fd09ee0" title="Subscribes to timer interrupts." alt="" coords="96,1113,285,1140"/>
+<area shape="rect" id="node3" href="$group__game__over.html#gaf9ec056011ec595ee6de8265977f52ad" title="Creates the game over screen sprites." alt="" coords="333,5,528,32"/>
+<area shape="rect" id="node5" href="$group__game.html#gac276f8bc4fe067dfb30eb09ec5602588" title="Creates the game sprites." alt="" coords="351,56,510,83"/>
+<area shape="rect" id="node6" href="$group__instructions.html#gac035dc12b522a4a0e00642568617864f" title="Creates the instruction screen sprites." alt="" coords="357,107,504,149"/>
+<area shape="rect" id="node7" href="$group__level__select.html#gafc39badb2c1eb005efaca17ccdc87a95" title="Creates the level select screen sprites." alt="" coords="357,173,505,214"/>
+<area shape="rect" id="node8" href="$group__menu.html#gaca64b4929ba4582259b4789bace2f734" title="Creates the menu screen sprites." alt="" coords="351,239,510,265"/>
+<area shape="rect" id="node9" href="$group__model.html#ga29929e5bb1ef04bd53eae6e940f3e3a3" title="Creates the mouse cursor sprites." alt="" coords="348,289,513,316"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga9ccde6d4e77fd2cfab480e67fd92c1b7" title="Creates a sprite from XPM sprites." alt="" coords="595,148,738,175"/>
+<area shape="rect" id="node11" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="805,619,904,645"/>
+<area shape="rect" id="node12" href="$group___k_b_c.html#ga1cf2ac5152e50a2fb53919df386523c5" title="Writes a command to a given port." alt="" coords="367,695,494,721"/>
+<area shape="rect" id="node13" href="$group___k_b_c.html#gae988bc086a6da6871f1a5c897d4eec63" title="Checks the status byte for errors." alt="" coords="596,644,737,671"/>
+<area shape="rect" id="node14" href="$group___k_b_c.html#gac914f50754a0fd75563e8640a72874f3" title="Retrieves the status register of the KBC." alt="" coords="605,695,729,721"/>
+<area shape="rect" id="node19" href="$group__rtc.html#ga060741ae796d3c561d57c9a25f402d2d" title="Disables RTC updates." alt="" coords="606,441,727,468"/>
+<area shape="rect" id="node20" href="$group__rtc.html#gaa63c62bc7e741b9c72538b68eb898f6b" title="Enables RTC updates." alt="" coords="607,492,726,519"/>
+<area shape="rect" id="node21" href="$group__rtc.html#ga271589204989d069068b8251c7d3a8af" title="Reads the hours value from the specified RTC register." alt="" coords="371,340,490,367"/>
+<area shape="rect" id="node22" href="$group__rtc.html#ga763493fa756f9d870276f292dd15bd7f" title="Waits until the RTC finishes updating." alt="" coords="374,391,487,417"/>
+<area shape="rect" id="node29" href="$group__timer.html#ga0732b22a1c1cd7e587ea836f8fc4b10f" title="Gets the configuration of a timer." alt="" coords="607,568,727,595"/>
+<area shape="rect" id="node30" href="$utils_8c.html#a81621440b3d65680979425e39aa8c789" title=" " alt="" coords="379,593,482,620"/>
+<area shape="rect" id="node31" href="$utils_8c.html#a6a880076cd2ec468834438b6e0c58836" title=" " alt="" coords="377,644,484,671"/>
+</map>

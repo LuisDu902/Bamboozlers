@@ -1,0 +1,5 @@
+<map id="draw_level_select_menu" name="draw_level_select_menu">
+<area shape="rect" id="node1" title="Draws the level selection menu with the level options." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="node2" href="$group__viewer.html#ga0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="236,5,335,32"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="383,5,497,32"/>
+</map>

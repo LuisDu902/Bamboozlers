@@ -1,0 +1,4 @@
+<map id="fix_fall_collision" name="fix_fall_collision">
+<area shape="rect" id="node1" title="Fixes the collision between the panda and the collided item during a fall." alt="" coords="5,5,132,32"/>
+<area shape="rect" id="node2" href="$group__map__controller.html#ga02f2f989c3627d1012fe3c97faba404b" title="Checks if two sprites collide." alt="" coords="180,5,245,32"/>
+</map>

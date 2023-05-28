@@ -1,0 +1,7 @@
+<map id="draw_game_cursor" name="draw_game_cursor">
+<area shape="rect" id="node1" title="Draws the game cursor based on the item state." alt="" coords="5,56,151,83"/>
+<area shape="rect" id="node2" href="$group__viewer.html#ga0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="199,5,297,32"/>
+<area shape="rect" id="node4" href="$group__map__controller.html#ga9da7618ca657dae2e8b844a9b9fee998" title="Checks if an item is within the map boundaries." alt="" coords="204,56,292,83"/>
+<area shape="rect" id="node5" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="199,107,297,133"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="345,5,460,32"/>
+</map>

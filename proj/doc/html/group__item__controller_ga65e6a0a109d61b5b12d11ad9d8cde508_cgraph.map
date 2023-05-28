@@ -1,0 +1,4 @@
+<map id="update_inventory" name="update_inventory">
+<area shape="rect" id="node1" title="Updates the inventory." alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga0bb9f4b019dbaabf93664db54d901827" title="Sets the position of a sprite." alt="" coords="189,5,255,32"/>
+</map>

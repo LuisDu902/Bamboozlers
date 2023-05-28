@@ -1,0 +1,7 @@
+<map id="draw_inventory" name="draw_inventory">
+<area shape="rect" id="node1" title="Draws the inventory containers." alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$game__viewer_8c.html#a345eae12bd1a50f184626e675dd4e734" title="Draws a container at the specified position and with the given width." alt="" coords="176,5,299,32"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga99d2da2559e11200c6b40c469e9977ec" title="Draws a rectangle starting at the specified coordinates with the given width, height,..." alt="" coords="347,5,492,32"/>
+<area shape="rect" id="node4" href="$group__graphics.html#ga5e5b25bd525250f61f40b9e9f212d5e6" title="Draws a horizontal line starting at the specified coordinates with the given length and color." alt="" coords="540,5,656,32"/>
+<area shape="rect" id="node5" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="704,5,819,32"/>
+</map>

@@ -11,6 +11,10 @@
 #include "xpm/menu/levels.xpm"
 #include "xpm/menu/logo.xpm"
 
+/** @defgroup menu menu
+ * @{
+  */
+
 Sprite* levels;
 Sprite* logo;
 Sprite* instructions;

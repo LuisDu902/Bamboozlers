@@ -4,7 +4,7 @@
 /**
  * @file map_controller.h
  *
- * @brief Functions for map management, collision detection, and game setup.
+ * @brief Header file containing functions for map management, collision detection, and game setup.
  */
 
 #include "../KBC/KBC.h"
@@ -33,6 +33,10 @@ extern int counter;
 extern Panda_state panda_state;
 extern bool isRightPressed;
 extern bool isLeftPressed;
+
+/** @defgroup map_controller map_controller
+ * @{
+ */
 
 /**
  * @brief Checks if an item is within the map boundaries.

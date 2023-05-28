@@ -11,10 +11,10 @@
 #include "../KBC/KBC.h"
 
 
-/** @defgroup Mouse Mouse
+
+/** @defgroup mouse mouse
  * @{
  */
-
 
 /**
  * @brief Subscribes to mouse interrupts.

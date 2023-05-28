@@ -1,0 +1,6 @@
+<map id="draw_map" name="draw_map">
+<area shape="rect" id="node1" title="Draws the map borders." alt="" coords="5,5,96,32"/>
+<area shape="rect" id="node2" href="$group__graphics.html#ga99d2da2559e11200c6b40c469e9977ec" title="Draws a rectangle starting at the specified coordinates with the given width, height,..." alt="" coords="144,5,289,32"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga5e5b25bd525250f61f40b9e9f212d5e6" title="Draws a horizontal line starting at the specified coordinates with the given length and color." alt="" coords="337,5,453,32"/>
+<area shape="rect" id="node4" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="501,5,616,32"/>
+</map>

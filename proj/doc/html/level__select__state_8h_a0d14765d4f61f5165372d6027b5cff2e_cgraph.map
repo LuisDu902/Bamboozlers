@@ -1,0 +1,6 @@
+<map id="update_mouse_level" name="update_mouse_level">
+<area shape="rect" id="node1" title="Updates the menu state based on the mouse input in the instructions menu." alt="" coords="5,31,163,57"/>
+<area shape="rect" id="node2" href="$group__map__controller.html#ga2a73a7f2b0434d6bb3444a93609e86f8" title="Sets up the game map for a specific level." alt="" coords="211,5,312,32"/>
+<area shape="rect" id="node4" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="212,56,311,83"/>
+<area shape="rect" id="node3" href="$sprite_8c.html#a0bb9f4b019dbaabf93664db54d901827" title="Sets the position of a sprite." alt="" coords="360,5,425,32"/>
+</map>

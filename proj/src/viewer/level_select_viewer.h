@@ -8,6 +8,10 @@
 
 #include "viewer.h"
 
+/** @defgroup level_select_viewer level_select_viewer
+ * @{
+  */
+  
 extern Sprite* level_one;
 extern Sprite* level_two;
 extern Sprite* level_three;

@@ -1,0 +1,4 @@
+<map id="above_any_item" name="above_any_item">
+<area shape="rect" id="node1" title="Checks if the panda is above any item." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$group__panda__controller.html#ga7248171b38c62ae744d602c53b51d390" title="Checks if the panda is above a given item." alt="" coords="184,5,247,32"/>
+</map>

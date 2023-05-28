@@ -1,0 +1,5 @@
+<map id="draw_instructions_menu" name="draw_instructions_menu">
+<area shape="rect" id="node1" title="Draws the instructions menu with the instruction texts." alt="" coords="5,5,187,32"/>
+<area shape="rect" id="node2" href="$group__viewer.html#ga0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="235,5,333,32"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="381,5,496,32"/>
+</map>

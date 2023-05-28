@@ -9,7 +9,7 @@
 
 #include <lcom/lcf.h>
 
-/** @defgroup Timer Timer
+/** @defgroup timer timer
  * @{
  */
 
@@ -21,6 +21,8 @@
  * @return 0 on success, non-zero value on failure.
  */
 int (timer_set_frequency)(uint8_t timer, uint32_t freq);
+
+
 /**
  * @brief Gets the configuration of a timer.
  *

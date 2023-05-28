@@ -8,6 +8,9 @@
 
 #include "viewer.h"
 
+/** @defgroup instructions_viewer instructions_viewer
+ * @{
+  */
 extern Sprite* instructions_text_1;
 extern Sprite* instructions_text_2;
 extern Sprite* instructions_text_3;

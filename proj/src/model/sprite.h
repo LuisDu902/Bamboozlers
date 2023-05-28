@@ -3,6 +3,9 @@
 
 #include "controller/video/graphics.h"
 
+/** @defgroup sprite sprite
+ * @{
+  */
 /**
  * @brief Structure representing a sprite.
  */

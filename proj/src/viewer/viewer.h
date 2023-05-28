@@ -15,6 +15,9 @@
 #include "game_over_viewer.h"
 #include "level_select_viewer.h"
 
+/** @defgroup viewer viewer
+ * @{
+  */
 /**
  * @brief Draws a sprite on the screen.
  *

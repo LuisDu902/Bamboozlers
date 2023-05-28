@@ -1,0 +1,6 @@
+<map id="draw_level_cursor" name="draw_level_cursor">
+<area shape="rect" id="node1" title="Draws the level cursor based on the selected level." alt="" coords="5,31,145,57"/>
+<area shape="rect" id="node2" href="$viewer_8c.html#a0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="193,5,292,32"/>
+<area shape="rect" id="node4" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="193,56,292,83"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="340,5,455,32"/>
+</map>

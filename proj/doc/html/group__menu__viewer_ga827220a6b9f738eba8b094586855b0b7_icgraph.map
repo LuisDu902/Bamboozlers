@@ -1,0 +1,6 @@
+<map id="draw_main_menu" name="draw_main_menu">
+<area shape="rect" id="node1" title="Draws the main menu with the menu options." alt="" coords="520,5,659,32"/>
+<area shape="rect" id="node2" href="$group__viewer.html#ga707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="373,5,472,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node4" href="$group__state.html#gac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="176,31,325,57"/>
+</map>

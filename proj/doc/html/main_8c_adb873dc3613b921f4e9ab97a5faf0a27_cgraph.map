@@ -1,0 +1,21 @@
+<map id="cleanup" name="cleanup">
+<area shape="rect" id="node1" title=" " alt="" coords="5,453,79,480"/>
+<area shape="rect" id="node2" href="$group__model.html#ga4f202337f90040263c518c9fbc82d2f3" title="Destroys all sprites used in the game." alt="" coords="161,165,283,192"/>
+<area shape="rect" id="node9" href="$group__mouse.html#ga213d5f0c93d25fe21ae6ee3ba7b50a15" title="Disables data reporting for the mouse." alt="" coords="137,327,307,353"/>
+<area shape="rect" id="node14" href="$group__keyboard.html#ga32cc4de66854f8a7bd909e7aa8b901ed" title="Unsubscribes from keyboard interrupts." alt="" coords="127,377,317,404"/>
+<area shape="rect" id="node15" href="$group__mouse.html#ga3ecf823d80520009ae5e0d76ae40a3c3" title="Unsubscribes from mouse interrupts." alt="" coords="135,428,309,455"/>
+<area shape="rect" id="node16" href="$group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title="Unsubscribes RTC interrupts." alt="" coords="148,479,296,505"/>
+<area shape="rect" id="node17" href="$group__rtc.html#gaf7ad1adef6fab0acdbb82fe65bdd7c30" title="Sets the RTC interrupts." alt="" coords="616,504,797,531"/>
+<area shape="rect" id="node18" href="$group__graphics.html#ga62f63672fd06c462a0873e30f5e32ef8" title="Sets the text mode." alt="" coords="163,580,281,607"/>
+<area shape="rect" id="node19" href="$group__timer.html#gafabd21de449be154dd65d5fdb2d8045d" title="Unsubscribes from timer interrupts." alt="" coords="139,631,305,657"/>
+<area shape="rect" id="node3" href="$group__game__over.html#gafd8aead7980399e61de4aebaf08c52e5" title="Destroys the game over screen sprites." alt="" coords="365,5,568,32"/>
+<area shape="rect" id="node4" href="$group__sprite.html#ga607cfeb4f019a84c346eb3bce9da0420" title="Destroys a sprite and frees its resources." alt="" coords="649,136,764,163"/>
+<area shape="rect" id="node5" href="$group__game.html#gab49f8cb06ae575901db9bf1194f2ab72" title="Destroys the game sprites." alt="" coords="383,107,550,133"/>
+<area shape="rect" id="node6" href="$group__instructions.html#gabdc245a9f1f0284c917267f29c85f5cb" title="Destroys the instruction screen sprites." alt="" coords="389,158,544,199"/>
+<area shape="rect" id="node7" href="$group__level__select.html#ga09be19091ce84ca252a566af88afe406" title="Destroys the level select screen sprites." alt="" coords="389,223,545,265"/>
+<area shape="rect" id="node8" href="$group__menu.html#gae07a33199be53d226b0122ba0888d5bf" title="Destroys the menu screen sprites." alt="" coords="383,289,550,316"/>
+<area shape="rect" id="node10" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="845,441,944,468"/>
+<area shape="rect" id="node11" href="$group___k_b_c.html#ga1cf2ac5152e50a2fb53919df386523c5" title="Writes a command to a given port." alt="" coords="403,391,530,417"/>
+<area shape="rect" id="node12" href="$group___k_b_c.html#gae988bc086a6da6871f1a5c897d4eec63" title="Checks the status byte for errors." alt="" coords="636,391,777,417"/>
+<area shape="rect" id="node13" href="$group___k_b_c.html#gac914f50754a0fd75563e8640a72874f3" title="Retrieves the status register of the KBC." alt="" coords="645,441,769,468"/>
+</map>

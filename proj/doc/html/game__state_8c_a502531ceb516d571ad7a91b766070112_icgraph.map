@@ -1,0 +1,5 @@
+<map id="update_timer_game" name="update_timer_game">
+<area shape="rect" id="node1" title="Updates the game state based on the timer interrupt." alt="" coords="373,5,527,32"/>
+<area shape="rect" id="node2" href="$state_8c.html#ac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="176,5,325,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>

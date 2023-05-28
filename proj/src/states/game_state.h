@@ -13,6 +13,9 @@
 #include "viewer/viewer.h"
 #include "state.h"
 
+/** @defgroup game_state game_state
+ * @{
+  */
 /**
  * @brief Updates the game state based on the keyboard input.
  */

@@ -1,0 +1,11 @@
+<map id="draw_game_menu" name="draw_game_menu">
+<area shape="rect" id="node1" title="Draws the game menu including the map, inventory, background, timer, home, and other sprites." alt="" coords="5,81,148,108"/>
+<area shape="rect" id="node2" href="$group__game__viewer.html#gacb26a649ac4b917d41c8a86ef1b37541" title="Draws the inventory containers." alt="" coords="196,5,319,32"/>
+<area shape="rect" id="node7" href="$group__game__viewer.html#gac4bcef6eb2b4c839c3b0c57171759a8e" title="Draws the map borders." alt="" coords="383,56,473,83"/>
+<area shape="rect" id="node8" href="$group__viewer.html#ga0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="379,157,477,184"/>
+<area shape="rect" id="node9" href="$group__game__viewer.html#ga9eb831ba2a514ba15a974586e8f80364" title="Draws the timer in the game menu." alt="" coords="209,107,305,133"/>
+<area shape="rect" id="node3" href="$group__game__viewer.html#ga345eae12bd1a50f184626e675dd4e734" title="Draws a container at the specified position and with the given width." alt="" coords="367,5,489,32"/>
+<area shape="rect" id="node4" href="$group__graphics.html#ga99d2da2559e11200c6b40c469e9977ec" title="Draws a rectangle starting at the specified coordinates with the given width, height,..." alt="" coords="537,63,683,89"/>
+<area shape="rect" id="node5" href="$group__graphics.html#ga5e5b25bd525250f61f40b9e9f212d5e6" title="Draws a horizontal line starting at the specified coordinates with the given length and color." alt="" coords="731,69,847,96"/>
+<area shape="rect" id="node6" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="895,107,1009,133"/>
+</map>

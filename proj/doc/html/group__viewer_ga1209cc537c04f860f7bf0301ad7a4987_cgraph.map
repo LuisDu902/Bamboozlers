@@ -1,0 +1,11 @@
+<map id="draw_cursor" name="draw_cursor">
+<area shape="rect" id="node1" title="Draws the cursor on the screen based on the current menu state." alt="" coords="5,107,107,133"/>
+<area shape="rect" id="node2" href="$group__game__viewer.html#ga9e10eacfcda98bc74247832d523edb39" title="Draws the game cursor based on the item state." alt="" coords="173,5,318,32"/>
+<area shape="rect" id="node3" href="$group__viewer.html#ga0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="384,107,483,133"/>
+<area shape="rect" id="node7" href="$group__game__over__viewer.html#ga2473522ee5ab26881e4495a6a5666136" title="Draws the cursor in the game over menu and updates its position based on the selected item." alt="" coords="155,107,336,133"/>
+<area shape="rect" id="node8" href="$group__level__select__viewer.html#gac864d3006142e4bd4cb28f77ec914395" title="Draws the level cursor based on the selected level." alt="" coords="175,157,315,184"/>
+<area shape="rect" id="node9" href="$group__menu__viewer.html#ga590d6557df299779778ad5526a5ec6eb" title="Draws the menu cursor based on the selected menu option." alt="" coords="173,208,318,235"/>
+<area shape="rect" id="node5" href="$group__map__controller.html#ga9da7618ca657dae2e8b844a9b9fee998" title="Checks if an item is within the map boundaries." alt="" coords="389,5,477,32"/>
+<area shape="rect" id="node6" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="384,157,483,184"/>
+<area shape="rect" id="node4" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="531,107,645,133"/>
+</map>

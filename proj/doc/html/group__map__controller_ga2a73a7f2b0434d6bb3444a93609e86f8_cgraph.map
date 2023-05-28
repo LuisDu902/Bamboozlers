@@ -1,0 +1,4 @@
+<map id="map_set_up" name="map_set_up">
+<area shape="rect" id="node1" title="Sets up the game map for a specific level." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga0bb9f4b019dbaabf93664db54d901827" title="Sets the position of a sprite." alt="" coords="155,5,220,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="update_keyboard_level" name="update_keyboard_level">
+<area shape="rect" id="node1" title="Updates the menu state based on the keyboard input in the instructions menu." alt="" coords="5,56,179,83"/>
+<area shape="rect" id="node2" href="$group__keyboard.html#ga08867b9a8652864d7f1134d4c0452688" title="Reads the scancode from the keyboard." alt="" coords="227,56,345,83"/>
+<area shape="rect" id="node3" href="$group___k_b_c.html#ga6162a7e4edf60dd470706fe3c4a4980f" title="Reads the output data from a given port." alt="" coords="393,56,493,83"/>
+<area shape="rect" id="node4" href="$group___k_b_c.html#gae988bc086a6da6871f1a5c897d4eec63" title="Checks the status byte for errors." alt="" coords="541,5,683,32"/>
+<area shape="rect" id="node5" href="$group___k_b_c.html#gac914f50754a0fd75563e8640a72874f3" title="Retrieves the status register of the KBC." alt="" coords="550,56,674,83"/>
+<area shape="rect" id="node6" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="731,81,829,108"/>
+</map>

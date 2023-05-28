@@ -1,0 +1,52 @@
+<map id="/home/luisdu/Desktop/lcom/g6/proj/src/controller/game/item_controller.h" name="/home/luisdu/Desktop/lcom/g6/proj/src/controller/game/item_controller.h">
+<area shape="rect" id="node1" title="Header file containing functions for controlling and updating game items in the game." alt="" coords="4145,5,4341,61"/>
+<area shape="rect" id="node2" href="$map__controller_8h.html" title="Header file containing functions for map management, collision detection, and game setup." alt="" coords="4404,348,4535,375"/>
+<area shape="rect" id="node13" href="$state_8h.html" title="Header file containing function declarations for state update functions." alt="" coords="3898,109,4009,136"/>
+<area shape="rect" id="node3" href="$_k_b_c_8h.html" title="Keyboard Controller (KBC) interface functions." alt="" coords="3921,505,4025,531"/>
+<area shape="rect" id="node6" href="$mouse_8h.html" title="Mouse interface functions." alt="" coords="4081,423,4220,449"/>
+<area shape="rect" id="node7" href="$timer_8h.html" title="Timer interface functions." alt="" coords="4447,423,4566,449"/>
+<area shape="rect" id="node8" href="$keyboard_8h.html" title="Keyboard interface functions." alt="" coords="3887,423,4057,449"/>
+<area shape="rect" id="node9" href="$graphics_8h.html" title="Header file containing graphics interface functions." alt="" coords="3677,587,3819,613"/>
+<area shape="rect" id="node11" href="$sprite_8h.html" title=" " alt="" coords="2407,505,2523,531"/>
+<area shape="rect" id="node12" href="$config_8h.html" title=" " alt="" coords="4642,423,4761,449"/>
+<area shape="rect" id="node4" title=" " alt="" coords="3885,736,3971,763"/>
+<area shape="rect" id="node5" href="$i8042_8h.html" title=" " alt="" coords="4027,587,4098,613"/>
+<area shape="rect" id="node10" href="$_v_b_e_8h.html" title=" " alt="" coords="3786,661,3846,688"/>
+<area shape="rect" id="node14" href="$menu__state_8h.html" title="Header file containing function declarations for menu state update functions." alt="" coords="4053,184,4163,211"/>
+<area shape="rect" id="node46" href="$game__state_8h.html" title="Header file containing function declarations for game state update functions." alt="" coords="4187,184,4298,211"/>
+<area shape="rect" id="node48" href="$instructions__state_8h.html" title="Header file containing function declarations for instructions state update functions." alt="" coords="3878,184,4029,211"/>
+<area shape="rect" id="node49" href="$game__over__state_8h.html" title="Header file containing function declarations for game over state update functions." alt="" coords="2823,184,2969,211"/>
+<area shape="rect" id="node50" href="$level__select__state_8h.html" title="Header file containing function declarations for game over state update functions." alt="" coords="2993,184,3145,211"/>
+<area shape="rect" id="node15" href="$viewer_8h.html" title="Header file containing function declarations for viewer functions." alt="" coords="3480,266,3605,293"/>
+<area shape="rect" id="node16" href="$model_8h.html" title="Sprites creation and destruction functions." alt="" coords="2648,348,2768,375"/>
+<area shape="rect" id="node41" href="$game__viewer_8h.html" title="Header file containing function declarations for game viewer functions." alt="" coords="3794,348,3915,375"/>
+<area shape="rect" id="node42" href="$menu__viewer_8h.html" title="Header file containing function declarations for menu viewer functions." alt="" coords="3649,348,3770,375"/>
+<area shape="rect" id="node43" href="$instructions__viewer_8h.html" title="Header file containing function declarations for instructions viewer functions." alt="" coords="3096,348,3256,375"/>
+<area shape="rect" id="node44" href="$game__over__viewer_8h.html" title="Header file containing function declarations for game over menu viewer functions." alt="" coords="3280,348,3437,375"/>
+<area shape="rect" id="node45" href="$level__select__viewer_8h.html" title="Header file containing function declarations for level select viewer functions." alt="" coords="3461,348,3624,375"/>
+<area shape="rect" id="node17" href="$menu_8h.html" title="Menu screen functions." alt="" coords="2609,423,2679,449"/>
+<area shape="rect" id="node21" href="$game_8h.html" title="Game logic and sprite creation/destruction functions." alt="" coords="1023,423,1094,449"/>
+<area shape="rect" id="node31" href="$instructions_8h.html" title="Instruction screen functions." alt="" coords="2338,423,2449,449"/>
+<area shape="rect" id="node33" href="$level__select_8h.html" title="Level select screen functions." alt="" coords="2473,423,2585,449"/>
+<area shape="rect" id="node37" href="$game__over_8h.html" title="Game over screen functions." alt="" coords="2117,423,2224,449"/>
+<area shape="rect" id="node40" title=" " alt="" coords="2755,423,2882,449"/>
+<area shape="rect" id="node18" title=" " alt="" coords="3313,505,3519,531"/>
+<area shape="rect" id="node19" title=" " alt="" coords="3543,505,3711,531"/>
+<area shape="rect" id="node20" title=" " alt="" coords="3132,505,3289,531"/>
+<area shape="rect" id="node22" title=" " alt="" coords="1174,505,1343,531"/>
+<area shape="rect" id="node23" title=" " alt="" coords="1368,505,1573,531"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1598,505,1762,531"/>
+<area shape="rect" id="node25" title=" " alt="" coords="93,505,259,531"/>
+<area shape="rect" id="node26" title=" " alt="" coords="283,505,408,531"/>
+<area shape="rect" id="node27" title=" " alt="" coords="433,505,578,531"/>
+<area shape="rect" id="node28" title=" " alt="" coords="603,505,760,531"/>
+<area shape="rect" id="node29" title=" " alt="" coords="785,505,943,531"/>
+<area shape="rect" id="node30" title=" " alt="" coords="967,505,1150,531"/>
+<area shape="rect" id="node32" title=" " alt="" coords="2185,505,2383,531"/>
+<area shape="rect" id="node34" title=" " alt="" coords="2548,505,2719,531"/>
+<area shape="rect" id="node35" title=" " alt="" coords="2743,505,2913,531"/>
+<area shape="rect" id="node36" title=" " alt="" coords="2937,505,3108,531"/>
+<area shape="rect" id="node38" title=" " alt="" coords="1786,505,1977,531"/>
+<area shape="rect" id="node39" title=" " alt="" coords="2001,497,2161,539"/>
+<area shape="rect" id="node47" href="$panda__controller_8h.html" title="Header file containing functions for controlling the panda character, including movement,..." alt="" coords="4346,259,4515,300"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="destroy_level_select_sprites" name="destroy_level_select_sprites">
+<area shape="rect" id="node1" title="Destroys the level select screen sprites." alt="" coords="5,5,161,47"/>
+<area shape="rect" id="node2" href="$group__sprite.html#ga607cfeb4f019a84c346eb3bce9da0420" title="Destroys a sprite and frees its resources." alt="" coords="209,13,324,39"/>
+</map>

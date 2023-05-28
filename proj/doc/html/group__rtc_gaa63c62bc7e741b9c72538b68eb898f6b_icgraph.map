@@ -1,0 +1,9 @@
+<map id="enable_update" name="enable_update">
+<area shape="rect" id="node1" title="Enables RTC updates." alt="" coords="651,31,769,57"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga061230f6f4a1fd2f970247ca014b6f41" title="Updates the RTC time." alt="" coords="327,5,397,32"/>
+<area shape="rect" id="node6" href="$group__rtc.html#ga763493fa756f9d870276f292dd15bd7f" title="Waits until the RTC finishes updating." alt="" coords="489,56,603,83"/>
+<area shape="rect" id="node3" href="$main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="184,5,227,32"/>
+<area shape="rect" id="node5" href="$group__rtc.html#ga75dad42881d64cf07cf1bdc2979a7056" title="RTC interrupt handler." alt="" coords="176,56,235,83"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,128,57"/>
+<area shape="rect" id="node7" href="$group__rtc.html#gaba6e92914293f2cd8d6300509252dc18" title="Sets the power&#45;up alarm based on the current time." alt="" coords="283,56,441,83"/>
+</map>

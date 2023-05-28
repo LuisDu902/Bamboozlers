@@ -1,0 +1,6 @@
+<map id="draw_game_over_cursor" name="draw_game_over_cursor">
+<area shape="rect" id="node1" title="Draws the cursor in the game over menu and updates its position based on the selected item." alt="" coords="5,31,187,57"/>
+<area shape="rect" id="node2" href="$viewer_8c.html#a0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="235,5,333,32"/>
+<area shape="rect" id="node4" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="235,56,333,83"/>
+<area shape="rect" id="node3" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="381,5,496,32"/>
+</map>

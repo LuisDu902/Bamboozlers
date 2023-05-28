@@ -1,0 +1,45 @@
+<map id="update_timer_state" name="update_timer_state">
+<area shape="rect" id="node1" title="Updates the state based on the timer interrupt." alt="" coords="5,360,155,387"/>
+<area shape="rect" id="node2" href="$group__graphics.html#ga3b1e8cd1261ca12581d1c26be45ea309" title="Clears the drawing buffer by setting all pixels to black." alt="" coords="203,259,361,285"/>
+<area shape="rect" id="node3" href="$viewer_8c.html#a1209cc537c04f860f7bf0301ad7a4987" title="Draws the cursor on the screen based on the current menu state." alt="" coords="450,157,551,184"/>
+<area shape="rect" id="node12" href="$viewer_8c.html#a707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="233,360,331,387"/>
+<area shape="rect" id="node24" href="$group__graphics.html#gaa3eb82d3b44f0375e27216392595fdb3" title="Swaps the drawing buffer with the main buffer, updating the screen." alt="" coords="228,689,336,716"/>
+<area shape="rect" id="node25" href="$game__state_8c.html#a502531ceb516d571ad7a91b766070112" title="Updates the game state based on the timer interrupt." alt="" coords="205,639,359,665"/>
+<area shape="rect" id="node4" href="$game__viewer_8c.html#a54510b9b0c300d30aed96ce4c75b7a42" title="Draws the game cursor based on the item state." alt="" coords="671,208,817,235"/>
+<area shape="rect" id="node5" href="$viewer_8c.html#a0402f04eb842f327fb6ee4c44a549d2e" title="Draws a sprite on the screen." alt="" coords="908,284,1007,311"/>
+<area shape="rect" id="node9" href="$game__over__viewer_8c.html#a2473522ee5ab26881e4495a6a5666136" title="Draws the cursor in the game over menu and updates its position based on the selected item." alt="" coords="653,5,835,32"/>
+<area shape="rect" id="node10" href="$level__select__viewer_8c.html#ac864d3006142e4bd4cb28f77ec914395" title="Draws the level cursor based on the selected level." alt="" coords="674,56,814,83"/>
+<area shape="rect" id="node11" href="$menu__viewer_8c.html#a590d6557df299779778ad5526a5ec6eb" title="Draws the menu cursor based on the selected menu option." alt="" coords="671,107,817,133"/>
+<area shape="rect" id="node7" href="$group__map__controller.html#ga9da7618ca657dae2e8b844a9b9fee998" title="Checks if an item is within the map boundaries." alt="" coords="913,613,1001,640"/>
+<area shape="rect" id="node8" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="908,81,1007,108"/>
+<area shape="rect" id="node6" href="$group__graphics.html#ga6fb281e02be3abd389b72ae92bf8c6e3" title="Draws a pixel at the specified coordinates with the given color." alt="" coords="1424,399,1539,425"/>
+<area shape="rect" id="node13" href="$game__viewer_8c.html#a87b7bdb3212593972316d18d5aa8e02e" title="Draws the game menu including the map, inventory, background, timer, home, and other sprites." alt="" coords="429,512,572,539"/>
+<area shape="rect" id="node20" href="$game__over__viewer_8c.html#ab4dfd5cac05ded2669eba91c4755e7da" title="Draws the game over menu." alt="" coords="411,309,590,336"/>
+<area shape="rect" id="node21" href="$instructions__viewer_8c.html#aa4d38432f695ccbcb04a63e78b87897a" title="Draws the instructions menu with the instruction texts." alt="" coords="410,360,591,387"/>
+<area shape="rect" id="node22" href="$level__select__viewer_8c.html#a8ec35ca14990ff5ff6ea318e6b6a19cd" title="Draws the level selection menu with the level options." alt="" coords="409,411,592,437"/>
+<area shape="rect" id="node23" href="$menu__viewer_8c.html#a827220a6b9f738eba8b094586855b0b7" title="Draws the main menu with the menu options." alt="" coords="431,259,570,285"/>
+<area shape="rect" id="node14" href="$game__viewer_8c.html#acb26a649ac4b917d41c8a86ef1b37541" title="Draws the inventory containers." alt="" coords="683,664,805,691"/>
+<area shape="rect" id="node18" href="$game__viewer_8c.html#ac4bcef6eb2b4c839c3b0c57171759a8e" title="Draws the map borders." alt="" coords="912,563,1003,589"/>
+<area shape="rect" id="node19" href="$game__viewer_8c.html#a9eb831ba2a514ba15a974586e8f80364" title="Draws the timer in the game menu." alt="" coords="696,512,792,539"/>
+<area shape="rect" id="node15" href="$game__viewer_8c.html#a345eae12bd1a50f184626e675dd4e734" title="Draws a container at the specified position and with the given width." alt="" coords="896,664,1019,691"/>
+<area shape="rect" id="node16" href="$group__graphics.html#ga99d2da2559e11200c6b40c469e9977ec" title="Draws a rectangle starting at the specified coordinates with the given width, height,..." alt="" coords="1067,537,1212,564"/>
+<area shape="rect" id="node17" href="$group__graphics.html#ga5e5b25bd525250f61f40b9e9f212d5e6" title="Draws a horizontal line starting at the specified coordinates with the given length and color." alt="" coords="1260,424,1376,451"/>
+<area shape="rect" id="node26" href="$group__map__controller.html#ga02f2f989c3627d1012fe3c97faba404b" title="Checks if two sprites collide." alt="" coords="925,892,990,919"/>
+<area shape="rect" id="node27" href="$group__timer.html#ga91a2072306c68353712a6b771287dc2c" title="Timer interrupt handler." alt="" coords="432,664,569,691"/>
+<area shape="rect" id="node28" href="$game__state_8c.html#accc7b78020e47721c6d83038c9af3e48" title="Updates the state of the panda character." alt="" coords="423,1069,578,1096"/>
+<area shape="rect" id="node29" href="$group__panda__controller.html#ga144565a588c341a814971556dd542fcf" title="Checks if the panda is above any item." alt="" coords="679,1019,809,1045"/>
+<area shape="rect" id="node31" href="$group__panda__controller.html#ga9058281a29ef75ea5e6dcd82000757c0" title="Checks if the panda collides with any items." alt="" coords="672,968,816,995"/>
+<area shape="rect" id="node32" href="$group__panda__controller.html#ga9b876f521a53fcfb081a3e403d552b85" title="Makes the panda character fall." alt="" coords="723,1120,765,1147"/>
+<area shape="rect" id="node33" href="$group__panda__controller.html#ga959045326863d1ba5dceafcf5f1b498e" title="Fixes the collision between the panda and the collided item." alt="" coords="695,1069,793,1096"/>
+<area shape="rect" id="node34" href="$group__panda__controller.html#gaa9b6d0b7897eec3788b04e783cb11739" title="Moves the panda character to the left." alt="" coords="914,1132,1001,1159"/>
+<area shape="rect" id="node35" href="$group__panda__controller.html#gab96f9f75e97d03c5682995c854ec4cb5" title="Moves the panda character to the left." alt="" coords="909,1247,1005,1273"/>
+<area shape="rect" id="node36" href="$group__panda__controller.html#gaadcbd7769f77292471f99850796e7489" title="Fixes the collision between the panda and the collided item during a fall." alt="" coords="681,816,807,843"/>
+<area shape="rect" id="node37" href="$group__panda__controller.html#gaa7d8d77d5aa0271b47adbbbcffeb1517" title="Fixes the collision between the panda and the collided item during a jump." alt="" coords="675,867,813,893"/>
+<area shape="rect" id="node38" href="$group__panda__controller.html#gad7c2d8881ede8b56ccfcc4b3b2a475b3" title="Handles the boundary conditions for the panda character." alt="" coords="640,1171,848,1197"/>
+<area shape="rect" id="node39" href="$group__panda__controller.html#ga2c6d1dd259c937c3a8194b97ed3a6698" title="Checks if the panda hits the floor." alt="" coords="707,1221,781,1248"/>
+<area shape="rect" id="node40" href="$group__panda__controller.html#ga2a8ae329702e1bac41c8551d1e86bd77" title="Makes the panda character jump." alt="" coords="717,1272,771,1299"/>
+<area shape="rect" id="node41" href="$group__item__controller.html#ga65e6a0a109d61b5b12d11ad9d8cde508" title="Updates the inventory." alt="" coords="676,1424,812,1451"/>
+<area shape="rect" id="node43" href="$group__panda__controller.html#ga52e159828216bfe07c652074c314455c" title="Updates the panda character&#39;s animation frame." alt="" coords="651,765,837,792"/>
+<area shape="rect" id="node30" href="$group__panda__controller.html#ga7248171b38c62ae744d602c53b51d390" title="Checks if the panda is above a given item." alt="" coords="926,1019,989,1045"/>
+<area shape="rect" id="node42" href="$sprite_8c.html#a0bb9f4b019dbaabf93664db54d901827" title="Sets the position of a sprite." alt="" coords="925,1424,990,1451"/>
+</map>

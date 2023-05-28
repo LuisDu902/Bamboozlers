@@ -1,0 +1,31 @@
+<map id="/home/luisdu/Desktop/lcom/g6/proj/src/controller" name="/home/luisdu/Desktop/lcom/g6/proj/src/controller">
+<area shape="rect" id="node1" href="dir_61a31ff85c95043c98241b02dc2a1804.html" title="states" alt="" coords="155,52,227,100"/>
+<area shape="rect" id="edge9-headlabel" href="dir_000011_000001.html" title="19" alt="" coords="506,125,524,139"/>
+<area shape="rect" id="node4" href="dir_76088a752558682af708bdc53f0e1495.html" title="game" alt="" coords="421,148,493,196"/>
+<area shape="rect" id="edge11-headlabel" href="dir_000011_000002.html" title="3" alt="" coords="424,124,433,139"/>
+<area shape="rect" id="node5" href="dir_91e7b9ef0686c36bcf0af7e2c178d199.html" title="KBC" alt="" coords="357,340,429,388"/>
+<area shape="rect" id="edge13-headlabel" href="dir_000011_000003.html" title="4" alt="" coords="336,341,345,355"/>
+<area shape="rect" id="node6" href="dir_782879a5cbd923d8fdc5499936db5b1c.html" title="keyboard" alt="" coords="301,244,384,292"/>
+<area shape="rect" id="edge12-headlabel" href="dir_000011_000004.html" title="4" alt="" coords="283,227,293,241"/>
+<area shape="rect" id="node7" href="dir_650679d5804fe80d7147267ee45020d1.html" title="mouse" alt="" coords="408,244,480,292"/>
+<area shape="rect" id="edge10-headlabel" href="dir_000011_000005.html" title="4" alt="" coords="389,227,398,242"/>
+<area shape="rect" id="node11" href="dir_41bb3fef4c98c09d0e8e29fc30e11ed5.html" title="video" alt="" coords="205,244,277,292"/>
+<area shape="rect" id="edge8-headlabel" href="dir_000011_000009.html" title="4" alt="" coords="196,218,206,233"/>
+<area shape="rect" id="node2" href="dir_5dd65160827af56e6353642206b80129.html" title="model" alt="" coords="53,148,125,196"/>
+<area shape="rect" id="edge15-headlabel" href="dir_000010_000001.html" title="1" alt="" coords="525,122,534,137"/>
+<area shape="rect" id="edge14-headlabel" href="dir_000010_000009.html" title="1" alt="" coords="189,220,199,235"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000002_000011.html" title="1" alt="" coords="238,90,247,104"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000002_000010.html" title="2" alt="" coords="141,141,150,156"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000002_000003.html" title="1" alt="" coords="444,361,453,375"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000002_000004.html" title="1" alt="" coords="385,232,395,246"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000002_000005.html" title="1" alt="" coords="454,220,463,234"/>
+<area shape="rect" id="node9" href="dir_db9266e0383cc7a556734809bcbae701.html" title="timer" alt="" coords="504,244,576,292"/>
+<area shape="rect" id="edge7-headlabel" href="dir_000002_000007.html" title="1" alt="" coords="509,217,519,232"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000002_000009.html" title="1" alt="" coords="293,243,302,257"/>
+<area shape="rect" id="edge16-headlabel" href="dir_000004_000003.html" title="2" alt="" coords="375,313,384,327"/>
+<area shape="rect" id="edge17-headlabel" href="dir_000005_000003.html" title="2" alt="" coords="417,321,426,335"/>
+<area shape="rect" id="node8" href="dir_7002180236e5881402c635902678c899.html" title="RTC" alt="" coords="325,148,397,196"/>
+<area shape="rect" id="node10" href="dir_13f139eadeea21ee8f2bca286bfc0952.html" title="utils" alt="" coords="229,148,301,196"/>
+<area shape="rect" id="clust2" href="dir_41ef5d8a90b9cc03a02949a5c062e6f0.html" alt="" coords="195,137,613,399"/>
+<area shape="rect" id="clust1" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="16,16,624,409"/>
+</map>

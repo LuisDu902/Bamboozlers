@@ -17,6 +17,9 @@
 #include "xpm/game/map.xpm"
 #include "xpm/game/bamboo.xpm"
 
+/** @defgroup game game
+ * @{
+  */
 Sprite *home;
 Sprite *background;
 Sprite *little_block;

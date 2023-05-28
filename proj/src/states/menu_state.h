@@ -13,6 +13,9 @@
 #include "viewer/viewer.h"
 #include "state.h"
 
+/** @defgroup menu_state menu_state
+ * @{
+  */
 extern Sprite* cursor;
 /**
  * @brief Updates the menu state based on the keyboard input in the main menu.

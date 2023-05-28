@@ -1,0 +1,10 @@
+<map id="rtc_ih" name="rtc_ih">
+<area shape="rect" id="node1" title="RTC interrupt handler." alt="" coords="5,144,64,171"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga061230f6f4a1fd2f970247ca014b6f41" title="Updates the RTC time." alt="" coords="156,93,227,120"/>
+<area shape="rect" id="node6" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="497,144,595,171"/>
+<area shape="rect" id="node8" href="$group__rtc.html#gaba6e92914293f2cd8d6300509252dc18" title="Sets the power&#45;up alarm based on the current time." alt="" coords="112,144,271,171"/>
+<area shape="rect" id="node3" href="$group__rtc.html#ga060741ae796d3c561d57c9a25f402d2d" title="Disables RTC updates." alt="" coords="485,68,607,95"/>
+<area shape="rect" id="node4" href="$group__rtc.html#gaa63c62bc7e741b9c72538b68eb898f6b" title="Enables RTC updates." alt="" coords="487,5,605,32"/>
+<area shape="rect" id="node5" href="$group__rtc.html#ga271589204989d069068b8251c7d3a8af" title="Reads the hours value from the specified RTC register." alt="" coords="319,144,437,171"/>
+<area shape="rect" id="node7" href="$group__rtc.html#ga763493fa756f9d870276f292dd15bd7f" title="Waits until the RTC finishes updating." alt="" coords="321,93,435,120"/>
+</map>

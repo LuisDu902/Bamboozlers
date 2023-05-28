@@ -1,0 +1,5 @@
+<map id="check_item_pos" name="check_item_pos">
+<area shape="rect" id="node1" title="Checks the position of the selected item and handles collisions." alt="" coords="5,31,132,57"/>
+<area shape="rect" id="node2" href="$group__map__controller.html#ga02f2f989c3627d1012fe3c97faba404b" title="Checks if two sprites collide." alt="" coords="191,5,257,32"/>
+<area shape="rect" id="node3" href="$group__map__controller.html#ga9da7618ca657dae2e8b844a9b9fee998" title="Checks if an item is within the map boundaries." alt="" coords="180,56,268,83"/>
+</map>

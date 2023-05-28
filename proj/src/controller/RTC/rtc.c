@@ -1,34 +1,26 @@
 #include "rtc.h"
 
-int hook_rtc = 3;
+int rtc_hook_id = 3;
 
 uint8_t hour = 0, minute = 0, second = 0;
 
 bool darkMode=false;
 
 int (rtc_subscribe_int)(uint8_t *bit_no) {
-  *bit_no=BIT(hook_rtc);
-  return sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &hook_rtc);
+  *bit_no=BIT(rtc_hook_id);
+  return sys_irqsetpolicy(RTC_IRQ, IRQ_REENABLE, &rtc_hook_id);
 }
 
 int (rtc_unsubscribe_int)() {
-  return sys_irqrmpolicy(&hook_rtc);
+  return sys_irqrmpolicy(&rtc_hook_id);
 }
 
 int (enable_update)(){
-    uint8_t regB;
-    if(sys_outb(ADDR_REG,REG_B) != 0) return 0;
-    if(util_sys_inb(DATA_REG,&regB) != 0) return 0;
-    regB = (regB & ~SET) | UIE;
-    return sys_outb(DATA_REG,regB);
+    return sys_irqenable(&rtc_hook_id);
 }
 
 int (disable_update)(){
-    uint8_t regB;
-    if( sys_outb(ADDR_REG,REG_B) != 0) return 1;
-    if( util_sys_inb(DATA_REG,&regB) != 0) return 1;
-    regB |= SET;
-    return sys_outb(DATA_REG,regB);
+    return sys_irqdisable(&rtc_hook_id);
 }
 
 
@@ -46,14 +38,14 @@ int (wait_valid_rtc)(){
   return 0;
 }
 void (rtc_ih)(){
-    uint8_t regB;
+    uint8_t data;
     if(sys_outb(ADDR_REG, REG_C)) return ;
-    if(util_sys_inb(DATA_REG, &regB)) return ;
-    if(regB & UF) rtc_upd();
-    if(regB & AF) set_darkMode_alarm();
+    if(util_sys_inb(DATA_REG, &data)) return ;
+    if(data & UF) rtc_upd();
+    if(data & AF) set_darkMode_alarm();
 }
 
-int (set_rtc_interrupt)(bool value){
+int (set_alarm_upd_interrupt)(bool value){
     uint8_t regB;
     if(sys_outb(ADDR_REG, REG_B)) return 1;
     if(util_sys_inb(DATA_REG, &regB)) return 1;
@@ -109,7 +101,4 @@ void (set_darkMode_alarm)(){
     if(sys_outb(ADDR_REG, REG_HOUR_ALARM)) return;
     if(sys_outb(DATA_REG, hour_alarm))return;
 }
-
-
-
 

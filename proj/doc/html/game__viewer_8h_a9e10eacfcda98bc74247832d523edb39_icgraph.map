@@ -1,0 +1,7 @@
+<map id="draw_game_cursor" name="draw_game_cursor">
+<area shape="rect" id="node1" title="Draws the game cursor based on the item state." alt="" coords="669,31,815,57"/>
+<area shape="rect" id="node2" href="$viewer_8c.html#a1209cc537c04f860f7bf0301ad7a4987" title="Draws the cursor on the screen based on the current menu state." alt="" coords="520,31,621,57"/>
+<area shape="rect" id="node3" href="$viewer_8c.html#a707959b375a50b10833d823cdbe5bdbc" title="Draws the current menu on the screen." alt="" coords="373,5,472,32"/>
+<area shape="rect" id="node5" href="$state_8c.html#ac0addbad1ae85da860c12626fc9d97b0" title="Updates the state based on the timer interrupt." alt="" coords="176,56,325,83"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,31,128,57"/>
+</map>

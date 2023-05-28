@@ -1,0 +1,8 @@
+<map id="rtc_upd" name="rtc_upd">
+<area shape="rect" id="node1" title="Updates the RTC time." alt="" coords="5,68,76,95"/>
+<area shape="rect" id="node2" href="$group__rtc.html#ga060741ae796d3c561d57c9a25f402d2d" title="Disables RTC updates." alt="" coords="291,5,412,32"/>
+<area shape="rect" id="node3" href="$group__rtc.html#gaa63c62bc7e741b9c72538b68eb898f6b" title="Enables RTC updates." alt="" coords="292,68,411,95"/>
+<area shape="rect" id="node4" href="$group__rtc.html#ga271589204989d069068b8251c7d3a8af" title="Reads the hours value from the specified RTC register." alt="" coords="124,144,243,171"/>
+<area shape="rect" id="node6" href="$group__rtc.html#ga763493fa756f9d870276f292dd15bd7f" title="Waits until the RTC finishes updating." alt="" coords="127,43,240,69"/>
+<area shape="rect" id="node5" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="302,131,401,157"/>
+</map>

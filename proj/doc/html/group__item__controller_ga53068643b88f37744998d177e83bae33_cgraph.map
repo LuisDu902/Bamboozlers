@@ -1,0 +1,5 @@
+<map id="is_selected_item" name="is_selected_item">
+<area shape="rect" id="node1" title="Checks if an item is selected and updates the item&#39;s position." alt="" coords="5,31,137,57"/>
+<area shape="rect" id="node2" href="$group__map__controller.html#ga9da7618ca657dae2e8b844a9b9fee998" title="Checks if an item is within the map boundaries." alt="" coords="191,5,279,32"/>
+<area shape="rect" id="node3" href="$group__item__controller.html#ga905eed9d5ce9fa54d56b7837a0c0f3b8" title="Selects an item based on the cursor&#39;s position." alt="" coords="185,56,284,83"/>
+</map>

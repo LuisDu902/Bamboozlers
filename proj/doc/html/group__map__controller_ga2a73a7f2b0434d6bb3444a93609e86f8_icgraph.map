@@ -1,0 +1,6 @@
+<map id="map_set_up" name="map_set_up">
+<area shape="rect" id="node1" title="Sets up the game map for a specific level." alt="" coords="588,5,689,32"/>
+<area shape="rect" id="node2" href="$group__level__select__state.html#ga0d14765d4f61f5165372d6027b5cff2e" title="Updates the menu state based on the mouse input in the instructions menu." alt="" coords="383,5,540,32"/>
+<area shape="rect" id="node3" href="$group__state.html#ga8e97a0ab2a725ac22fc2f010f5a161b5" title="Updates the state based on the mouse input." alt="" coords="176,5,335,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
+</map>
